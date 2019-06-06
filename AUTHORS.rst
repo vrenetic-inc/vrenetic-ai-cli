@@ -2,4 +2,4 @@
 Contributors
 ============
 
-* kris <krzysztof.piotr.stasiak@gmail.com>
+* kris-lab <krzysztof.piotr.stasiak@gmail.com>
