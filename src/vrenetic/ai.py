@@ -5,42 +5,24 @@ import argparse
 import sys
 import logging
 
-from vrenetic_ai import __version__
-
 __author__ = "kris-lab"
-__copyright__ = "kris-lab"
-__license__ = "mit"
+__copyright__ = "VRenetic Inc."
+__license__ = "MIT"
 __version__ = "0.0.1"
 
 _logger = logging.getLogger(__name__)
 
 
-def fib(n):
-    """Fibonacci example function
-
-    Args:
-      n (int): integer
-
-    Returns:
-      int: n-th Fibonacci number
-    """
-    assert n > 0
-    a, b = 1, 1
-    for i in range(n-1):
-        a, b = b, a+b
-    return a
-
-
 def parse_args(args):
     parser = argparse.ArgumentParser(
-        description="Just a Fibonnaci demonstration")
+        description="VRenetic AI Cli")
     parser.add_argument(
         '--version',
         action='version',
         version='vrenetic-ai {ver}'.format(ver=__version__))
     parser.add_argument(
         dest="n",
-        help="n-th Fibonacci number",
+        help="n",
         type=int,
         metavar="INT")
     parser.add_argument(
@@ -70,7 +52,7 @@ def main(args):
     args = parse_args(args)
     setup_logging(args.loglevel)
     _logger.debug("Starting crazy calculations...")
-    print("The {}-th Fibonacci number is {}".format(args.n, fib(args.n)))
+    print("Arguments {}".format(args.n, args.n))
     _logger.info("Script ends here")
 
 
