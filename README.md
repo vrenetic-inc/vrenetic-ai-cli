@@ -16,7 +16,7 @@ DTOs
     "region-legal": "Poland",
     "region-registration": "UK",
     "region-session": "Germany",
-    "region-relatime": "Switzerland"
+    "region-relatime": "Switzerland",
 }
 ```
 
@@ -43,6 +43,7 @@ DTOs
 ```json
 {}
 ```
+
 
 VResh Models Specific
 ---------------------
