@@ -7,9 +7,9 @@ VRenetic AI Cli tools.
 Contract v.1
 ------------
 
-## Input DTOs
+### Input DTOs
 
-### User entity
+#### User entity
 
 ```json
 {
@@ -22,7 +22,7 @@ Contract v.1
 }
 ```
 
-### User Prefernces entity
+#### User Prefernces entity
 
 ```json
 {
@@ -31,7 +31,7 @@ Contract v.1
 }
 ```
 
-### Content entity
+#### Content entity
 
 ```json
 {
@@ -42,7 +42,7 @@ Contract v.1
 }
 ```
 
-### Stats Feed entity
+#### Stats Feed entity
 
 ```json
 {
@@ -58,7 +58,7 @@ Contract v.1
 }
 ```
 
-### Stats Source entity
+#### Stats Source entity
 
 ```json
 {
@@ -72,9 +72,9 @@ Contract v.1
 }
 ```
 
-## Output DTO
+### Output DTO
 
-### Relevancy
+#### Relevancy
 
 ```json
 {
@@ -82,7 +82,7 @@ Contract v.1
 }
 ```
 
-### Distirbution policy
+#### Distirbution policy
 
 ```json
 {
@@ -97,11 +97,13 @@ Keeps VResh business logic specific data for NN models in `data/vresh`
 Examples
 --------
 
+#### Run NN with DTO inputs
 ```bash
 $ vrenetic-ai nn-run "name-of-registered-nn" '{ "user": "DTO", "content": "DTO", "stat-source": "DTO", "stat-feed": "DTO" }'
+{ "relevancy_index": "1" }
 ```
 
-Integraton
-----------
+Integration
+-----------
 
 ![Integration v.1](/docs/assets/integration-v1.png)
