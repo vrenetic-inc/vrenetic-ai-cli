@@ -108,3 +108,11 @@ Integration
 VResh Models Specific
 ---------------------
 Keeps VResh business logic specific data for NN models in `data/vresh`
+
+TODO
+----
+* Move "data" storage to the Cloud eg AWS/S3
+* Introduce "workflows" as chain of NNs
+* Introduce "dataset" storage support
+* Introduce "dataset" training support
+* Introduce "NN" training support with multiple backends
