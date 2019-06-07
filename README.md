@@ -89,13 +89,7 @@ Contract v.1
     "distribution_policy": "0|0.5|1"
 }
 ```
-0.0 - ignore
-0.5 - byffer by time
-1.0 - realtime
-
-VResh Models Specific
----------------------
-Keeps VResh business logic specific data for NN models in `data/vresh`
+0.0 - ignore, 0.5 - byffer by time, 1.0 - realtime
 
 Examples
 --------
@@ -110,3 +104,7 @@ Integration
 -----------
 
 ![Integration v.1](/docs/assets/integration-v1.png)
+
+VResh Models Specific
+---------------------
+Keeps VResh business logic specific data for NN models in `data/vresh`
