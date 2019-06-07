@@ -4,6 +4,29 @@ vrenetic-ai
 
 VRenetic AI Cli tools.
 
+Usage
+-----
+
+```bash
+$ vrenetic-ai -h
+usage: ai.py [-h] [-v] [--version] [-vv] {nn-run,nn-list,nn-show} ...
+
+VRenetic AI Cli
+
+positional arguments:
+  {nn-run,nn-list,nn-show}
+                        Sub-command help
+    nn-run              Neural Network Run
+    nn-list             Neural Network List
+    nn-show             Neural Network Show
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --verbose         set loglevel to INFO
+  --version             show program's version number and exit
+  -vv, --very-verbose   set loglevel to DEBUG
+```
+
 Contract v.1
 ------------
 
