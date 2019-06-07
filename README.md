@@ -109,6 +109,45 @@ VResh Models Specific
 ---------------------
 Keeps VResh business logic specific data for NN models in `data/vresh`
 
+VRenetic AI File
+----------------
+
+### Example
+```json
+{
+    "name" : "vresh feed item relevancy for population for us market",
+    "descrition": "recommends items for sources for users from US region",
+    "regions": [ "US" ],
+    "tags": [ "population", "feed", "us" ],
+    "status": "published",
+    "type": "nn",
+    "models": [
+        {
+            "language": "python",
+            "path": "./models/model_optimisation_1.py",
+            "type": "compute"
+        },
+        {
+            "language": "neural-ide",
+            "path": "./pyton/vresh-feed-population-us.ndo",
+            "type": "edit"
+        }
+    ],
+    "inputs": [
+        {
+            "name": "user_age",
+            "type": "integer"
+        }
+    ],
+    "output": [
+        {
+            "name": "conversion",
+            "type": "float"
+        }
+    ]
+}
+```
+
 TODO
 ----
 * Move "data" storage to the Cloud eg AWS/S3
