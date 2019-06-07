@@ -45,7 +45,7 @@ Contract v.1
 }
 ```
 
-#### User Prefernces entity
+#### User Preferences entity
 
 ```json
 {
@@ -69,8 +69,10 @@ Contract v.1
 
 ```json
 {
-    "content-type-flat": "12",
-    "content-type-spherical": "222",
+    "content-type-live": "12",
+    "content-type-capsule": "132",
+    "content-projection-flat": "12",
+    "content-projection-spherical": "222",
     "rate-last-minute": "23",
     "rate-last-hour": "45",
     "region-own-gdpr": "23",
@@ -85,7 +87,8 @@ Contract v.1
 
 ```json
 {
-    "source-content-type": "spherical",
+    "source-content-type": "live|capsule|photo",
+    "source-content-projection": "flat|spherical360",
     "source-rate-last-minute": "23",
     "source-rate-last-hour": "45",
     "region-all": "435",
