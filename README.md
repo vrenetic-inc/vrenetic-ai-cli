@@ -4,8 +4,10 @@ vrenetic-ai
 
 VRenetic AI Cli tools.
 
-DTOs v.1
---------
+Contract v.1
+------------
+
+## Input DTOs
 
 ### User entity
 
@@ -67,6 +69,24 @@ DTOs v.1
     "region-us": "23",
     "region-uk": "12",
     "region-other": "123"
+}
+```
+
+## Output DTO
+
+### Relevancy
+
+```json
+{
+    "relevancy_index": "0|1",
+}
+```
+
+### Distirbution policy
+
+```json
+{
+    "distribution_policy": "0|0.5|1" // ignore, byffer by time, realtime
 }
 ```
 
