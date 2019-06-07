@@ -36,8 +36,8 @@ Contract v.1
 
 ```json
 {
-    "name": "Chris",
-    "age": "36",
+    "user-name": "Chris",
+    "user-age": "36",
     "system-user-role": "user|trial|studio|afu",
     "region-legal-gdpr": "Poland",
     "region-registration-signup": "UK",
@@ -50,8 +50,8 @@ Contract v.1
 
 ```json
 {
-    "region-own-max": "70%",
-    "source-type-spherical360-max": "40%"
+    "prefer-region-own-max": "70%",
+    "prefer-source-type-spherical360-max": "40%"
 }
 ```
 
@@ -60,11 +60,20 @@ Contract v.1
 ```json
 {
     "content-type": "live|capsule|photo",
+    "content-age": "10m",
     "content-projection": "flat|spherical360",
+    "content-settings-muted": "true|false",
+    "content-audio-language": "unknown|lang-code",
     "region-legal-gdpr": "Poland",
     "region-registration-signup": "UK",
     "region-session-datacenter": "Germany",
     "region-relatime-gps": "Switzerland",
+    "publisher-profile-followers-count": "233",
+    "publisher-profile-library-count": "22",
+    "publisher-profile-library-total-views": "234001",
+    "publisher-profile-library-total-likes": "2333",
+    "publisher-profile-library-total-comments": "33",
+    "publisher-profile-library-total-reported": "0"
 }
 ```
 
