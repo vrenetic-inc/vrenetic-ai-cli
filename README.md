@@ -38,6 +38,7 @@ Contract v.1
 {
     "name": "Chris",
     "age": "36",
+    "system-user-role": "user|trial|studio|afu",
     "region-legal-gdpr": "Poland",
     "region-registration-signup": "UK",
     "region-session-datacenter": "Germany",
