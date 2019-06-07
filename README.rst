@@ -8,33 +8,41 @@ DTOs
 ----
 
 ### User entity
-```
+
+```json
 {
     "name": "Chris",
     "age": "36",
     "region-legal": "Poland",
     "region-registration": "UK",
     "region-session": "Germany",
-    "region-relatime": "Switzerland",
+    "region-relatime": "Switzerland"
 }
 ```
+
 ### User Prefernces entity
-```
-{}
-```
-### Content entity
-```
-{}
-```
-### Stats Feed entity
-```
-{}
-```
-### Stats Source entity
-```
+
+```json
 {}
 ```
 
+### Content entity
+
+```json
+{}
+```
+
+### Stats Feed entity
+
+```json
+{}
+```
+
+### Stats Source entity
+
+```json
+{}
+```
 
 VResh Models Specific
 ---------------------
