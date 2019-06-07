@@ -50,7 +50,7 @@ Contract v.1
 ```json
 {
     "region-own-max": "70%",
-    "source-type-spherical-max": "40%"
+    "source-type-spherical360-max": "40%"
 }
 ```
 
@@ -58,6 +58,8 @@ Contract v.1
 
 ```json
 {
+    "content-type": "live|capsule|photo",
+    "content-projection": "flat|spherical360",
     "region-legal-gdpr": "Poland",
     "region-registration-signup": "UK",
     "region-session-datacenter": "Germany",
@@ -72,7 +74,7 @@ Contract v.1
     "content-type-live": "12",
     "content-type-capsule": "132",
     "content-projection-flat": "12",
-    "content-projection-spherical": "222",
+    "content-projection-spherical360": "222",
     "rate-last-minute": "23",
     "rate-last-hour": "45",
     "region-own-gdpr": "23",
