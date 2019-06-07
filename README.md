@@ -100,3 +100,8 @@ Examples
 ```bash
 $ vrenetic-ai nn-run "name-of-registered-nn" '{ "user": "DTO", "content": "DTO", "stat-source": "DTO", "stat-feed": "DTO" }'
 ```
+
+Integraton
+----------
+
+![Integration v.1](/docs/assets/integration-v1.png)
