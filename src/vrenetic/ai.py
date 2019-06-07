@@ -1,9 +1,14 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import argparse
 import sys
 import logging
+import pprint
+from importlib.util import spec_from_loader, module_from_spec
+from importlib.machinery import SourceFileLoader
+from tinydb import TinyDB, Query
+
 
 __author__ = "kris-lab"
 __copyright__ = "VRenetic Inc."
@@ -36,7 +41,6 @@ def parse_args(args):
         const=logging.DEBUG)
     parser_command = parser.add_subparsers(help = 'Sub-command help')
     parser_cmd_nn_run = parser_command.add_parser('nn-run', help='Neural Network Run')
-    parser_cmd_nn_list = parser_command.add_parser('nn-list', help='Neural Network List')
     parser_cmd_nn_show = parser_command.add_parser('nn-show', help='Neural Network Show')
     parser_cmd_nn_show.add_argument(
         '--nn-print-inputs',
@@ -69,7 +73,20 @@ def main(args):
     args = parse_args(args)
     setup_logging(args.loglevel)
     _logger.debug("Starting crazy calculations...")
-    # print("Arguments {}".format(args.command, args.command))
+
+    # Item = Query()
+    # db = TinyDB('./data/db.json')
+    # table = db.table('models')
+    # pprint.pprint(table.search(Item.app.matches("vre")))
+    # table.insert(model)
+    # pprint.pprint(table.all())
+    # exec(open('./data/assets/06c180564e5934837c7c137d130fdf6d/vresh-feed-relevance-v1.py').read(), globals() )
+    # spec = spec_from_loader("module.name",
+        # SourceFileLoader("module.name", "./data/assets/06c180564e5934837c7c137d130fdf6d/vresh-feed-relevance-v1.py"))
+    # mod = module_from_spec(spec)
+    # spec.loader.exec_module(mod)
+    # inputs = [0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1]
+    # pprint.pprint(mod.expression(inputs))
     _logger.info("Script ends here")
 
 

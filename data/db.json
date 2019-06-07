@@ -1,0 +1,56 @@
+{
+    "_default": {},
+    "models": {
+        "1": {
+            "application": "vresh",
+            "name": "vresh feed item relevancy for population for us market",
+            "descrition": "recommends items for sources for users from US region",
+            "regions": [
+                "US"
+            ],
+            "tags": [
+                "population",
+                "feed",
+                "us"
+            ],
+            "status": "published",
+            "type": "nn",
+            "models": [
+                {
+                    "language": "python",
+                    "path": "./assets/06c180564e5934837c7c137d130fdf6d/python/vresh-feed-relevance-v1.py",
+                    "type": "compute"
+                },
+                {
+                    "language": "neural-ide",
+                    "path": "./assets/06c180564e5934837c7c137d130fdf6d/ndo/vresh-feed-population-us.ndo",
+                    "type": "edit"
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "user_age",
+                    "type": "continues"
+                },
+                {
+                    "name": "user_role",
+                    "type": "categorical",
+                    "dictionary": {
+                        "trial": 1,
+                        "user": 2
+                    }
+                },
+                {
+                    "name": "content_tags",
+                    "type": "binary"
+                }
+            ],
+            "output": [
+                {
+                    "name": "conversion",
+                    "type": "float"
+                }
+            ]
+        }
+    }
+}

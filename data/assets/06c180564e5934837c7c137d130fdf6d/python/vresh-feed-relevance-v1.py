@@ -10,6 +10,14 @@ def Binary(x) :
    else : 
        return 1
 
+def Probability(x) : 
+   if x < 0 :
+       return 0
+   elif x > 1 :
+       return 1
+   else : 
+       return x
+
 def expression(inputs) : 
 
     if type(inputs) != list:
@@ -81,6 +89,6 @@ def expression(inputs) :
     y_3_6 = Logistic (-3.41238+ (y_2_1*-0.160183)+ (y_2_2*-2.42276)+ (y_2_3*-1.12705)+ (y_2_4*0.36958))
     y_3_7 = Logistic (-3.9379+ (y_2_1*-4.76202)+ (y_2_2*-0.29344)+ (y_2_3*7.77222)+ (y_2_4*2.6012))
     non_probabilistic_conversion = Logistic (-0.822244+ (y_3_1*-9.08942)+ (y_3_2*-6.04938)+ (y_3_3*-2.43876)+ (y_3_4*0.256248)+ (y_3_5*7.56854)+ (y_3_6*1.13401)+ (y_3_7*7.42522))
-    conversion = probability(non_probabilistic_conversion)
+    conversion = Probability(non_probabilistic_conversion)
     
     return conversion 

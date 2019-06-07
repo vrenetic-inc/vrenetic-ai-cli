@@ -17,7 +17,6 @@ positional arguments:
   {nn-run,nn-list,nn-show}
                         Sub-command help
     nn-run              Neural Network Run
-    nn-list             Neural Network List
     nn-show             Neural Network Show
 
 optional arguments:
@@ -193,3 +192,4 @@ TODO
 * Introduce "dataset" storage support
 * Introduce "dataset" training support
 * Introduce "NN" training support with multiple backends
+* CI/CD deployment for package - maybe Travis?
