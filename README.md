@@ -1,10 +1,11 @@
+
 vrenetic-ai
 ===========
 
 VRenetic AI Cli tools.
 
-DTOs
-----
+DTOs v.1
+--------
 
 ### User entity
 
@@ -23,7 +24,8 @@ DTOs
 
 ```json
 {
-    "...": "TBD"
+    "region-own-max": "70%",
+    "source-type-spherical-max": "40%"
 }
 ```
 
@@ -59,7 +61,7 @@ DTOs
 ```json
 {
     "source-content-type": "spherical",
-    "souorce-rate-last-minute": "23",
+    "source-rate-last-minute": "23",
     "source-rate-last-hour": "45",
     "region-all": "435",
     "region-us": "23",
@@ -68,7 +70,13 @@ DTOs
 }
 ```
 
-
 VResh Models Specific
 ---------------------
 Keeps VResh business logic specific data for NN models in `data/vresh`
+
+Examples
+--------
+
+```bash
+$ vrenetic-ai nn-run "name-of-registered-nn" '{ "user": "DTO", "content": "DTO", "stat-source": "DTO", "stat-feed": "DTO" }'
+```
