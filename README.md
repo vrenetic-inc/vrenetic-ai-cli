@@ -86,9 +86,12 @@ Contract v.1
 
 ```json
 {
-    "distribution_policy": "0|0.5|1" // ignore, byffer by time, realtime
+    "distribution_policy": "0|0.5|1"
 }
 ```
+0.0 - ignore
+0.5 - byffer by time
+1.0 - realtime
 
 VResh Models Specific
 ---------------------
