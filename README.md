@@ -178,7 +178,7 @@ VRenetic AI File
             "default": "true"
         },
     ],
-    "mappings": [
+    "mappers": [
         {
             "path": "./assets/06c180564e5934837c7c137d130fdf6d/python/mapping.py",
             "language": "python",
