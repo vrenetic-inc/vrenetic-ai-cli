@@ -142,9 +142,9 @@ Integration
 
 ![Integration v.1](/docs/assets/integration-v1.png)
 
-VResh Models Specific
----------------------
-Keeps VResh business logic specific data for NN models in `data/vresh`
+Models and data
+---------------
+Business logic specific meta-data for AI/NN projects, expressions, mappings are provided via `data/db.json` file.
 
 VRenetic AI File
 ----------------
