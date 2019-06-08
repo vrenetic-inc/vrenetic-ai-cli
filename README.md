@@ -154,8 +154,11 @@ VRenetic AI File
 ### Example
 ```json
 {
+    "id": "vresh-feed-06c180564e5934837c7c137d130fdf6d-v1",
+    "version": "0.0.1",
+    "application": "vresh",
     "name" : "vresh feed item relevancy for population for us market",
-    "descrition": "recommends items for sources for users from US region",
+    "description": "recommends items for sources for users from US region",
     "regions": [ "US" ],
     "tags": [ "population", "feed", "us" ],
     "status": "published",
