@@ -8,22 +8,24 @@ Usage
 -----
 
 ```bash
-$ vrenetic-ai -h
-usage: ai.py [-h] [-v] [--version] [-vv] {nn-run,nn-list,nn-show} ...
+$ vrenetic-ai --version
+vrenetic-ai 0.0.1
+
+$ vrenetic-ai --help
+usage: vrenetic-ai [-h] [-v] [--version] [-vv] {nn-run,nn-show} ...
 
 VRenetic AI Cli
 
 positional arguments:
-  {nn-run,nn-list,nn-show}
-                        Sub-command help
-    nn-run              Neural Network Run
-    nn-show             Neural Network Show
+  {nn-run,nn-show}     Sub-command help
+    nn-run             Neural Network Run
+    nn-show            Neural Network Show
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -v, --verbose         set loglevel to INFO
-  --version             show program's version number and exit
-  -vv, --very-verbose   set loglevel to DEBUG
+  -h, --help           show this help message and exit
+  -v, --verbose        set loglevel to INFO
+  --version            show program's version number and exit
+  -vv, --very-verbose  set loglevel to DEBUG
 ```
 
 Contract v.1
