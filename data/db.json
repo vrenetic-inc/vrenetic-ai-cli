@@ -27,7 +27,7 @@
             ],
             "mappers": [
                 {
-                    "path": "./assets/06c180564e5934837c7c137d130fdf6d/python/mapping.py",
+                    "path": "./assets/06c180564e5934837c7c137d130fdf6d/python/mapper.py",
                     "language": "python",
                     "default": "true"
                 }
