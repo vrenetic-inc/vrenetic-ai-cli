@@ -18,13 +18,16 @@
             "models": [
                 {
                     "language": "python",
-                    "path": "./assets/06c180564e5934837c7c137d130fdf6d/python/vresh-feed-relevance-v1.py",
-                    "type": "compute"
-                },
+                    "path": "./assets/06c180564e5934837c7c137d130fdf6d/python/expression.py",
+                    "type": "compute",
+                    "default": "true"
+                }
+            ],
+            "mappings": [
                 {
-                    "language": "neural-ide",
-                    "path": "./assets/06c180564e5934837c7c137d130fdf6d/ndo/vresh-feed-population-us.ndo",
-                    "type": "edit"
+                    "path": "./assets/06c180564e5934837c7c137d130fdf6d/python/mapping.py",
+                    "language": "python",
+                    "default": "true"
                 }
             ],
             "inputs": [

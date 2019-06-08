@@ -161,13 +161,21 @@ VRenetic AI File
     "models": [
         {
             "language": "python",
-            "path": "./models/model_optimisation_1.py",
-            "type": "compute"
+            "path": "./assets/06c180564e5934837c7c137d130fdf6d/python/expression.py",
+            "type": "compute",
+            "default": "true"
         },
         {
-            "language": "neural-ide",
-            "path": "./pyton/vresh-feed-population-us.ndo",
+            "language": "neural-editor",
+            "path": "./assets/06c180564e5934837c7c137d130fdf6d/neural-editor/project.ndo",
             "type": "edit"
+        }
+    ],
+    "mappings": [
+        {
+            "path": "./assets/06c180564e5934837c7c137d130fdf6d/python/mapping.py",
+            "language": "python",
+            "default": "true"
         }
     ],
     "inputs": [
