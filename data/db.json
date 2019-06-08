@@ -15,7 +15,7 @@
             ],
             "status": "published",
             "type": "nn",
-            "models": [
+            "expressions": [
                 {
                     "language": "python",
                     "path": "./assets/06c180564e5934837c7c137d130fdf6d/python/expression.py",

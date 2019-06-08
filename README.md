@@ -158,18 +158,20 @@ VRenetic AI File
     "tags": [ "population", "feed", "us" ],
     "status": "published",
     "type": "nn",
-    "models": [
+    "projects": [
+        {
+            "language": "neural-editor",
+            "path": "./assets/06c180564e5934837c7c137d130fdf6d/neural-editor/project.ndo",
+            "type": "edit"
+        }
+    ],
+    "expressions": [
         {
             "language": "python",
             "path": "./assets/06c180564e5934837c7c137d130fdf6d/python/expression.py",
             "type": "compute",
             "default": "true"
         },
-        {
-            "language": "neural-editor",
-            "path": "./assets/06c180564e5934837c7c137d130fdf6d/neural-editor/project.ndo",
-            "type": "edit"
-        }
     ],
     "mappings": [
         {
