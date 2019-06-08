@@ -202,6 +202,7 @@ VRenetic AI File
 
 TODO
 ----
+* Add dummny NNs - return always 1, return always 0, return always 0.5
 * Move "data" storage to the Cloud eg AWS/S3
 * Introduce "workflows" as chain of NNs
 * Introduce "dataset" storage support
