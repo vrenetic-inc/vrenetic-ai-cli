@@ -1,7 +1,13 @@
 #!/usr/bin/python
 
+import pprint
 
-def VReneticMapping(inputs) : 
+
+def map():
         # TODO
-        # Need to map categorical, binary, continues DTOs values into NN inputs
-    return True 
+        # Need to map
+        # - categorical inputs
+        # - binary inputs
+        # - continues inputs
+        # for DTOs values into NN inputs
+        pprint.pprint("mapping")
