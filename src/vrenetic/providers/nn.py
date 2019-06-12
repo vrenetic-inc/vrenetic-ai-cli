@@ -5,8 +5,11 @@ from providers.db import localdb
 
 
 def nn_show(options):
-    pprint.pprint(options)
-    pprint.pprint(localdb.getAll())
+    # pprint.pprint(options)
+    # pprint.pprint(localdb.getAll())
+    for nn in (localdb.getAll()):
+        print(" - ", nn['name'])
+
     # show only 1 if naem provided
     # show all if no name provided
 
@@ -15,7 +18,7 @@ def nn_get_configuration(name):
     return {}
 
 def nn_run(options):
-    pprint.pprint(options)
+    # pprint.pprint(options)
 
     nn_expression_spec = spec_from_loader("module.name",
         SourceFileLoader("module.name", "./data/assets/06c180564e5934837c7c137d130fdf6d/python/expression.py"))

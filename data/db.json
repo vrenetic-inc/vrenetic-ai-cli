@@ -5,7 +5,7 @@
             "id": "vresh-feed-06c180564e5934837c7c137d130fdf6d-v1",
             "version": "0.0.1",
             "application": "vresh",
-            "name": "vresh feed item relevancy for population for us market",
+            "name": "Vresh Feed Item Relevancy Index for global population market",
             "description": "recommends items for sources for users from US region",
             "regions": [
                 "US"
@@ -65,6 +65,62 @@
                     }
                 }
             ],
+            "output": [
+                {
+                    "name": "relevancy_index",
+                    "type": "float",
+                    "contract": {
+                        "version": "1",
+                        "dto": "relevancy",
+                        "param": "relevancy-index"
+                    }
+                }
+            ]
+        },
+        "2": {
+            "id": "5b9fa90171d4f00001bc863e",
+            "application": "vresh",
+            "name": "Dummy PassThrough NN Relevancy Index with always Positive 1.0 response",
+            "type": "nn",
+            "expressions": [
+                {
+                    "language": "python",
+                    "path": "./assets/5b9fa90171d4f00001bc863e/python/expression.py",
+                    "type": "compute",
+                    "default": "true"
+                }
+            ],
+            "mappers": null,
+            "trainners": null,
+            "inputs": null,
+            "output": [
+                {
+                    "name": "relevancy_index",
+                    "type": "float",
+                    "contract": {
+                        "version": "1",
+                        "dto": "relevancy",
+                        "param": "relevancy-index"
+                    }
+                }
+            ]
+        },
+        "3": {
+            "id": "5b21f94435a6a400013c6eca",
+            "application": "vresh",
+            "name": "Dummy PassThrough NN Relevancy Index with always Negative 0.0 response",
+            "type": "nn",
+            "expressions": [
+                {
+                    "language": "python",
+                    "path": "./assets/5b21f94435a6a400013c6eca/python/expression.py",
+                    "type": "compute",
+                    "default": "true"
+                }
+            ],
+            "mappers": null,
+            "trainners": null,
+            "inputs": null,
             "output": [
                 {
                     "name": "relevancy_index",
