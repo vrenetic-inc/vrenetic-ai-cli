@@ -43,9 +43,17 @@ optional arguments:
 }
 ```
 
+### Show available NNs
+```bash
+$ vrenetic-ai nn-show
+5cfe0db269e0ba0001bfb7df / 0.0.1  -  Vresh Feed Item Relevancy Index for global population market
+5b9fa90171d4f00001bc863e / 0.0.1  -  Dummy PassThrough NN Relevancy Index with always Positive 1.0 response
+5b21f94435a6a400013c6eca / 0.0.1  -  Dummy PassThrough NN Relevancy Index with always Negative 0.0 response
+```
+
 #### Run NN with DTO inputs
 ```bash
-$ vrenetic-ai nn-run "name-of-registered-nn" '{ "user": "DTO", "content": "DTO", "stat-source": "DTO", "stat-feed": "DTO" }'
+$ vrenetic-ai nn-run "nn-ID" '{ "user": "DTO", "content": "DTO", "statistic-source-activity": "DTO", "statistic-user-feed-activity: "DTO" }'
 { "relevancy-index": "1" }
 ```
 
@@ -63,7 +71,7 @@ Follow link to [see document](/docs/MANIFEST-V1.md)
 
 Data storage
 ------------
-Business logic specific meta-data for AI/NN projects, expressions, mappers are provided via `data/db.json` file using `JSON` local DB provider.
+Business logic specific meta-data for AI/NN projects, expressions, mappers are provided via [db.json](/data/db.json) file using `JSON` local DB provider.
 
 Integration
 -----------
@@ -72,7 +80,6 @@ Integration
 
 TODO
 ----
-* Add dummny NNs - return always 1, return always 0, return always 0.5
 * Move "data" storage to the Cloud eg AWS/S3
 * Introduce "workflows" as chain of NNs
 * Introduce "dataset" storage support (for future auto re-train of NN)

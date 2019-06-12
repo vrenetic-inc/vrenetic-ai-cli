@@ -8,7 +8,7 @@ def nn_show(options):
     # pprint.pprint(options)
     # pprint.pprint(localdb.getAll())
     for nn in (localdb.getAll()):
-        print(" - ", nn['name'])
+        print(nn['id'], "/", nn['version'], " - ", nn['name'])
 
     # show only 1 if naem provided
     # show all if no name provided
