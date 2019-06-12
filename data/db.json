@@ -35,11 +35,21 @@
             "inputs": [
                 {
                     "name": "user_age",
-                    "type": "continues"
+                    "type": "continues",
+                    "contract": {
+                        "version": "1",
+                        "dto": "user",
+                        "param": "user-age"
+                    }
                 },
                 {
                     "name": "user_role",
                     "type": "categorical",
+                    "contract": {
+                        "version": "1",
+                        "dto": "user",
+                        "param": "user-role"
+                    },
                     "dictionary": {
                         "trial": 1,
                         "user": 2
@@ -47,13 +57,23 @@
                 },
                 {
                     "name": "content_tags",
-                    "type": "binary"
+                    "type": "binary",
+                    "contract": {
+                        "version": "1",
+                        "dto": "content",
+                        "param": "content-tags"
+                    }
                 }
             ],
             "output": [
                 {
-                    "name": "conversion",
-                    "type": "float"
+                    "name": "relevancy_index",
+                    "type": "float",
+                    "contract": {
+                        "version": "1",
+                        "dto": "relevancy",
+                        "param": "relevancy-index"
+                    }
                 }
             ]
         }

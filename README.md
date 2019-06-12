@@ -30,10 +30,23 @@ optional arguments:
 
 ### Examples
 
+#### Command line input param structure
+
+```json
+{
+  "user": {},
+  "content": {},
+  "statistic-user-feed-activity": {},
+  "statistic-source-activity": {},
+  "statistic-user-behaviour": {},
+  "configuration-user-preference": {}
+}
+```
+
 #### Run NN with DTO inputs
 ```bash
 $ vrenetic-ai nn-run "name-of-registered-nn" '{ "user": "DTO", "content": "DTO", "stat-source": "DTO", "stat-feed": "DTO" }'
-{ "relevancy_index": "1" }
+{ "relevancy-index": "1" }
 ```
 
 Contract 

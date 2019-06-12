@@ -113,7 +113,7 @@ This will be used for future re-training of Neural Netowrk.
 
 ```json
 {
-    "relevancy_index": "0|1",
+    "relevancy-index": "0|1",
 }
 ```
 
@@ -121,7 +121,7 @@ This will be used for future re-training of Neural Netowrk.
 
 ```json
 {
-    "distribution_policy": "0|0.5|1"
+    "distribution-policy": "0|0.5|1"
 }
 ```
 0.0 - ignore, 0.5 - byffer by time, 1.0 - realtime
