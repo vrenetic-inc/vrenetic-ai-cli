@@ -6,14 +6,20 @@ from providers.db import localdb
 
 def nn_show(options):
     # pprint.pprint(options)
-    # pprint.pprint(localdb.getAll())
-    for nn in (localdb.getAll()):
+    if options.nn_id:
+        for nn in (localdb.getById(options.nn_id)):
+            nn_show_print(nn, options)
+    else:
+        for nn in (localdb.getAll()):
+            nn_show_print(nn, options)
+
+def nn_show_print(nn, options):
+    if options.nnShowPrintAll == True:
+        pprint.pprint(nn)
+    else:
         print(nn['id'], "/", nn['version'], " - ", nn['name'])
 
-    # show only 1 if naem provided
-    # show all if no name provided
-
-def nn_get_configuration(name):
+def nn_run_get_configuration(name):
     # get single document from DB by network name
     return {}
 

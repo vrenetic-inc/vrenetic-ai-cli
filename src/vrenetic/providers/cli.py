@@ -30,39 +30,49 @@ def init(version, logging):
 
     parser_cmd_nn_show = parser_command.add_parser('nn-show', help='Neural Network Show')
     parser_cmd_nn_show.add_argument(
+        '--nn-id',
+        type=str,
+        help="Neural Network ID")
+    parser_cmd_nn_show.add_argument(
+        '--nn-print-all',
+        dest="nnShowPrintAll",
+        help="All",
+        action='store_const',
+        const=True)
+    parser_cmd_nn_show.add_argument(
         '--nn-print-metadata',
-        dest="loglevel",
-        help="Neural Network Metadata",
+        dest="nnShowPrintMetadata",
+        help="Metadata",
         action='store_const',
         const=logging.INFO)
     parser_cmd_nn_show.add_argument(
         '--nn-print-inputs',
-        dest="loglevel",
-        help="Neural Network Inputs",
+        dest="nnShowPrintInputs",
+        help="Inputs",
         action='store_const',
         const=logging.INFO)
     parser_cmd_nn_show.add_argument(
         '--nn-print-outputs',
-        dest="loglevel",
-        help="Neural Network Outputs",
+        dest="nnShowPrintOutputs",
+        help="Outputs",
         action='store_const',
         const=logging.INFO)
     parser_cmd_nn_show.add_argument(
         '--nn-print-expressions',
-        dest="loglevel",
-        help="Neural Network Expressions",
+        dest="nnShowPrintExpressions",
+        help="Expressions",
         action='store_const',
         const=logging.INFO)
     parser_cmd_nn_show.add_argument(
         '--nn-print-mappers',
-        dest="loglevel",
-        help="Neural Network Mappers",
+        dest="nnShowPrintMAppers",
+        help="Mappers",
         action='store_const',
         const=logging.INFO)
     parser_cmd_nn_show.add_argument(
         '--nn-print-projects',
-        dest="loglevel",
-        help="Neural Network Projects",
+        dest="nnShowPrintProjects",
+        help="Projects",
         action='store_const',
         const=logging.INFO)
     return parser
