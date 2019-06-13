@@ -3,6 +3,8 @@ from importlib.util import spec_from_loader, module_from_spec
 from importlib.machinery import SourceFileLoader
 from providers.db import localdb
 
+def init(basepath):
+    localdb.__basepath_db__ =  basepath + '/db.json'
 
 def nn_show(options):
     # pprint.pprint(options)
