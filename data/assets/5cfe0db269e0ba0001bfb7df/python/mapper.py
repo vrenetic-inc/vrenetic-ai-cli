@@ -3,7 +3,7 @@
 import pprint
 
 
-def map():
+def map(input_dtos):
         # TODO
         # Need to map
         # - categorical inputs

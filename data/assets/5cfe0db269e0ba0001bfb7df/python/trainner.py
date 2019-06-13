@@ -8,4 +8,4 @@ def map():
         # Need backend engine for training
         # Needs Dataset input in CSV
         # Needs to output Pythion or R expression
-        pprint.pprint("mapping")
+        pprint.pprint("trainning")

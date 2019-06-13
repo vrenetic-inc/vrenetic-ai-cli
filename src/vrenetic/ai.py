@@ -7,6 +7,7 @@ import pprint
 import os
 
 from providers import nn, cli
+from providers.db import localdb
 
 
 __author__ = "kris-lab <krzysztof.piotr.stasiak@gmail.com>"
@@ -15,7 +16,8 @@ __license__ = "MIT"
 __version__ = "0.0.2"
 
 __basepath__ = os.path.dirname(os.path.realpath(__file__))
-__basepath_data___ = __basepath__ + '/../../data'
+__basepath_data__ = __basepath__ + '/../../data'
+__basepath_db__ = __basepath_data__ + '/db.json'
 _logger = logging.getLogger(__name__)
 
 
@@ -26,15 +28,21 @@ def setup_logging(loglevel):
 
 
 def main(args):
+    modules_init()
+
     parser = cli.init(__version__, logging)
     args = parser.parse_args(args)
     setup_logging(args.loglevel)
-    nn.init(__basepath_data___)
 
-    if args.command == 'nn-run':
+    if args.command == "nn-run":
         nn.nn_run(args)
-    if args.command == 'nn-show':
+    if args.command == "nn-show":
         nn.nn_show(args)
+
+
+def modules_init():
+    nn.__basepath_data__ = __basepath_data__
+    localdb.__basepath_db__ = __basepath_db__
 
 
 def run():
