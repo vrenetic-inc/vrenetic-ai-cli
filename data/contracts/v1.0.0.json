@@ -1,0 +1,187 @@
+{
+    "version": "1.0.0",
+    "inputs": [
+        "user",
+        "content",
+        "statistic-user-feed-activity",
+        "statistic-source-activity",
+        "statistic-user-behaviour",
+        "configuration-user-preference"
+    ],
+    "outputs": [
+        "relevancy-index",
+        "distribution-policy"
+    ],
+    "defintion": {
+        "user": {
+            "user-name": {
+                "type": "string"
+            },
+            "user-age": {
+                "type": "continues"
+            },
+            "system-user-role": {
+                "type": "binary",
+                "dictionary": [
+                    "user",
+                    "trial",
+                    "studio",
+                    "afu"
+                ]
+            },
+            "region-legal-gdpr": {
+                "type": "string"
+            },
+            "region-registration-signup": {
+                "type": "string"
+            },
+            "region-session-datacenter": {
+                "type": "string"
+            },
+            "region-relatime-gps": {
+                "type": "string"
+            }
+        },
+        "content": {
+            "content-type": {
+                "type": "binary",
+                "dictionary": [
+                    "live",
+                    "capsule",
+                    "photo"
+                ]
+            },
+            "content-age": {
+                "type": "continues"
+            },
+            "content-projection": {
+                "dictionary": [
+                    "flat",
+                    "spherical",
+                    "360"
+                ]
+            },
+            "content-settings-muted": {
+                "type": "integer"
+            },
+            "content-audio-language": {
+                "type": "string"
+            },
+            "region-legal-gdpr": {
+                "type": "string"
+            },
+            "region-registration-signup": {
+                "type": "string"
+            },
+            "region-session-datacenter": {
+                "type": "string"
+            },
+            "region-relatime-gps": {
+                "type": "string"
+            },
+            "publisher-profile-followers-count": {
+                "type": "continues"
+            },
+            "publisher-profile-library-count": {
+                "type": "continues"
+            },
+            "publisher-profile-library-total-views": {
+                "type": "continues"
+            },
+            "publisher-profile-library-total-likes": {
+                "type": "continues"
+            },
+            "publisher-profile-library-total-comments": {
+                "type": "continues"
+            },
+            "publisher-profile-library-total-reported": {
+                "type": "continues"
+            }
+        },
+        "statistic-user-feed-activity": {
+            "content-type-live": "12",
+            "content-type-capsule": "132",
+            "content-projection-flat": "12",
+            "content-projection-spherical360": "222",
+            "rate-last-minute": "23",
+            "rate-last-hour": "45",
+            "region-own-gdpr": "23",
+            "region-all": "435",
+            "region-us": "23",
+            "region-uk": "12",
+            "region-other": "123"
+        },
+        "statistic-source-activity": {
+            "source-content-type": "live|capsule|photo",
+            "source-content-projection": "flat|spherical360",
+            "source-rate-last-minute": "23",
+            "source-rate-last-hour": "45",
+            "region-all": "435",
+            "region-us": "23",
+            "region-uk": "12",
+            "region-other": "123"
+        },
+        "statistic-user-behaviour": {
+            "date-form": {
+                "type": "timestamp"
+            },
+            "date-to": {
+                "type": "timestamp"
+            },
+            "behaviours-count": {
+                "type": "continues"
+            },
+            "behaviours": [
+                {
+                    "type": {
+                        "type": "binary",
+                        "dictionary": [
+                            "like",
+                            "view",
+                            "comment",
+                            "play",
+                            "report",
+                            "block",
+                            "flag"
+                        ]
+                    },
+                    "entity-type": {
+                        "type": "binary",
+                        "dictionary": [
+                            "video-flat",
+                            "video-360",
+                            "photo",
+                            "comment",
+                            "user"
+                        ]
+                    },
+                    "entity-dto": {
+                        "type": "json"
+                    }
+                }
+            ]
+        },
+        "configuration-user-preference": {
+            "prefer-region-own-max": {
+                "type": "continues",
+                "min": "0",
+                "max": "100%"
+            },
+            "prefer-source-type-spherical360-max": {
+                "type": "continues",
+                "min": "0",
+                "max": "100%"
+            }
+        },
+        "relevancy-index": {
+            "type": "continues",
+            "min": "0",
+            "max": "1"
+        },
+        "distribution-policy": {
+            "type": "continues",
+            "min": "0",
+            "max": "1"
+        }
+    }
+}
