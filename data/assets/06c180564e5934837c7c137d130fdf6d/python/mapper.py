@@ -10,4 +10,4 @@ def map():
         # - binary inputs
         # - continues inputs
         # for DTOs values into NN inputs
-        pprint.pprint("mapping")
+        return [1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1]

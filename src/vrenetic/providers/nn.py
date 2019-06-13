@@ -19,24 +19,42 @@ def nn_show_print(nn, options):
     else:
         print(nn['id'], "/", nn['version'], " - ", nn['name'])
 
-def nn_run_get_configuration(name):
-    # get single document from DB by network name
-    return {}
+def nn_run_get_configuration(id):
+    return localdb.getById(id)
 
 def nn_run(options):
     # pprint.pprint(options)
 
-    nn_expression_spec = spec_from_loader("module.name",
-        SourceFileLoader("module.name", "./data/assets/06c180564e5934837c7c137d130fdf6d/python/expression.py"))
-    nn_mapping_spec = spec_from_loader("module.name",
-        SourceFileLoader("module.name", "./data/assets/06c180564e5934837c7c137d130fdf6d/python/mapping.py"))
-    
-    expresion = module_from_spec(nn_expression_spec)
-    mapping = module_from_spec(nn_mapping_spec)
-    
-    nn_expression_spec.loader.exec_module(expresion)
-    nn_mapping_spec.loader.exec_module(mapping)
+    nn_configuration = {}
+    mapper_inputs = []
+    if options.nn_id:
+        nn_item = nn_run_get_configuration(options.nn_id)
+        if len(nn_item):
+            nn_configuration = nn_run_get_configuration(options.nn_id)[0]
+        else:
+            print('Cannot find network by ID')
+            exit(1)
+    else:
+        print('No network ID provided')
+        exit(1)
 
-    inputs = [0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1]
-    pprint.pprint(expresion.expression(inputs))
-    pprint.pprint(mapping.map())
+    if nn_configuration['mappers']:
+        mapper_json = nn_configuration['mappers'][0]
+        mapper_path = './data/' + mapper_json['path']
+
+        nn_mapping_spec = spec_from_loader("module.name", SourceFileLoader("module.name", mapper_path))
+        mapping = module_from_spec(nn_mapping_spec)
+        nn_mapping_spec = nn_mapping_spec.loader.exec_module(mapping)
+
+        mapper_inputs = mapping.map()
+
+    if nn_configuration['expressions']:
+        expression_json = nn_configuration['expressions'][0]
+        expression_path = './data/' + expression_json['path']
+
+        nn_expression_spec = spec_from_loader("module.name", SourceFileLoader("module.name", expression_path))
+        expresion = module_from_spec(nn_expression_spec)
+        nn_expression_spec.loader.exec_module(expresion)
+
+        nn_output = expresion.expression(mapper_inputs)
+        pprint.pprint(nn_output)

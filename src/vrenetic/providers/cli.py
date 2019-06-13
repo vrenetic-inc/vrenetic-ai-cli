@@ -25,7 +25,7 @@ def init(version, logging):
     parser_command = parser.add_subparsers(help = 'Commands help', dest='command')
 
     parser_cmd_nn_run = parser_command.add_parser('nn-run', help='Neural Network Run')
-    parser_cmd_nn_run.add_argument('nn_id', metavar='nn-id', type=str, nargs='+', help='NN Id')
+    parser_cmd_nn_run.add_argument('nn_id', metavar='nn-id', type=str, help='NN Id')
     parser_cmd_nn_run.add_argument('nn_dtos', metavar='nn-inputs', type=str, nargs='+', help='NN Input DTOs')
 
     parser_cmd_nn_show = parser_command.add_parser('nn-show', help='Neural Network Show')
