@@ -12,16 +12,22 @@
         "relevancy-index",
         "distribution-policy"
     ],
+    "types": [
+        "continues",
+        "binary",
+        "categorical",
+        "json"
+    ],
     "defintion": {
         "user": {
-            "user-name": {
-                "type": "string"
+            "user-sex": {
+                "type": "binary"
             },
             "user-age": {
                 "type": "continues"
             },
             "system-user-role": {
-                "type": "binary",
+                "type": "categorical",
                 "dictionary": [
                     "user",
                     "trial",
@@ -30,21 +36,21 @@
                 ]
             },
             "region-legal-gdpr": {
-                "type": "string"
+                "type": "categorical"
             },
             "region-registration-signup": {
-                "type": "string"
+                "type": "categorical"
             },
             "region-session-datacenter": {
-                "type": "string"
+                "type": "categorical"
             },
             "region-relatime-gps": {
-                "type": "string"
+                "type": "categorical"
             }
         },
         "content": {
             "content-type": {
-                "type": "binary",
+                "type": "categorical",
                 "dictionary": [
                     "live",
                     "capsule",
@@ -55,6 +61,7 @@
                 "type": "continues"
             },
             "content-projection": {
+                "type": "categorical",
                 "dictionary": [
                     "flat",
                     "spherical",
@@ -65,19 +72,19 @@
                 "type": "integer"
             },
             "content-audio-language": {
-                "type": "string"
+                "type": "categorical"
             },
             "region-legal-gdpr": {
-                "type": "string"
+                "type": "categorical"
             },
             "region-registration-signup": {
-                "type": "string"
+                "type": "categorical"
             },
             "region-session-datacenter": {
-                "type": "string"
+                "type": "categorical"
             },
             "region-relatime-gps": {
-                "type": "string"
+                "type": "categorical"
             },
             "publisher-profile-followers-count": {
                 "type": "continues"
@@ -134,7 +141,7 @@
             "behaviours": [
                 {
                     "type": {
-                        "type": "binary",
+                        "type": "categorical",
                         "dictionary": [
                             "like",
                             "view",
@@ -146,7 +153,7 @@
                         ]
                     },
                     "entity-type": {
-                        "type": "binary",
+                        "type": "categorical",
                         "dictionary": [
                             "video-flat",
                             "video-360",
@@ -174,14 +181,18 @@
             }
         },
         "relevancy-index": {
-            "type": "continues",
-            "min": "0",
-            "max": "1"
+            "relevancy-index": {
+                "type": "continues",
+                "min": "0",
+                "max": "1"
+            }
         },
         "distribution-policy": {
-            "type": "continues",
-            "min": "0",
-            "max": "1"
+            "distribution-policy": {
+                "type": "continues",
+                "min": "0",
+                "max": "1"
+            }
         }
     }
 }

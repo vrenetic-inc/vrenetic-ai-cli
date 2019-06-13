@@ -2,6 +2,14 @@
 VRenetic AI DTO V.1
 ===================
 
+Definition
+----------
+
+Full definition of [v1.0.0](/data/contracts/v1.0.0.json)
+
+Example
+-------
+
 ## Input
 
 ### Entity

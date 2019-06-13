@@ -32,12 +32,16 @@
                     "default": "true"
                 }
             ],
+            "trainners": null,
+            "contract": {
+                "version": "1.0.0",
+                "reference": "./contracts/v1.0.0.json"
+            },
             "inputs": [
                 {
                     "name": "user_age",
                     "type": "continues",
                     "contract": {
-                        "version": "1",
                         "dto": "user",
                         "param": "user-age"
                     }
@@ -46,7 +50,6 @@
                     "name": "user_role",
                     "type": "categorical",
                     "contract": {
-                        "version": "1",
                         "dto": "user",
                         "param": "user-role"
                     },
@@ -59,7 +62,6 @@
                     "name": "content_tags",
                     "type": "binary",
                     "contract": {
-                        "version": "1",
                         "dto": "content",
                         "param": "content-tags"
                     }
@@ -70,7 +72,6 @@
                     "name": "relevancy_index",
                     "type": "float",
                     "contract": {
-                        "version": "1",
                         "dto": "relevancy",
                         "param": "relevancy-index"
                     }
@@ -93,13 +94,16 @@
             ],
             "mappers": null,
             "trainners": null,
+            "contract": {
+                "version": "1.0.0",
+                "reference": "./contracts/v1.0.0.json"
+            },
             "inputs": null,
             "output": [
                 {
                     "name": "relevancy_index",
                     "type": "float",
                     "contract": {
-                        "version": "1",
                         "dto": "relevancy",
                         "param": "relevancy-index"
                     }
@@ -122,13 +126,16 @@
             ],
             "mappers": null,
             "trainners": null,
+            "contract": {
+                "version": "1.0.0",
+                "reference": "./contracts/v1.0.0.json"
+            },
             "inputs": null,
             "output": [
                 {
                     "name": "relevancy_index",
                     "type": "float",
                     "contract": {
-                        "version": "1",
                         "dto": "relevancy",
                         "param": "relevancy-index"
                     }

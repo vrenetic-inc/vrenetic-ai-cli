@@ -43,16 +43,28 @@ VRenetic AI Manifest File
             "default": "true"
         }
     ],
+    "contract": {
+        "version": "1.0.0",
+        "reference": "./contracts/v1.0.0.json"
+    },
     "inputs": [
         {
             "name": "user_age",
-            "type": "integer"
+            "type": "integer",
+            "contract": {
+                "dto": "user",
+                "param": "user-age"
+            }
         }
     ],
     "output": [
         {
-            "name": "conversion",
-            "type": "float"
+            "name": "relevancy_index",
+            "type": "float",
+            "contract": {
+                "dto": "relevancy-index",
+                "param": "relevancy-index"
+            }
         }
     ]
 }
