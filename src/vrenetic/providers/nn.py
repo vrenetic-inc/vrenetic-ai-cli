@@ -51,7 +51,7 @@ def nn_run(options):
         nn_expression_spec.loader.exec_module(expresion)
 
         nn_output = expresion.expression(mapper_inputs)
-        pprint.pprint(nn_output)
+        print(nn_output)
 
 
 def contract_validator(input_dtos):
@@ -70,6 +70,6 @@ def nn_data_get_path(path):
 
 def nn_show_print(nn, options):
     if options.nnShowPrintAll == True:
-        pprint.pprint(nn)
+        print(nn)
     else:
         print(nn['id'], "/", nn['version'], " - ", nn['name'])

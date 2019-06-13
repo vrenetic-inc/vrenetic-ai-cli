@@ -78,6 +78,11 @@ Integration
 
 ![Integration v.1](/docs/assets/integration-v1.png)
 
+HTTP API
+--------
+
+Please see [VRenetic AI API](https://github.com/vrenetic-inc/vrenetic-api-ai) repository for more details.
+
 TODO
 ----
 * Move "data" storage to the Cloud eg AWS/S3
