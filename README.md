@@ -78,16 +78,17 @@ Integration
 
 ![Integration v.1](/docs/assets/integration-v1.png)
 
-HTTP API
+REST API
 --------
 
 Please see [VRenetic AI API](https://github.com/vrenetic-inc/vrenetic-api-ai) repository for more details.
 
 TODO
 ----
-* Move "data" storage to the Cloud eg AWS/S3
+* Add full GPU support for expressions
 * Introduce "workflows" as chain of NNs
-* Introduce "dataset" storage support (for future auto re-train of NN)
+* CI/CD deployment for package - maybe Travis?
+* Move "data" storage to the Cloud eg AWS/S3
 * Introduce "dataset" training support
 * Introduce "NN" training support with multiple backends
-* CI/CD deployment for package - maybe Travis?
+* Introduce "dataset" storage support (for future auto re-train of NN)

@@ -1,4 +1,5 @@
 import pprint
+import json
 from importlib.util import spec_from_loader, module_from_spec
 from importlib.machinery import SourceFileLoader
 from providers.db import localdb
@@ -30,7 +31,7 @@ def nn_run(options):
         print('No neural network ID provided')
         exit(1)
 
-    input_dtos = contract_validator(options.nn_dtos)
+    input_dtos = contract_validator(options.nn_dtos[0])
 
     if nn_configuration['mappers']:
         mapper_json = nn_configuration['mappers'][0]
@@ -51,13 +52,13 @@ def nn_run(options):
         nn_expression_spec.loader.exec_module(expresion)
 
         nn_output = expresion.expression(mapper_inputs)
-        print(nn_output)
+        pprint.pprint(nn_output)
 
 
 def contract_validator(input_dtos):
     # to be implemented
     # needs storage with contract definitions
-    return input_dtos
+    return json.loads(input_dtos)
 
 
 def nn_run_get_configuration(id):
