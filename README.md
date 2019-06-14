@@ -83,11 +83,16 @@ REST API
 
 Please see [VRenetic AI API](https://github.com/vrenetic-inc/vrenetic-api-ai) repository for more details.
 
+Develop and distro
+------------------
+
+It's based on [PyScaffold](https://pyscaffold.org)
+
 TODO
 ----
 * Add full GPU support for expressions
 * Introduce "workflows" as chain of NNs
-* CI/CD deployment for package - maybe Travis?
+* CI/CD deployment for package - maybe Travis for testing and Nexus for packages?
 * Move "data" storage to the Cloud eg AWS/S3
 * Introduce "dataset" training support
 * Introduce "NN" training support with multiple backends
