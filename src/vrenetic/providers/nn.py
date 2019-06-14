@@ -11,8 +11,12 @@ def nn_show(options):
         for nn in (localdb.getById(options.nn_id)):
             nn_show_print(nn, options)
     else:
-        for nn in (localdb.getAll()):
-            nn_show_print(nn, options)
+        nns = localdb.getAll()
+        if options.nnShowPrintAll == True:
+            print(json.dumps(nns))
+        else:
+            for nn in nns:
+                nn_show_print(nn, options)
 
 
 def nn_run(options):
@@ -71,6 +75,7 @@ def nn_data_get_path(path):
 
 def nn_show_print(nn, options):
     if options.nnShowPrintAll == True:
-        print(nn)
+        print(json.dumps(nn))
     else:
         print(nn['id'], "/", nn['version'], " - ", nn['name'])
+

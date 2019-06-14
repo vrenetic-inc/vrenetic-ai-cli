@@ -52,10 +52,6 @@
                     "contract": {
                         "dto": "user",
                         "param": "user-role"
-                    },
-                    "dictionary": {
-                        "trial": 1,
-                        "user": 2
                     }
                 },
                 {
