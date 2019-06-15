@@ -26,6 +26,7 @@ def init(version, logging):
 
     parser_cmd_workflow_run = parser_command.add_parser('workflow-run', help='AI Worfklow Run')
     parser_cmd_workflow_run.add_argument('workflow_id', metavar='workflow-id', type=str, help='Workflow Id')
+    parser_cmd_workflow_run.add_argument('workflow_dtos', metavar='workflow-inputs', type=str, nargs='+', help='Workflow Input DTOs')
 
     parser_cmd_workflow_run = parser_command.add_parser('workflow-show', help='AI Worfklow Show')
     parser_cmd_workflow_run.add_argument(

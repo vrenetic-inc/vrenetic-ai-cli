@@ -20,7 +20,9 @@ def show(options):
 
 def run(options):
     # print workflow
-    return
+    print(json.dumps({
+        "relevancy-index": 0
+    }))
 
 
 def run_get_configuration(id):
