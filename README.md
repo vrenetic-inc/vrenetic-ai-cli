@@ -60,14 +60,14 @@ $ vrenetic-ai nn-run "nn-ID" '{ "user": "DTO", "content": "DTO", "statistic-sour
 Contract 
 --------
 
-#### DTOs V.1
-Follow link to [see document](/docs/CONTRACT-V1.md)
+#### DTOs v1.0.0
+Follow link to [see document](/docs/DTO-V1.md)
 
-AI Manifest
------------
-
-#### Manifest V.1
+#### ANN Manifest v1.0.0
 Follow link to [see document](/docs/MANIFEST-V1.md)
+
+#### Workflow Manifest v1.0.0
+Follow link to [see document](/docs/WORKFLOW-V1.md)
 
 Data storage
 ------------

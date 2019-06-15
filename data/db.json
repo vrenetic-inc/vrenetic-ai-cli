@@ -16,7 +16,7 @@
                 "us"
             ],
             "status": "published",
-            "type": "nn",
+            "type": "ann-default|ann-opencl",
             "expressions": [
                 {
                     "language": "python",
@@ -33,10 +33,13 @@
                 }
             ],
             "trainners": null,
-            "contract": {
-                "version": "1.0.0",
-                "reference": "./contracts/v1.0.0.json"
-            },
+            "contract": [
+                {
+                    "version": "1.0.0",
+                    "type": "dto",
+                    "path": "./dtos/v1.0.0.json"
+                }
+            ],
             "inputs": [
                 {
                     "name": "user_age",
@@ -90,10 +93,13 @@
             ],
             "mappers": null,
             "trainners": null,
-            "contract": {
-                "version": "1.0.0",
-                "reference": "./contracts/v1.0.0.json"
-            },
+            "contract": [
+                {
+                    "version": "1.0.0",
+                    "type": "dto",
+                    "path": "./dtos/v1.0.0.json"
+                }
+            ],
             "inputs": null,
             "output": [
                 {
@@ -122,10 +128,13 @@
             ],
             "mappers": null,
             "trainners": null,
-            "contract": {
-                "version": "1.0.0",
-                "reference": "./contracts/v1.0.0.json"
-            },
+            "contract": [
+                {
+                    "version": "1.0.0",
+                    "type": "dto",
+                    "path": "./dtos/v1.0.0.json"
+                }
+            ],
             "inputs": null,
             "output": [
                 {

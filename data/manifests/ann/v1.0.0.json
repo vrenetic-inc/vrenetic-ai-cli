@@ -1,0 +1,64 @@
+{
+    "id": "string",
+    "version": "string",
+    "application": "string",
+    "name" : "string",
+    "description": "string",
+    "regions": [ "string" ],
+    "tags": [ "string" ],
+    "status": "[DRAFT|PUBLISHED]",
+    "type": "[ann-default|ann-opencl]",
+    "projects": [
+        {
+            "language": "neural-editor",
+            "path": "string",
+            "type": "edit"
+        }
+    ],
+    "trainers": [
+        {
+            "language": "python",
+            "path": "string",
+            "default": "[true|falase]"
+        }
+    ],
+    "expressions": [
+        {
+            "language": "python",
+            "path": "string",
+            "type": "compute",
+            "default": "[true|false]"
+        }
+    ],
+    "mappers": [
+        {
+            "path": "string",
+            "language": "python",
+            "default": "true"
+        }
+    ],
+    "contract": {
+        "version": "1.0.0",
+        "path": "string"
+    },
+    "inputs": [
+        {
+            "name": "string",
+            "type": "integer|string|float",
+            "contract": {
+                "dto": "[DTO]",
+                "param": "string"
+            }
+        }
+    ],
+    "output": [
+        {
+            "name": "string",
+            "type": "float",
+            "contract": {
+                "dto": "[DTO]",
+                "param": "string"
+            }
+        }
+    ]
+}

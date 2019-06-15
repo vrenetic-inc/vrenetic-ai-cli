@@ -2,7 +2,13 @@
 VRenetic AI Manifest File
 =========================
 
-### Manifest V.1 example
+Definition
+----------
+
+Full definition of [v1.0.0](/data/manifests/ann/v1.0.0.json)
+
+Example
+-------
 ```json
 {
     "id": "vresh-feed-06c180564e5934837c7c137d130fdf6d-v1",
@@ -13,7 +19,7 @@ VRenetic AI Manifest File
     "regions": [ "US" ],
     "tags": [ "population", "feed", "us" ],
     "status": "published",
-    "type": "nn",
+    "type": "ann-default|ann-opencl",
     "projects": [
         {
             "language": "neural-editor",
@@ -43,10 +49,13 @@ VRenetic AI Manifest File
             "default": "true"
         }
     ],
-    "contract": {
-        "version": "1.0.0",
-        "reference": "./contracts/v1.0.0.json"
-    },
+    "contract": [
+        {
+            "version": "1.0.0",
+            "type": "dto",
+            "path": "./dtos/v1.0.0.json"
+        }
+    ],
     "inputs": [
         {
             "name": "user_age",

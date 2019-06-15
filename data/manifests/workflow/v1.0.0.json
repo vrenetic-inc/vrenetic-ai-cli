@@ -1,0 +1,37 @@
+{
+    "version": "string",
+    "contract": "path",
+    "type": "ann-workflow",
+    "topology": {
+        "layers": [
+            {
+                "id": "nan1",
+                "nns": [
+                    "ann000"
+                ],
+                "output": "null"
+            },
+            {
+                "id": "ann2",
+                "nns": [
+                    "ann001"
+                ],
+                "wiring": {
+                    "nn1:output": "this:input23"
+                },
+                "output": "null"
+            },
+            {
+                "id": "ann3",
+                "nns": [
+                    "ann003"
+                ],
+                "wiring": {
+                    "nn1:output": "this:input22",
+                    "nn2:output": "this:input1"
+                },
+                "output": "name"
+            }
+        ]
+    }
+}

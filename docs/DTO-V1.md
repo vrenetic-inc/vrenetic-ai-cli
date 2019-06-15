@@ -1,11 +1,11 @@
 
-VRenetic AI DTO V.1
-===================
+VRenetic AI DTO
+===============
 
 Definition
 ----------
 
-Full definition of [v1.0.0](/data/contracts/v1.0.0.json)
+Full definition of [v1.0.0](/data/dtos/v1.0.0.json)
 
 Example
 -------
