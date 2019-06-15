@@ -90,10 +90,15 @@ It's based on [PyScaffold](https://pyscaffold.org)
 
 TODO
 ----
-* Add full GPU support for expressions
+* Add [OpenCL](https://www.khronos.org/opencl/) generic support
+* Add [OpenCV](https://opencv.org/) generic support
+* Add GPU support for OpenCL and OpenCV on Linux
+* Add PoC simple OpenCL support for python expressions
+* Add PoC simple OpenCV for Facial Recognition, Object Indentification, Segementation and Recognition, Augemented Reality
 * Introduce "workflows" as chain of NNs
 * CI/CD deployment for package - maybe Travis for testing and Nexus for packages?
 * Move "data" storage to the Cloud eg AWS/S3
 * Introduce "dataset" training support
 * Introduce "NN" training support with multiple backends
 * Introduce "dataset" storage support (for future auto re-train of NN)
+* Add OpenCV support
