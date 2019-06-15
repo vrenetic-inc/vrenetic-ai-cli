@@ -5,29 +5,26 @@ from importlib.machinery import SourceFileLoader
 from providers.db import localdb
 
 
-def nn_show(options):
-    # pprint.pprint(options)
+def show(options):
     if options.nn_id:
         for nn in (localdb.getById(options.nn_id)):
-            nn_show_print(nn, options)
+            show_print(nn, options)
     else:
         nns = localdb.getAll()
-        if options.nnShowPrintAll == True:
+        if options.optionJSONPrintAll == True:
             print(json.dumps(nns))
         else:
             for nn in nns:
-                nn_show_print(nn, options)
+                show_print(nn, options)
 
 
-def nn_run(options):
-    # pprint.pprint(options)
-
-    nn_configuration = {}
+def run(options):
+    configuration = {}
     mapper_inputs = []
     if options.nn_id:
-        nn_item = nn_run_get_configuration(options.nn_id)
+        nn_item = run_get_configuration(options.nn_id)
         if len(nn_item):
-            nn_configuration = nn_run_get_configuration(options.nn_id)[0]
+            configuration = run_get_configuration(options.nn_id)[0]
         else:
             print('Cannot find neural network by ID')
             exit(1)
@@ -35,11 +32,11 @@ def nn_run(options):
         print('No neural network ID provided')
         exit(1)
 
-    input_dtos = contract_validator(options.nn_dtos[0])
+    input_dtos = contract_validator(options.nn_dtos)
 
-    if nn_configuration['mappers']:
-        mapper_json = nn_configuration['mappers'][0]
-        mapper_path = nn_data_get_path(mapper_json['path'])
+    if configuration['mappers']:
+        mapper_json = configuration['mappers'][0]
+        mapper_path = data_get_path(mapper_json['path'])
 
         nn_mapping_spec = spec_from_loader("module.name", SourceFileLoader("module.name", mapper_path))
         mapping = module_from_spec(nn_mapping_spec)
@@ -47,9 +44,9 @@ def nn_run(options):
 
         mapper_inputs = mapping.map(input_dtos)
 
-    if nn_configuration['expressions']:
-        expression_json = nn_configuration['expressions'][0]
-        expression_path = nn_data_get_path(expression_json['path'])
+    if configuration['expressions']:
+        expression_json = configuration['expressions'][0]
+        expression_path = data_get_path(expression_json['path'])
 
         nn_expression_spec = spec_from_loader("module.name", SourceFileLoader("module.name", expression_path))
         expresion = module_from_spec(nn_expression_spec)
@@ -62,19 +59,19 @@ def nn_run(options):
 def contract_validator(input_dtos):
     # to be implemented
     # needs storage with contract definitions
-    return json.loads(input_dtos)
+    return input_dtos
 
 
-def nn_run_get_configuration(id):
+def run_get_configuration(id):
     return localdb.getById(id)
 
 
-def nn_data_get_path(path):
+def data_get_path(path):
     return __basepath_data__ + '/' + path
 
 
-def nn_show_print(nn, options):
-    if options.nnShowPrintAll == True:
+def show_print(nn, options):
+    if options.optionJSONPrintAll == True:
         print(json.dumps(nn))
     else:
         print(nn['id'], "/", nn['version'], " - ", nn['name'])

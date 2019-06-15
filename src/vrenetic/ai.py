@@ -6,7 +6,7 @@ import logging
 import pprint
 import os
 
-from providers import nn, cli
+from providers import nn, cli, workflow
 from providers.db import localdb
 
 
@@ -34,10 +34,14 @@ def main(args):
     args = parser.parse_args(args)
     setup_logging(args.loglevel)
 
-    if args.command == "nn-run":
-        nn.nn_run(args)
-    if args.command == "nn-show":
-        nn.nn_show(args)
+    if args.command == "ann-run":
+        nn.run(args)
+    if args.command == "ann-show":
+        nn.show(args)
+    if args.command == "workflow-run":
+        workflow.run(args)
+    if args.command == "workflow-show":
+        workflow.show(args)
 
 
 def modules_init():

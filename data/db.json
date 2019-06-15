@@ -1,6 +1,6 @@
 {
     "_default": {},
-    "models": {
+    "ann-models": {
         "1": {
             "id": "5cfe0db269e0ba0001bfb7df",
             "version": "0.0.1",
@@ -146,6 +146,14 @@
                     }
                 }
             ]
+        }
+    },
+    "workflow-models": {
+        "1": {
+            "id": "604f08de5b2ad818ce686365011c4aa7",
+            "version": "0.0.1",
+            "name": "Smaple Workflow",
+            "type": "workflow"
         }
     }
 }
