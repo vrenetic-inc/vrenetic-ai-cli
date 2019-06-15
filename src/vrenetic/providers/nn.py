@@ -32,7 +32,7 @@ def run(options):
         print('No neural network ID provided')
         exit(1)
 
-    input_dtos = contract_validator(options.nn_dtos)
+    input_dtos = contract_validator(options.ann_dtos)
 
     if configuration['mappers']:
         mapper_json = configuration['mappers'][0]
@@ -53,7 +53,7 @@ def run(options):
         nn_expression_spec.loader.exec_module(expresion)
 
         nn_output = expresion.expression(mapper_inputs)
-        pprint.pprint(nn_output)
+        print(json.dumps(nn_output))
 
 
 def contract_validator(input_dtos):

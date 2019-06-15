@@ -91,4 +91,6 @@ def expression(inputs) :
     non_probabilistic_conversion = Logistic (-0.822244+ (y_3_1*-9.08942)+ (y_3_2*-6.04938)+ (y_3_3*-2.43876)+ (y_3_4*0.256248)+ (y_3_5*7.56854)+ (y_3_6*1.13401)+ (y_3_7*7.42522))
     conversion = Probability(non_probabilistic_conversion)
     
-    return conversion 
+    return {
+        "relevancy-index": conversion
+    }

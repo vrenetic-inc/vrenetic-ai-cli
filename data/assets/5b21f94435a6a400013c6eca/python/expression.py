@@ -1,4 +1,6 @@
 #!/usr/bin/python
 
 def expression(inputs):
-    return 0
+    return {
+        "relevancy-index": 0
+    }
