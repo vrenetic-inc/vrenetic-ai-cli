@@ -6,8 +6,8 @@ from providers.db import localdb
 
 
 def show(options):
-    if options.nn_id:
-        for nn in (localdb.getById(options.nn_id)):
+    if options.ann_id:
+        for nn in (localdb.getById(options.ann_id)):
             show_print(nn, options)
     else:
         nns = localdb.getAll()
@@ -21,10 +21,10 @@ def show(options):
 def run(options):
     configuration = {}
     mapper_inputs = []
-    if options.nn_id:
-        nn_item = run_get_configuration(options.nn_id)
+    if options.ann_id:
+        nn_item = run_get_configuration(options.ann_id)
         if len(nn_item):
-            configuration = run_get_configuration(options.nn_id)[0]
+            configuration = run_get_configuration(options.ann_id)[0]
         else:
             print('Cannot find neural network by ID')
             exit(1)

@@ -43,7 +43,7 @@ def init(version, logging):
     parser_cmd_ann_run.add_argument('ann_id', metavar='ann-id', type=str, help='ANN Id')
     parser_cmd_ann_run.add_argument('ann_dtos', metavar='ann-inputs', type=str, nargs='+', help='ANN Input DTOs')
 
-    parser_cmd_ann_show = parser_command.add_parser('ann-show', help='Neural Network Show')
+    parser_cmd_ann_show = parser_command.add_parser('ann-show', help='ANN Show')
     parser_cmd_ann_show.add_argument(
         '--ann-id',
         type=str,

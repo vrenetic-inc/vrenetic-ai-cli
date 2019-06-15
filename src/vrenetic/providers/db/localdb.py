@@ -17,7 +17,7 @@ def getAll():
     return application_config
 
 
-def getWorkflowBYId(id):
+def getWorkflowById(id):
     Item = Query()
     db = TinyDB(__basepath_db__)
     table = db.table('workflow-models')
