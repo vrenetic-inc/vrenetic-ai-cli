@@ -14,6 +14,16 @@ Example
 
 ### Entity
 
+#### Standard IO
+
+```json
+{
+    "input": "string",
+    "output": "string",
+    "error": "string"
+}
+```
+
 #### User
 
 ```json
@@ -125,7 +135,7 @@ This will be used for future re-training of Neural Netowrk.
 }
 ```
 
-#### Distirbution policy
+#### Distirbution
 
 ```json
 {

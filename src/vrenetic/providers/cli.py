@@ -1,5 +1,6 @@
 import argparse
 
+
 def init(version, logging):
     parser = argparse.ArgumentParser(
         description="VRenetic AI Cli")
@@ -48,7 +49,7 @@ def init(version, logging):
     parser_cmd_ann_show.add_argument(
         '--ann-id',
         type=str,
-        help="Neural Network ID")
+        help="ANN ID")
     parser_cmd_ann_show.add_argument(
         '--print-json',
         dest="optionJSONPrintAll",
@@ -73,22 +74,6 @@ def init(version, logging):
         help="Outputs",
         action='store_const',
         const=logging.INFO)
-    parser_cmd_ann_show.add_argument(
-        '--ann-print-expressions',
-        dest="optionShowPrintExpressions",
-        help="Expressions",
-        action='store_const',
-        const=logging.INFO)
-    parser_cmd_ann_show.add_argument(
-        '--ann-print-mappers',
-        dest="optionShowPrintMAppers",
-        help="Mappers",
-        action='store_const',
-        const=logging.INFO)
-    parser_cmd_ann_show.add_argument(
-        '--ann-print-projects',
-        dest="optionShowPrintProjects",
-        help="Projects",
-        action='store_const',
-        const=logging.INFO)
+
     return parser
+

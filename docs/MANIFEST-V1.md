@@ -46,35 +46,13 @@ Example
     "mappers": [
         {
             "path": "./assets/06c180564e5934837c7c137d130fdf6d/python/mapper.py",
+            "contract": {
+                "version": "1.0.0",
+                "type": "dto",
+                "path": "./dtos/v1.0.0.json"
+            },
             "language": "python",
             "default": "true"
-        }
-    ],
-    "contract": [
-        {
-            "version": "1.0.0",
-            "type": "dto",
-            "path": "./dtos/v1.0.0.json"
-        }
-    ],
-    "inputs": [
-        {
-            "name": "user_age",
-            "type": "integer",
-            "contract": {
-                "dto": "user",
-                "param": "user-age"
-            }
-        }
-    ],
-    "output": [
-        {
-            "name": "relevancy_index",
-            "type": "float",
-            "contract": {
-                "dto": "relevancy-index",
-                "param": "relevancy-index"
-            }
         }
     ]
 }

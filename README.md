@@ -37,12 +37,15 @@ optional arguments:
 
 ```json
 {
+  "stdio": {},
   "user": {},
   "content": {},
   "statistic-user-feed-activity": {},
   "statistic-source-activity": {},
   "statistic-user-behaviour": {},
-  "configuration-user-preference": {}
+  "configuration-user-preference": {},
+  "relevancy": {},
+  "distribution": {}
 }
 ```
 
@@ -50,8 +53,9 @@ optional arguments:
 ```bash
 $ vrenetic-ai ann-show
 5cfe0db269e0ba0001bfb7df / 0.0.1  -  Vresh Feed Item Relevancy Index for global population market
-5b9fa90171d4f00001bc863e / 0.0.1  -  Dummy PassThrough NN Relevancy Index with always Positive 1.0 response
-5b21f94435a6a400013c6eca / 0.0.1  -  Dummy PassThrough NN Relevancy Index with always Negative 0.0 response
+5b9fa90171d4f00001bc863e / 0.0.1  -  Analog PassThrough ANN with always Positive 1.0 response
+5b21f94435a6a400013c6eca / 0.0.1  -  Analog PassThrough ANN with always Negative 0.0 response
+9c21f99999a6a400013c6321 / 0.0.1  -  Binary Inverter as ANN with always inverted input value as output
 ```
 
 ### Show available Workflows
@@ -62,7 +66,7 @@ $ vrenetic-ai workflow-show
 
 #### Run ANN with DTO inputs
 ```bash
-$ vrenetic-ai ann-run "ann-ID" '{ "user": "DTO", "content": "DTO" }'
+$ vrenetic-ai ann-run "ann-ID" '{ "user": "DTO", "content": "DTO", "stdio": "DTO", "relevancy": "DTO" }'
 { "relevancy-index": "1" }
 ```
 

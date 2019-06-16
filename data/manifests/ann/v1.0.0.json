@@ -34,32 +34,13 @@
     "mappers": [
         {
             "path": "string",
+            "contract": {
+                "version": "string",
+                "type": "dto",
+                "path": "string"
+            },
             "language": "python",
             "default": "true"
-        }
-    ],
-    "contract": {
-        "version": "1.0.0",
-        "path": "string"
-    },
-    "inputs": [
-        {
-            "name": "string",
-            "type": "integer|string|float",
-            "contract": {
-                "dto": "[DTO]",
-                "param": "string"
-            }
-        }
-    ],
-    "output": [
-        {
-            "name": "string",
-            "type": "float",
-            "contract": {
-                "dto": "[DTO]",
-                "param": "string"
-            }
         }
     ]
 }

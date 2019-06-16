@@ -1,6 +1,7 @@
 {
     "version": "1.0.0",
     "inputs": [
+        "stdio",
         "user",
         "content",
         "statistic-user-feed-activity",
@@ -9,8 +10,9 @@
         "configuration-user-preference"
     ],
     "outputs": [
-        "relevancy-index",
-        "distribution-policy"
+        "stdio",
+        "relevancy",
+        "distribution"
     ],
     "types": [
         "continues",
@@ -19,6 +21,17 @@
         "json"
     ],
     "defintion": {
+        "stdio": {
+            "input": {
+                "type": "continues"
+            },
+            "output": {
+                "type": "continues"
+            },
+            "error": {
+                "type": "continues"
+            }
+        },
         "user": {
             "user-sex": {
                 "type": "binary"
@@ -180,14 +193,14 @@
                 "max": "100%"
             }
         },
-        "relevancy-index": {
+        "relevancy": {
             "relevancy-index": {
                 "type": "continues",
                 "min": "0",
                 "max": "1"
             }
         },
-        "distribution-policy": {
+        "distribution": {
             "distribution-policy": {
                 "type": "continues",
                 "min": "0",

@@ -55,7 +55,7 @@ def run_workflow(layers, workflow_dtos):
         # TODO: re-think wiring output to input
         if layer['wiring'] != None:
             for wire in layer['wiring']:
-                link = wire.split('--')
+                link = wire.split('---')
                 layer_ann_output = link[0].split('::')
                 layer_ann_input = link[1].split('::')
                 for ann_output in layer_ann_outputs:
@@ -105,9 +105,9 @@ def workflow_validator(configuration):
             for layer in layers:
                 try:
                     try:
-                        id = layer['id']
+                        id = layer['layer']
                     except:
-                        print('Layer ID is not defined.')
+                        print('Layer index is not defined.')
                         return 0
 
                     try:

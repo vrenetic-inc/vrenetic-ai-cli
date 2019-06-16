@@ -10,6 +10,8 @@ Full definition of [v1.0.0](/data/manifests/workflow/v1.0.0.json)
 Example
 -------
 
+* `output` links single ANN output on layer to the final buffer of `outputs`
+
 #### Serial wiring
 ```json
 {

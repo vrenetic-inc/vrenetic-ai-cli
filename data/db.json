@@ -29,60 +29,22 @@
             "mappers": [
                 {
                     "path": "./assets/5cfe0db269e0ba0001bfb7df/python/mapper.py",
+                    "contract": {
+                        "version": "1.0.0",
+                        "type": "dto",
+                        "path": "./dtos/v1.0.0.json"
+                    },
                     "language": "python",
                     "default": "true"
                 }
             ],
-            "trainners": null,
-            "contract": [
-                {
-                    "version": "1.0.0",
-                    "type": "dto",
-                    "path": "./dtos/v1.0.0.json"
-                }
-            ],
-            "inputs": [
-                {
-                    "name": "user_age",
-                    "type": "continues",
-                    "contract": {
-                        "dto": "user",
-                        "param": "user-age"
-                    }
-                },
-                {
-                    "name": "user_role",
-                    "type": "categorical",
-                    "contract": {
-                        "dto": "user",
-                        "param": "user-role"
-                    }
-                },
-                {
-                    "name": "content_tags",
-                    "type": "binary",
-                    "contract": {
-                        "dto": "content",
-                        "param": "content-tags"
-                    }
-                }
-            ],
-            "output": [
-                {
-                    "name": "relevancy_index",
-                    "type": "float",
-                    "contract": {
-                        "dto": "relevancy",
-                        "param": "relevancy-index"
-                    }
-                }
-            ]
+            "trainners": null
         },
         "2": {
             "id": "5b9fa90171d4f00001bc863e",
             "application": "vresh",
             "version": "0.0.1",
-            "name": "Dummy PassThrough NN Relevancy Index with always Positive 1.0 response",
+            "name": "Analog PassThrough ANN with always Positive 1.0 response",
             "learning": "supervised",
             "type": "ann-default",
             "expressions": [
@@ -93,68 +55,59 @@
                     "default": "true"
                 }
             ],
-            "mappers": null,
-            "trainners": null,
-            "contract": [
+            "mappers": [
                 {
-                    "version": "1.0.0",
-                    "type": "dto",
-                    "path": "./dtos/v1.0.0.json"
+                    "path": "./assets/5b9fa90171d4f00001bc863e/python/mapper.py",
+                    "contract": {
+                        "version": "1.0.0",
+                        "type": "dto",
+                        "path": "./dtos/v1.0.0.json"
+                    },
+                    "language": "python",
+                    "default": "true"
                 }
             ],
-            "inputs": null,
-            "output": [
-                {
-                    "name": "relevancy_index",
-                    "type": "float",
-                    "contract": {
-                        "dto": "relevancy",
-                        "param": "relevancy-index"
-                    }
-                }
-            ]
+            "trainners": null
         },
         "3": {
             "id": "5b21f94435a6a400013c6eca",
             "application": "vresh",
             "version": "0.0.1",
-            "name": "Dummy PassThrough NN Relevancy Index with always Negative 0.0 response",
+            "name": "Analog PassThrough ANN with always Negative 0.0 response",
             "learning": "supervised",
             "type": "ann-default",
             "expressions": [
                 {
                     "language": "python",
                     "path": "./assets/5b21f94435a6a400013c6eca/python/expression.py",
+                    "contract": {
+                        "version": "1.0.0",
+                        "type": "dto",
+                        "path": "./dtos/v1.0.0.json"
+                    },
                     "type": "compute",
                     "default": "true"
                 }
             ],
-            "mappers": null,
-            "trainners": null,
-            "contract": [
+            "mappers": [
                 {
-                    "version": "1.0.0",
-                    "type": "dto",
-                    "path": "./dtos/v1.0.0.json"
+                    "path": "./assets/5b21f94435a6a400013c6eca/python/mapper.py",
+                    "contract": {
+                        "version": "1.0.0",
+                        "type": "dto",
+                        "path": "./dtos/v1.0.0.json"
+                    },
+                    "language": "python",
+                    "default": "true"
                 }
             ],
-            "inputs": null,
-            "output": [
-                {
-                    "name": "relevancy_index",
-                    "type": "float",
-                    "contract": {
-                        "dto": "relevancy",
-                        "param": "relevancy-index"
-                    }
-                }
-            ]
+            "trainners": null
         },
         "4": {
             "id": "9c21f99999a6a400013c6321",
             "application": "vresh",
             "version": "0.0.1",
-            "name": "Dummy Input Inverter Relevancy Index with always inverted input value",
+            "name": "Binary Inverter as ANN with always inverted input value as output",
             "learning": "supervised",
             "type": "ann-default",
             "expressions": [
@@ -168,38 +121,16 @@
             "mappers": [
                 {
                     "path": "./assets/9c21f99999a6a400013c6321/python/mapper.py",
+                    "contract": {
+                        "version": "1.0.0",
+                        "type": "dto",
+                        "path": "./dtos/v1.0.0.json"
+                    },
                     "language": "python",
                     "default": "true"
                 }
             ],
-            "trainners": null,
-            "contract": [
-                {
-                    "version": "1.0.0",
-                    "type": "dto",
-                    "path": "./dtos/v1.0.0.json"
-                }
-            ],
-            "inputs": [
-                {
-                    "name": "input",
-                    "type": "float",
-                    "contract": {
-                        "dto": "input",
-                        "param": "input"
-                    }
-                }
-            ],
-            "output": [
-                {
-                    "name": "output",
-                    "type": "float",
-                    "contract": {
-                        "dto": "output",
-                        "param": "output"
-                    }
-                }
-            ]
+            "trainners": null
         }
     },
     "workflow-models": {
@@ -212,7 +143,7 @@
             "topology": {
                 "layers": [
                     {
-                        "id": "ann1",
+                        "layer": "0",
                         "ann": [
                             "5b21f94435a6a400013c6eca"
                         ],
@@ -220,14 +151,16 @@
                         "output": null
                     },
                     {
-                        "id": "ann2",
+                        "layer": "1",
                         "ann": [
                             "5b9fa90171d4f00001bc863e"
                         ],
                         "wiring": [
-                            "5b21f94435a6a400013c6eca::relevancy-index--5b9fa90171d4f00001bc863e::relevancy-index"
+                            "5b21f94435a6a400013c6eca::relevancy-index---5b9fa90171d4f00001bc863e::relevancy-index"
                         ],
-                        "output": "5b9fa90171d4f00001bc863e::relevancy-index"
+                        "output": [
+                            "5b9fa90171d4f00001bc863e::relevancy-index"
+                        ]
                     }
                 ]
             }
@@ -241,7 +174,7 @@
             "topology": {
                 "layers": [
                     {
-                        "id": "ann1",
+                        "layer": "0",
                         "ann": [
                             "9c21f99999a6a400013c6321"
                         ],
@@ -249,24 +182,26 @@
                         "output": null
                     },
                     {
-                        "id": "ann2",
+                        "layer": "1",
                         "ann": [
                             "9c21f99999a6a400013c6321"
                         ],
                         "wiring": [
-                            "9c21f99999a6a400013c6321::output--9c21f99999a6a400013c6321::input"
+                            "9c21f99999a6a400013c6321::output---9c21f99999a6a400013c6321::input"
                         ],
                         "output": null
                     },
                     {
-                        "id": "ann3",
+                        "layer": "2",
                         "ann": [
                             "9c21f99999a6a400013c6321"
                         ],
                         "wiring": [
-                            "9c21f99999a6a400013c6321::output--9c21f99999a6a400013c6321::input"
+                            "9c21f99999a6a400013c6321::output---9c21f99999a6a400013c6321::input"
                         ],
-                        "output": "9c21f99999a6a400013c6321::output"
+                        "output": [
+                            "9c21f99999a6a400013c6321::output"
+                        ]
                     }
                 ]
             }

@@ -2,43 +2,47 @@
     "id": "string",
     "version": "string",
     "name": "string",
-    "type": "ann-workflow",
+    "type": "[ann-workflow]",
     "contract": "path-to-dtos-version-controact-as-string",
     "topology": {
         "layers": [
             {
-                "id": "name-for-reference-for-wiring-as-string",
+                "layer": "0",
                 "ann": [
-                    "existing-ann-id-as-string"
+                    "ann-id0",
+                    "ann-id1"
                 ],
+                "wiring": null,
                 "output": [
-                    "existing-ann-id-as-string:existing-ann-output-as-string"
+                    "ann-id0::output-name0"
                 ]
             },
             {
-                "id": "name-for-reference-for-wiring-as-string",
+                "layer": "1",
                 "ann": [
-                    "existing-ann-id-as-string"
+                    "ann-id0",
+                    "ann-id1",
+                    "ann-id2"
                 ],
-                "wiring": {
-                    "name-for-reference:output": "existing-ann-id-as-string:existing-ann-input-as-string"
-                },
-                "output": [
-                    "existing-ann-id-as-string:existing-ann-output-as-string"
-                ]
+                "wiring": [
+                    "ann-id0::output-name0---ann-id0::input-name0",
+                    "ann-id0::output-name0---ann-id1::input-name1",
+                    "ann-id1::output-name1---ann-id2::input-name2"
+                ],
+                "output": null
             },
             {
-                "id": "name-for-reference-for-wiring-as-string",
+                "layer": "2",
                 "ann": [
-                    "existing-ann-id-as-string"
+                    "ann-id0"
                 ],
-                "wiring": {
-                    "name-for-reference0:output": "existing-ann-id-as-string:existing-ann-input-as-string",
-                    "name-for-reference1:output": "existing-ann-id-as-string:existing-ann-input-as-string"
-                },
+                "wiring": [
+                    "ann-id1::output-name1---ann-id0::input-name1",
+                    "ann-id1::output-name1---ann-id0::input-name2",
+                    "ann-id2::output-name2---ann-id0::input-name3"
+                ],
                 "output": [
-                    "existing-ann-id-as-string0:existing-ann-output-as-string",
-                    "existing-ann-id-as-string1:existing-ann-output-as-string"
+                    "ann-id::output-name0"
                 ]
             }
         ]
