@@ -1,36 +1,45 @@
 {
+    "id": "string",
     "version": "string",
-    "contract": "path",
+    "name": "string",
     "type": "ann-workflow",
+    "contract": "path-to-dtos-version-controact-as-string",
     "topology": {
         "layers": [
             {
-                "id": "nan1",
-                "nns": [
-                    "ann000"
+                "id": "name-for-reference-for-wiring-as-string",
+                "ann": [
+                    "existing-ann-id-as-string"
                 ],
-                "output": "null"
+                "output": [
+                    "existing-ann-id-as-string:existing-ann-output-as-string"
+                ]
             },
             {
-                "id": "ann2",
-                "nns": [
-                    "ann001"
+                "id": "name-for-reference-for-wiring-as-string",
+                "ann": [
+                    "existing-ann-id-as-string"
                 ],
                 "wiring": {
-                    "nn1:output": "this:input23"
+                    "name-for-reference:output": "existing-ann-id-as-string:existing-ann-input-as-string"
                 },
-                "output": "null"
+                "output": [
+                    "existing-ann-id-as-string:existing-ann-output-as-string"
+                ]
             },
             {
-                "id": "ann3",
-                "nns": [
-                    "ann003"
+                "id": "name-for-reference-for-wiring-as-string",
+                "ann": [
+                    "existing-ann-id-as-string"
                 ],
                 "wiring": {
-                    "nn1:output": "this:input22",
-                    "nn2:output": "this:input1"
+                    "name-for-reference0:output": "existing-ann-id-as-string:existing-ann-input-as-string",
+                    "name-for-reference1:output": "existing-ann-id-as-string:existing-ann-input-as-string"
                 },
-                "output": "name"
+                "output": [
+                    "existing-ann-id-as-string0:existing-ann-output-as-string",
+                    "existing-ann-id-as-string1:existing-ann-output-as-string"
+                ]
             }
         ]
     }

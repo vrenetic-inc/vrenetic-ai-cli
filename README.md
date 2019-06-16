@@ -54,10 +54,25 @@ $ vrenetic-ai ann-show
 5b21f94435a6a400013c6eca / 0.0.1  -  Dummy PassThrough NN Relevancy Index with always Negative 0.0 response
 ```
 
-#### Run NN with DTO inputs
+### Show available Workflows
 ```bash
-$ vrenetic-ai ann-run "nn-ID" '{ "user": "DTO", "content": "DTO", "statistic-source-activity": "DTO", "statistic-user-feed-activity: "DTO" }'
+$ vrenetic-ai workflow-show
+604f08de52ad6365011c4aa7 / 0.0.1  -  Serial passthrough via 2 dummy ANNs
+```
+
+#### Run ANN with DTO inputs
+```bash
+$ vrenetic-ai ann-run "ann-ID" '{ "user": "DTO", "content": "DTO" }'
 { "relevancy-index": "1" }
+```
+
+#### Run Workflow with DTO inputs
+```bash
+$ vrenetic-ai workflow-run "workflow-ID" '{ "user": "DTO", "content": "DTO", "statistic-source-activity": "DTO", "statistic-user-feed-activity: "DTO" }'
+{ 
+  "relevancy-index": "1",
+  "distribution-policy": "0.5",
+}
 ```
 
 Contract 
@@ -93,15 +108,25 @@ It's based on [PyScaffold](https://pyscaffold.org)
 
 TODO
 ----
+
+#### PoC
+* Introduce "workflows" as topology of ANNs
+* Add dummy Workflows with serial, parallel and mixed topology
+* Add dummy ANNs with 2 inputs for AND, OR, NAND, NOR, XOR expressions
+
+#### MVP
 * Add [OpenCL](https://www.khronos.org/opencl/) generic support
-* Add [OpenCV](https://opencv.org/) generic support
-* Add GPU support for OpenCL and OpenCV on Linux
 * Add PoC simple OpenCL support for python expressions
-* Add PoC simple OpenCV for Facial Recognition, Object Indentification, Segementation and Recognition, Augemented Reality
-* Introduce "workflows" as chain of NNs
+* Add GPU support for OpenCL on Linux
 * CI/CD deployment for package - maybe Travis for testing and Nexus for packages?
+
+#### Beta
+* Add [OpenCV](https://opencv.org/) generic support
+* Add GPU support for OpenCV on Linux
+* Add PoC simple OpenCV for Facial Recognition, Object Indentification, Segementation and Recognition, AR
 * Move "data" storage to the Cloud eg AWS/S3
+
+#### Public
+* Introduce "dataset" storage support
 * Introduce "dataset" training support
-* Introduce "NN" training support with multiple backends
-* Introduce "dataset" storage support (for future auto re-train of NN)
-* Add OpenCV support
+* Introduce supervised, semi-supervised and unsupervised "ANN" training mode with multiple backend providers

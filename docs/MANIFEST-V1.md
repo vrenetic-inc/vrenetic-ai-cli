@@ -19,7 +19,8 @@ Example
     "regions": [ "US" ],
     "tags": [ "population", "feed", "us" ],
     "status": "published",
-    "type": "ann-default|ann-opencl",
+    "learning": "supervised",
+    "type": "ann-default",
     "projects": [
         {
             "language": "neural-editor",

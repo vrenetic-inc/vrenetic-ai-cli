@@ -7,6 +7,7 @@
     "regions": [ "string" ],
     "tags": [ "string" ],
     "status": "[DRAFT|PUBLISHED]",
+    "learning": "[supervised|semi-supervised|unsupervised]",
     "type": "[ann-default|ann-opencl]",
     "projects": [
         {
