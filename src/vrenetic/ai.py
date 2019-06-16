@@ -41,7 +41,8 @@ def main(args):
     if args.command == "ann-show":
         nn.show(args)
     if args.command == "workflow-run":
-        results = workflow.run(args.workflow_id, args.workflow_dtos)
+        data = json.loads(args.workflow_dtos[0])
+        results = workflow.run(args.workflow_id, data)
         print(json.dumps(results))
     if args.command == "workflow-show":
         workflow.show(args)

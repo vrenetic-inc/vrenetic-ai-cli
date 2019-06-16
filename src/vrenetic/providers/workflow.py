@@ -19,7 +19,6 @@ def show(options):
 
 def run(workflow_id, workflow_dtos):
     configuration = {}
-    mapper_inputs = []
     if workflow_id:
         workflow_item = run_get_configuration(workflow_id)
         if len(workflow_item):
@@ -48,11 +47,34 @@ def run(workflow_id, workflow_dtos):
 
 
 def run_workflow(layers, workflow_dtos):
-    layer_output = []
+    ann_outputs = []
+    ann_last_id = ""
     for layer in layers:
-        layer_output += run_workflow_layer(layer, workflow_dtos)
-        # extend workflow_dtos with layer_output
-    return layer_output
+        ann_outputs = run_workflow_layer(layer, workflow_dtos)
+        layer_ann_output = layer['output'].split(':')
+        for ann_output in ann_outputs:
+            try:
+                # TODO: consider wiring configuration of output into inputs
+                ann_id = layer_ann_output[0]
+                ann_output_name = layer_ann_output[1]
+                output = ann_output[ann_id]
+                try:
+                    value = output[ann_output_name]
+                    workflow_dtos[ann_output_name] = value
+                    ann_last_id = ann_id
+                except:
+                    None
+            except:
+                None
+
+    workflow_output = None
+    for ann_output in ann_outputs:
+        try:
+            workflow_output = ann_output[ann_last_id]
+        except:
+            None
+
+    return workflow_output
 
 
 def run_workflow_layer(layer, workflow_dtos):

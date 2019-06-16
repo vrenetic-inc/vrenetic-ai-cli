@@ -112,7 +112,7 @@ TODO
 #### PoC
 * Introduce "workflows" as topology of ANNs
 * Add dummy Workflows with serial, parallel and mixed topology
-* Add dummy ANNs with 2 inputs for AND, OR, NAND, NOR, XOR expressions
+* Add dummy ANNs with 2 inputs for AND, OR, NAND, NOR, XOR expressions and 1 input NOT expression
 
 #### MVP
 * Add [OpenCL](https://www.khronos.org/opencl/) generic support
