@@ -31,3 +31,4 @@ def getWorkflowAll():
     table = db.table('workflow-models')
     application_config = table.search(Item.id.matches(''))
     return application_config
+

@@ -1,5 +1,6 @@
 import json
 import pprint
+import providers.nn as nn
 from providers.db import localdb
 
 
@@ -16,32 +17,57 @@ def show(options):
                 show_print(workflow, options)
 
 
-def run(options):
+def run(workflow_id, workflow_dtos):
     configuration = {}
     mapper_inputs = []
-    if options.workflow_id:
-        workflow_item = run_get_configuration(options.workflow_id)
+    if workflow_id:
+        workflow_item = run_get_configuration(workflow_id)
         if len(workflow_item):
-            configuration = run_get_configuration(options.workflow_id)[0]
+            configuration = run_get_configuration(workflow_id)[0]
         else:
+            # TODO: return exception and don't use print
             print('Cannot find workflow by ID')
             exit(1)
     else:
+        # TODO: return exception and don't use print
         print('No workflow ID provided')
         exit(1)
 
     validator = workflow_validator(configuration)
 
     if validator == 0:
+        # TODO: return exception and don't use print
         print('Workflow has errors in schema')
         exit(1)
 
-    print(json.dumps({
-        "relevancy-index": 0
-    }))
+    topology = configuration['topology']
+    layers = topology['layers']
 
+    layer_output = run_workflow(layers, workflow_dtos)
+    return layer_output
+
+
+def run_workflow(layers, workflow_dtos):
+    layer_output = []
+    for layer in layers:
+        layer_output += run_workflow_layer(layer, workflow_dtos)
+        # extend workflow_dtos with layer_output
+    return layer_output
+
+
+def run_workflow_layer(layer, workflow_dtos):
+    layer_outpus = []
+    for ann in layer['ann']:
+        layer_outpus.append({
+            ann: run_workflow_layer_ann(ann, workflow_dtos)
+        })
+    return layer_outpus
+
+def run_workflow_layer_ann(id, workflow_dtos):
+    return nn.run(id, workflow_dtos)
 
 def workflow_validator(configuration):
+    # TODO: return exception and don't use print
     try:
         topology = configuration['topology']
         try:

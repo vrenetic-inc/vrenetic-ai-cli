@@ -18,21 +18,23 @@ def show(options):
                 show_print(nn, options)
 
 
-def run(options):
+def run(ann_id, ann_dtos):
     configuration = {}
     mapper_inputs = []
-    if options.ann_id:
-        nn_item = run_get_configuration(options.ann_id)
+    if ann_id:
+        nn_item = run_get_configuration(ann_id)
         if len(nn_item):
-            configuration = run_get_configuration(options.ann_id)[0]
+            configuration = run_get_configuration(ann_id)[0]
         else:
+            # TODO: return exception and don't use print
             print('Cannot find neural network by ID')
             exit(1)
     else:
+        # TODO: return exception and don't use print
         print('No neural network ID provided')
         exit(1)
 
-    input_dtos = contract_validator(options.ann_dtos)
+    input_dtos = contract_validator(ann_dtos)
 
     if configuration['mappers']:
         mapper_json = configuration['mappers'][0]
@@ -53,7 +55,9 @@ def run(options):
         nn_expression_spec.loader.exec_module(expresion)
 
         nn_output = expresion.expression(mapper_inputs)
-        print(json.dumps(nn_output))
+        return nn_output
+
+    return None
 
 
 def contract_validator(input_dtos):

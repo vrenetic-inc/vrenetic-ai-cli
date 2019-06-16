@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import json
 import logging
 import pprint
 import os
@@ -35,11 +36,13 @@ def main(args):
     setup_logging(args.loglevel)
 
     if args.command == "ann-run":
-        nn.run(args)
+        results = nn.run(args.ann_id, args.ann_dtos)
+        print(json.dumps(results))
     if args.command == "ann-show":
         nn.show(args)
     if args.command == "workflow-run":
-        workflow.run(args)
+        results = workflow.run(args.workflow_id, args.workflow_dtos)
+        print(json.dumps(results))
     if args.command == "workflow-show":
         workflow.show(args)
 
