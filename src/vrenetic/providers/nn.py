@@ -1,8 +1,8 @@
-import pprint
 import json
+import pprint
+from providers.db import localdb
 from importlib.util import spec_from_loader, module_from_spec
 from importlib.machinery import SourceFileLoader
-from providers.db import localdb
 
 
 def show(options):

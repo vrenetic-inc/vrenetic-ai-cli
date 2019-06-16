@@ -165,6 +165,7 @@
                         "ann": [
                             "5b21f94435a6a400013c6eca"
                         ],
+                        "wiring": null,
                         "output": "5b21f94435a6a400013c6eca:relevancy-index"
                     },
                     {
