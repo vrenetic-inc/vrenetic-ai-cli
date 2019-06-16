@@ -36,7 +36,7 @@ def main(args):
     setup_logging(args.loglevel)
 
     if args.command == "ann-run":
-        results = nn.run(args.ann_id, args.ann_dtos)
+        results = nn.run(args.ann_id, args.ann_dtos[0])
         print(json.dumps(results))
     if args.command == "ann-show":
         nn.show(args)

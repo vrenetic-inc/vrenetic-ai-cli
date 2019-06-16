@@ -46,6 +46,10 @@ def run(ann_id, ann_dtos):
 
         mapper_inputs = mapping.map(input_dtos)
 
+        if mapper_inputs == None:
+            print('Invalid inputs provided for neural network.')
+            exit(1)
+
     if configuration['expressions']:
         expression_json = configuration['expressions'][0]
         expression_path = data_get_path(expression_json['path'])
@@ -61,8 +65,10 @@ def run(ann_id, ann_dtos):
 
 
 def contract_validator(input_dtos):
-    # to be implemented
-    # needs storage with contract definitions
+    # TODO: move inputs/outputs definition for json db to mapper.py files
+    # TODO: move contract definition into mappers section
+    # TODO: to be implemented
+    # TODO: needs storage with contract definitions
     return input_dtos
 
 

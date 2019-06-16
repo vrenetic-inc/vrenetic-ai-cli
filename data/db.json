@@ -149,6 +149,57 @@
                     }
                 }
             ]
+        },
+        "4": {
+            "id": "9c21f99999a6a400013c6321",
+            "application": "vresh",
+            "version": "0.0.1",
+            "name": "Dummy Input Inverter Relevancy Index with always inverted input value",
+            "learning": "supervised",
+            "type": "ann-default",
+            "expressions": [
+                {
+                    "language": "python",
+                    "path": "./assets/9c21f99999a6a400013c6321/python/expression.py",
+                    "type": "compute",
+                    "default": "true"
+                }
+            ],
+            "mappers": [
+                {
+                    "path": "./assets/9c21f99999a6a400013c6321/python/mapper.py",
+                    "language": "python",
+                    "default": "true"
+                }
+            ],
+            "trainners": null,
+            "contract": [
+                {
+                    "version": "1.0.0",
+                    "type": "dto",
+                    "path": "./dtos/v1.0.0.json"
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "input",
+                    "type": "float",
+                    "contract": {
+                        "dto": "input",
+                        "param": "input"
+                    }
+                }
+            ],
+            "output": [
+                {
+                    "name": "output",
+                    "type": "float",
+                    "contract": {
+                        "dto": "output",
+                        "param": "output"
+                    }
+                }
+            ]
         }
     },
     "workflow-models": {
@@ -166,17 +217,56 @@
                             "5b21f94435a6a400013c6eca"
                         ],
                         "wiring": null,
-                        "output": "5b21f94435a6a400013c6eca:relevancy-index"
+                        "output": null
                     },
                     {
                         "id": "ann2",
                         "ann": [
                             "5b9fa90171d4f00001bc863e"
                         ],
-                        "wiring": {
-                            "ann1:output": "5b9fa90171d4f00001bc863e:input0"
-                        },
-                        "output": "5b9fa90171d4f00001bc863e:relevancy-index"
+                        "wiring": [
+                            "5b21f94435a6a400013c6eca::relevancy-index--5b9fa90171d4f00001bc863e::relevancy-index"
+                        ],
+                        "output": "5b9fa90171d4f00001bc863e::relevancy-index"
+                    }
+                ]
+            }
+        },
+        "2": {
+            "id": "704f08de52ad6365011c4abc",
+            "version": "0.0.1",
+            "name": "Serial Inverter passthrough via 3 dummy ANNs",
+            "type": "workflow-default",
+            "contract": "./dtos/v1.0.0.json",
+            "topology": {
+                "layers": [
+                    {
+                        "id": "ann1",
+                        "ann": [
+                            "9c21f99999a6a400013c6321"
+                        ],
+                        "wiring": null,
+                        "output": null
+                    },
+                    {
+                        "id": "ann2",
+                        "ann": [
+                            "9c21f99999a6a400013c6321"
+                        ],
+                        "wiring": [
+                            "9c21f99999a6a400013c6321::output--9c21f99999a6a400013c6321::input"
+                        ],
+                        "output": null
+                    },
+                    {
+                        "id": "ann3",
+                        "ann": [
+                            "9c21f99999a6a400013c6321"
+                        ],
+                        "wiring": [
+                            "9c21f99999a6a400013c6321::output--9c21f99999a6a400013c6321::input"
+                        ],
+                        "output": "9c21f99999a6a400013c6321::output"
                     }
                 ]
             }

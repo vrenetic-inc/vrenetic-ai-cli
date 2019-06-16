@@ -42,6 +42,7 @@ def run(workflow_id, workflow_dtos):
     topology = configuration['topology']
     layers = topology['layers']
 
+    # TODO: validate output based on contract
     layer_output = run_workflow(layers, workflow_dtos)
     return layer_output
 
@@ -49,23 +50,30 @@ def run(workflow_id, workflow_dtos):
 def run_workflow(layers, workflow_dtos):
     ann_outputs = []
     ann_last_id = ""
+    layer_ann_outputs = None
     for layer in layers:
-        ann_outputs = run_workflow_layer(layer, workflow_dtos)
-        layer_ann_output = layer['output'].split(':')
-        for ann_output in ann_outputs:
-            try:
-                # TODO: consider wiring configuration of output into inputs
-                ann_id = layer_ann_output[0]
-                ann_output_name = layer_ann_output[1]
-                output = ann_output[ann_id]
-                try:
-                    value = output[ann_output_name]
-                    workflow_dtos[ann_output_name] = value
-                    ann_last_id = ann_id
-                except:
-                    None
-            except:
-                None
+        # TODO: re-think wiring output to input
+        if layer['wiring'] != None:
+            for wire in layer['wiring']:
+                link = wire.split('--')
+                layer_ann_output = link[0].split('::')
+                layer_ann_input = link[1].split('::')
+                for ann_output in layer_ann_outputs:
+                    try:
+                        ann_id = layer_ann_output[0]
+                        ann_output_name = layer_ann_output[1]
+                        output = ann_output[ann_id]
+                        try:
+                            ann_input_name = layer_ann_input[1]
+                            value = output[ann_output_name]
+                            workflow_dtos[ann_input_name] = value
+                            ann_last_id = ann_id
+                        except:
+                            None
+                    except:
+                        None
+        layer_ann_outputs = run_workflow_layer(layer, workflow_dtos)
+        ann_outputs += layer_ann_outputs
 
     workflow_output = None
     for ann_output in ann_outputs:

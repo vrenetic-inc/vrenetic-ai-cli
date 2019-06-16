@@ -106,6 +106,12 @@ Develop and distro
 
 It's based on [PyScaffold](https://pyscaffold.org)
 
+Limitations
+-----------
+
+* ANN can have only single output
+* Workflow assumes unique ANN outputs on the same layer
+
 TODO
 ----
 
