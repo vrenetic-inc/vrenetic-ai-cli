@@ -55,7 +55,8 @@ $ vrenetic-ai ann-show
 5cfe0db269e0ba0001bfb7df / 0.0.1  -  Vresh Feed Item Relevancy Index for global population market
 5b9fa90171d4f00001bc863e / 0.0.1  -  Analog PassThrough ANN with always Positive 1.0 response
 5b21f94435a6a400013c6eca / 0.0.1  -  Analog PassThrough ANN with always Negative 0.0 response
-9c21f99999a6a400013c6321 / 0.0.1  -  Binary Inverter as ANN with always inverted input value as output
+9c21f99999a6a400013c6321 / 0.0.1  -  Binary logical negation (NOT) as ANN with always inverted input value as output
+0021f99999a6a400013c0000 / 0.0.1  -  Binary logical conjunction (AND) as ANN with two inputs and single output
 ```
 
 ### Show available Workflows
@@ -68,6 +69,12 @@ $ vrenetic-ai workflow-show
 ```bash
 $ vrenetic-ai ann-run "ann-ID" '{ "user": "DTO", "content": "DTO", "stdio": "DTO", "relevancy": "DTO" }'
 { "relevancy-index": "1" }
+```
+
+#### Run ANN with binary logical conjunction (AND)
+```bash
+$ vrenetic-ai ann-run 0021f99999a6a400013c0000 '{ "stdio": { "input0": "1", "input1": "1" } }'
+{ "output": 1 }
 ```
 
 #### Run Workflow with DTO inputs

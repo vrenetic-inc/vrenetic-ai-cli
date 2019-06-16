@@ -2,6 +2,6 @@
 
 def expression(inputs):
     return {
-        "output": (1 - inputs[0])
+        "output": inputs[0] & inputs[1]
     }
 

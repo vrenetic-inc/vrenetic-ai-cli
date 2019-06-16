@@ -22,7 +22,10 @@
     ],
     "defintion": {
         "stdio": {
-            "input": {
+            "input0": {
+                "type": "continues"
+            },
+            "input1": {
                 "type": "continues"
             },
             "output": {

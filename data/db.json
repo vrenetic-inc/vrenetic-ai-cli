@@ -131,6 +131,35 @@
                 }
             ],
             "trainners": null
+        },
+        "5": {
+            "id": "0021f99999a6a400013c0000",
+            "application": "vresh",
+            "version": "0.0.1",
+            "name": "Binary AND as ANN with two inputs and single output",
+            "learning": "supervised",
+            "type": "ann-default",
+            "expressions": [
+                {
+                    "language": "python",
+                    "path": "./assets/0021f99999a6a400013c0000/python/expression.py",
+                    "type": "compute",
+                    "default": "true"
+                }
+            ],
+            "mappers": [
+                {
+                    "path": "./assets/0021f99999a6a400013c0000/python/mapper.py",
+                    "contract": {
+                        "version": "1.0.0",
+                        "type": "dto",
+                        "path": "./dtos/v1.0.0.json"
+                    },
+                    "language": "python",
+                    "default": "true"
+                }
+            ],
+            "trainners": null
         }
     },
     "workflow-models": {
