@@ -57,6 +57,7 @@ $ vrenetic-ai ann-show
 5b21f94435a6a400013c6eca / 0.0.1  -  Analog PassThrough ANN with always Negative 0.0 response
 9c21f99999a6a400013c6321 / 0.0.1  -  Binary logical negation (NOT) as ANN with always inverted input value as output
 0021f99999a6a400013c0000 / 0.0.1  -  Binary logical conjunction (AND) as ANN with two inputs and single output
+bc21f99999a6a400013c6666 / 0.0.1  -  Binary logical disjunction (OR) as ANN with two inputs and single output
 ```
 
 ### Show available Workflows
@@ -81,6 +82,12 @@ $ vrenetic-ai ann-run 9c21f99999a6a400013c6321 '{ "stdio": { "input0": "1" }'
 #### Run ANN with binary logical conjunction (AND)
 ```bash
 $ vrenetic-ai ann-run 0021f99999a6a400013c0000 '{ "stdio": { "input0": "1", "input1": "1" } }'
+{ "output": 1 }
+```
+
+#### Run ANN with binary logical disjunction (OR)
+```bash
+$ vrenetic-ai ann-run bc21f99999a6a400013c6666 '{ "stdio": { "input0": "0", "input1": "1" } }'
 { "output": 1 }
 ```
 
@@ -138,7 +145,7 @@ TODO
 
 #### PoC
 * Add dummy Workflows with serial, parallel and mixed topology
-* Add dummy ANNs with 2 inputs for NAND, OR, NOR, XOR expressions
+* Add dummy ANNs with 2 inputs for XOR expressions
 
 #### MVP
 * Add [OpenCL](https://www.khronos.org/opencl/) generic support

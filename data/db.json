@@ -160,6 +160,35 @@
                 }
             ],
             "trainners": null
+        },
+        "6": {
+            "id": "bc21f99999a6a400013c6666",
+            "application": "vresh",
+            "version": "0.0.1",
+            "name": "Binary logical disjunction (OR) as ANN with two inputs and single output",
+            "learning": "supervised",
+            "type": "ann-default",
+            "expressions": [
+                {
+                    "language": "python",
+                    "path": "./assets/bc21f99999a6a400013c6666/python/expression.py",
+                    "type": "compute",
+                    "default": "true"
+                }
+            ],
+            "mappers": [
+                {
+                    "path": "./assets/bc21f99999a6a400013c6666/python/mapper.py",
+                    "contract": {
+                        "version": "1.0.0",
+                        "type": "dto",
+                        "path": "./dtos/v1.0.0.json"
+                    },
+                    "language": "python",
+                    "default": "true"
+                }
+            ],
+            "trainners": null
         }
     },
     "workflow-models": {
