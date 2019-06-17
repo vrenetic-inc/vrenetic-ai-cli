@@ -6,7 +6,7 @@ def map(input_dtos):
         try:
                 stdio = input_dtos['stdio']
                 try:
-                        input = float(stdio['input'])
+                        input = float(stdio['input0'])
                         if input >= 0.5:
                                 input = 1.0
 

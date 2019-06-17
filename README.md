@@ -63,12 +63,19 @@ $ vrenetic-ai ann-show
 ```bash
 $ vrenetic-ai workflow-show
 604f08de52ad6365011c4aa7 / 0.0.1  -  Serial passthrough via 2 dummy ANNs
+704f08de52ad6365011c4abc / 0.0.1  -  Serial Inverter with 3 layers of ANNs
 ```
 
 #### Run ANN with DTO inputs
 ```bash
 $ vrenetic-ai ann-run "ann-ID" '{ "user": "DTO", "content": "DTO", "stdio": "DTO", "relevancy": "DTO" }'
 { "relevancy-index": "1" }
+```
+
+#### Run ANN with binary logical negation (NOT)
+```bash
+$ vrenetic-ai ann-run 9c21f99999a6a400013c6321 '{ "stdio": { "input0": "1" }'
+{ "output": 0 }
 ```
 
 #### Run ANN with binary logical conjunction (AND)
@@ -98,6 +105,9 @@ Follow link to [see document](/docs/MANIFEST-V1.md)
 #### Workflow Manifest v1.0.0
 Follow link to [see document](/docs/WORKFLOW-V1.md)
 
+#### AI Package v1.0.0
+Follow link to [see document](/docs/AI-PACKAGE-V1.md)
+
 Data storage
 ------------
 Business logic specific meta-data for AI/NN projects, expressions, mappers are provided via [db.json](/data/db.json) file using `JSON` local DB provider.
@@ -121,15 +131,14 @@ Limitations
 -----------
 
 * ANN can have only single output
-* Workflow assumes unique ANN outputs on the same layer
+* Workflow assumes unique ANN outputs on the same layer and unique global output names
 
 TODO
 ----
 
 #### PoC
-* Introduce "workflows" as topology of ANNs
 * Add dummy Workflows with serial, parallel and mixed topology
-* Add dummy ANNs with 2 inputs for AND, OR, NAND, NOR, XOR expressions and 1 input NOT expression
+* Add dummy ANNs with 2 inputs for NAND, OR, NOR, XOR expressions
 
 #### MVP
 * Add [OpenCL](https://www.khronos.org/opencl/) generic support

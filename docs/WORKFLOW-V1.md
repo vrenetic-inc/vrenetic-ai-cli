@@ -23,22 +23,23 @@ Example
     "topology": {
         "layers": [
             {
-                "id": "ann1",
+                "layer": "0",
                 "ann": [
                     "5b21f94435a6a400013c6eca"
                 ],
+                "wiring": null,
                 "output": [
                     "5b21f94435a6a400013c6eca:relevancy-index"
                 ]
             },
             {
-                "id": "ann2",
+                "layer": "1",
                 "ann": [
                     "5b9fa90171d4f00001bc863e"
                 ],
-                "wiring": {
-                    "ann1:output": "5b9fa90171d4f00001bc863e:input0"
-                },
+                "wiring": [
+                    "5b9fa90171d4f00001bc863e::output---5b9fa90171d4f00001bc863e::input0"
+                ],
                 "output": [
                     "5b21f94435a6a400013c6eca:relevancy-index"
                     "5b9fa90171d4f00001bc863e:distribution-policy"

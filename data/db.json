@@ -107,7 +107,7 @@
             "id": "9c21f99999a6a400013c6321",
             "application": "vresh",
             "version": "0.0.1",
-            "name": "Binary Inverter as ANN with always inverted input value as output",
+            "name": "Binary logical negation (NOT) as ANN with always inverted input value as output",
             "learning": "supervised",
             "type": "ann-default",
             "expressions": [
@@ -136,7 +136,7 @@
             "id": "0021f99999a6a400013c0000",
             "application": "vresh",
             "version": "0.0.1",
-            "name": "Binary AND as ANN with two inputs and single output",
+            "name": "Binary logical conjunction (AND) as ANN with two inputs and single output",
             "learning": "supervised",
             "type": "ann-default",
             "expressions": [
@@ -197,7 +197,7 @@
         "2": {
             "id": "704f08de52ad6365011c4abc",
             "version": "0.0.1",
-            "name": "Serial Inverter passthrough via 3 dummy ANNs",
+            "name": "Serial Inverter with 3 layers of ANNs",
             "type": "workflow-default",
             "contract": "./dtos/v1.0.0.json",
             "topology": {
