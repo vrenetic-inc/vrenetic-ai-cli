@@ -189,6 +189,35 @@
                 }
             ],
             "trainners": null
+        },
+        "7": {
+            "id": "acacf99999a6a400013c4321",
+            "application": "vresh",
+            "version": "0.0.1",
+            "name": "Binary logical exclusive disjunction (XOR) as ANN with two inputs and single output",
+            "learning": "supervised",
+            "type": "ann-default",
+            "expressions": [
+                {
+                    "language": "python",
+                    "path": "./assets/acacf99999a6a400013c4321/python/expression.py",
+                    "type": "compute",
+                    "default": "true"
+                }
+            ],
+            "mappers": [
+                {
+                    "path": "./assets/acacf99999a6a400013c4321/python/mapper.py",
+                    "contract": {
+                        "version": "1.0.0",
+                        "type": "dto",
+                        "path": "./dtos/v1.0.0.json"
+                    },
+                    "language": "python",
+                    "default": "true"
+                }
+            ],
+            "trainners": null
         }
     },
     "workflow-models": {

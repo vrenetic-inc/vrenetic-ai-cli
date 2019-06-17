@@ -58,6 +58,7 @@ $ vrenetic-ai ann-show
 9c21f99999a6a400013c6321 / 0.0.1  -  Binary logical negation (NOT) as ANN with always inverted input value as output
 0021f99999a6a400013c0000 / 0.0.1  -  Binary logical conjunction (AND) as ANN with two inputs and single output
 bc21f99999a6a400013c6666 / 0.0.1  -  Binary logical disjunction (OR) as ANN with two inputs and single output
+acacf99999a6a400013c4321 / 0.0.1  -  Binary logical exclusive disjunction (XOR) as ANN with two inputs and single output
 ```
 
 ### Show available Workflows
@@ -145,7 +146,6 @@ TODO
 
 #### PoC
 * Add dummy Workflows with serial, parallel and mixed topology
-* Add dummy ANNs with 2 inputs for XOR expressions
 
 #### MVP
 * Add [OpenCL](https://www.khronos.org/opencl/) generic support
