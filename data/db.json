@@ -296,7 +296,7 @@
         "3": {
             "id": "111108de52ad6365011caabb",
             "version": "0.0.1",
-            "name": "Parallel passthrough via 2 dummy ANNs on single layer",
+            "name": "Parallel topology with 1 layer (AND+OR+XOR)",
             "type": "workflow-default",
             "contract": "./dtos/v1.0.0.json",
             "topology": {
@@ -304,13 +304,15 @@
                     {
                         "layer": "0",
                         "ann": [
-                            "5b21f94435a6a400013c6eca",
-                            "9c21f99999a6a400013c6321"
+                            "0021f99999a6a400013c0000",
+                            "bc21f99999a6a400013c6666",
+                            "acacf99999a6a400013c4321"
                         ],
                         "wiring": null,
                         "output": [
-                            "5b21f94435a6a400013c6eca::relevancy-index",
-                            "9c21f99999a6a400013c6321::output"
+                            "0021f99999a6a400013c0000::output---AND",
+                            "bc21f99999a6a400013c6666::output---OR",
+                            "acacf99999a6a400013c4321::output---XOR"
                         ]
                     }
                 ]

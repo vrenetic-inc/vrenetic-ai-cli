@@ -14,7 +14,7 @@
                 ],
                 "wiring": null,
                 "output": [
-                    "ann-id0::output-name0"
+                    "ann-id0::output-name0---outputAliasName"
                 ]
             },
             {
@@ -42,7 +42,7 @@
                     "ann-id2::output-name2---ann-id0::input-name3"
                 ],
                 "output": [
-                    "ann-id::output-name0"
+                    "ann-id::output-name0---outputAliasName"
                 ]
             }
         ]

@@ -66,7 +66,7 @@ acacf99999a6a400013c4321 / 0.0.1  -  Binary logical exclusive disjunction (XOR) 
 $ vrenetic-ai workflow-show
 604f08de52ad6365011c4aa7 / 0.0.1  -  Serial passthrough via 2 dummy ANNs
 704f08de52ad6365011c4abc / 0.0.1  -  Serial Inverters with 3 layers (NOT::NOT::NOT)
-111108de52ad6365011caabb / 0.0.1  -  Parallel passthrough via 2 dummy ANNs on single layer
+111108de52ad6365011caabb / 0.0.1  -  Parallel topology with 1 layer (AND+OR+XOR)
 885608de52ad636501mmaa9a / 0.0.1  -  Mixed serial&parallel topology with 3 layers (AND+OR::OR+AND::XOR)
 ```
 
@@ -141,13 +141,13 @@ Limitations
 -----------
 
 * ANN can have only single output
-* Workflow assumes unique ANN outputs on the same layer and unique global output names
+* Workflow assumes unique ANNs on the same layer and unique global output names
 
 TODO
 ----
 
 #### PoC
-* Workflow - output definition needs aliases support
+* Workflow - improve support of layers out/in wiring
 
 #### MVP
 * Add [OpenCL](https://www.khronos.org/opencl/) generic support

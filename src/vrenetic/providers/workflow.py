@@ -83,14 +83,19 @@ def run_workflow(layers, workflow_dtos):
     for layer in layers:
         if layer['output'] != None:
             for output in layer['output']:
-                out = output.split('::')
+                link = output.split('---')
+                out = link[0].split('::')
+                if len(link) == 2:
+                    out_alias = link[1]
+                else:
+                    out_alias = out[1]
                 out_id = out[0]
                 out_name = out[1]
                 for ann_output in ann_outputs:
                     try:
                         # TODO: introduce aliases to output so we can return from ANNs
                         # with the same output names
-                        workflow_output[out_name] = (ann_output[out_id][out_name])
+                        workflow_output[out_alias] = (ann_output[out_id][out_name])
                     except:
                         None
 
