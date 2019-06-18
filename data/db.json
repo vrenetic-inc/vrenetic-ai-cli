@@ -255,7 +255,7 @@
         "2": {
             "id": "704f08de52ad6365011c4abc",
             "version": "0.0.1",
-            "name": "Serial Inverter with 3 layers of ANNs",
+            "name": "Serial Inverters with 3 layers (NOT::NOT::NOT)",
             "type": "workflow-default",
             "contract": "./dtos/v1.0.0.json",
             "topology": {
@@ -288,6 +288,76 @@
                         ],
                         "output": [
                             "9c21f99999a6a400013c6321::output"
+                        ]
+                    }
+                ]
+            }
+        },
+        "3": {
+            "id": "111108de52ad6365011caabb",
+            "version": "0.0.1",
+            "name": "Parallel passthrough via 2 dummy ANNs on single layer",
+            "type": "workflow-default",
+            "contract": "./dtos/v1.0.0.json",
+            "topology": {
+                "layers": [
+                    {
+                        "layer": "0",
+                        "ann": [
+                            "5b21f94435a6a400013c6eca",
+                            "9c21f99999a6a400013c6321"
+                        ],
+                        "wiring": null,
+                        "output": [
+                            "5b21f94435a6a400013c6eca::relevancy-index",
+                            "9c21f99999a6a400013c6321::output"
+                        ]
+                    }
+                ]
+            }
+        },
+        "4": {
+            "id": "885608de52ad636501mmaa9a",
+            "version": "0.0.1",
+            "name": "Mixed serial&parallel topology with 3 layers (AND+OR::OR+AND::XOR)",
+            "type": "workflow-default",
+            "contract": "./dtos/v1.0.0.json",
+            "topology": {
+                "layers": [
+                    {
+                        "layer": "0",
+                        "ann": [
+                            "0021f99999a6a400013c0000",
+                            "bc21f99999a6a400013c6666"
+                        ],
+                        "wiring": null,
+                        "output": null
+                    },
+                    {
+                        "layer": "1",
+                        "ann": [
+                            "bc21f99999a6a400013c6666",
+                            "0021f99999a6a400013c0000"
+                        ],
+                        "wiring": [
+                            "0021f99999a6a400013c0000::output---bc21f99999a6a400013c6666::input0",
+                            "0021f99999a6a400013c0000::output---bc21f99999a6a400013c6666::input1",
+                            "bc21f99999a6a400013c6666::output---0021f99999a6a400013c0000::input0",
+                            "bc21f99999a6a400013c6666::output---0021f99999a6a400013c0000::input1"
+                        ],
+                        "output": null
+                    },
+                    {
+                        "layer": "2",
+                        "ann": [
+                            "acacf99999a6a400013c4321"
+                        ],
+                        "wiring": [
+                            "bc21f99999a6a400013c6666::output---acacf99999a6a400013c4321::input0",
+                            "0021f99999a6a400013c0000::output---acacf99999a6a400013c4321::input1"
+                        ],
+                        "output": [
+                            "acacf99999a6a400013c4321::output"
                         ]
                     }
                 ]

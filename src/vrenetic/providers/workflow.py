@@ -50,9 +50,13 @@ def run(workflow_id, workflow_dtos):
 def run_workflow(layers, workflow_dtos):
     ann_outputs = []
     ann_last_id = ""
+    workflow_output = {}
     layer_ann_outputs = None
     for layer in layers:
         # TODO: re-think wiring output to input
+        # probably should wire by aliases
+        # probably should not override global input state bu just
+        # pass new state between layers
         if layer['wiring'] != None:
             for wire in layer['wiring']:
                 link = wire.split('---')
@@ -72,15 +76,23 @@ def run_workflow(layers, workflow_dtos):
                             None
                     except:
                         None
+
         layer_ann_outputs = run_workflow_layer(layer, workflow_dtos)
         ann_outputs += layer_ann_outputs
 
-    workflow_output = None
-    for ann_output in ann_outputs:
-        try:
-            workflow_output = ann_output[ann_last_id]
-        except:
-            None
+    for layer in layers:
+        if layer['output'] != None:
+            for output in layer['output']:
+                out = output.split('::')
+                out_id = out[0]
+                out_name = out[1]
+                for ann_output in ann_outputs:
+                    try:
+                        # TODO: introduce aliases to output so we can return from ANNs
+                        # with the same output names
+                        workflow_output[out_name] = (ann_output[out_id][out_name])
+                    except:
+                        None
 
     return workflow_output
 

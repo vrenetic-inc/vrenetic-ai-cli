@@ -65,7 +65,9 @@ acacf99999a6a400013c4321 / 0.0.1  -  Binary logical exclusive disjunction (XOR) 
 ```bash
 $ vrenetic-ai workflow-show
 604f08de52ad6365011c4aa7 / 0.0.1  -  Serial passthrough via 2 dummy ANNs
-704f08de52ad6365011c4abc / 0.0.1  -  Serial Inverter with 3 layers of ANNs
+704f08de52ad6365011c4abc / 0.0.1  -  Serial Inverters with 3 layers (NOT::NOT::NOT)
+111108de52ad6365011caabb / 0.0.1  -  Parallel passthrough via 2 dummy ANNs on single layer
+885608de52ad636501mmaa9a / 0.0.1  -  Mixed serial&parallel topology with 3 layers (AND+OR::OR+AND::XOR)
 ```
 
 #### Run ANN with DTO inputs
@@ -145,7 +147,7 @@ TODO
 ----
 
 #### PoC
-* Add dummy Workflows with serial, parallel and mixed topology
+* Workflow - output definition needs aliases support
 
 #### MVP
 * Add [OpenCL](https://www.khronos.org/opencl/) generic support
