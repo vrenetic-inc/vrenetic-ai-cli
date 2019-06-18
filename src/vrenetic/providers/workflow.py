@@ -24,20 +24,14 @@ def run(workflow_id, workflow_dtos):
         if len(workflow_item):
             configuration = run_get_configuration(workflow_id)[0]
         else:
-            # TODO: return exception and don't use print
-            print('Cannot find workflow by ID')
-            exit(1)
+            raise ValueError('Cannot find workflow by ID')
     else:
-        # TODO: return exception and don't use print
-        print('No workflow ID provided')
-        exit(1)
+        raise ValueError('No workflow ID provided')
 
-    validator = workflow_validator(configuration)
-
-    if validator == 0:
-        # TODO: return exception and don't use print
-        print('Workflow has errors in schema')
-        exit(1)
+    try:
+        validator = workflow_validator(configuration)
+    except ValueError as error:
+        raise ValueError(error)
 
     topology = configuration['topology']
     layers = topology['layers']
@@ -93,8 +87,6 @@ def run_workflow(layers, workflow_dtos):
                 out_name = out[1]
                 for ann_output in ann_outputs:
                     try:
-                        # TODO: introduce aliases to output so we can return from ANNs
-                        # with the same output names
                         workflow_output[out_alias] = (ann_output[out_id][out_name])
                     except:
                         None
@@ -110,11 +102,12 @@ def run_workflow_layer(layer, workflow_dtos):
         })
     return layer_outpus
 
+
 def run_workflow_layer_ann(id, workflow_dtos):
     return nn.run(id, workflow_dtos)
 
+
 def workflow_validator(configuration):
-    # TODO: return exception and don't use print
     try:
         topology = configuration['topology']
         try:
@@ -124,37 +117,33 @@ def workflow_validator(configuration):
                     try:
                         id = layer['layer']
                     except:
-                        print('Layer index is not defined.')
-                        return 0
+                        raise ValueError('Layer index is not defined')
 
                     try:
                         ann = layer['ann']
                     except:
-                        print('Layer ANNs are not defined.')
-                        return 0
+                        raise ValueError('Layer ANNs are not defined')
 
                     try:
                         wiring = layer['wiring']
                     except:
-                        print('Layer wiring is not defined.')
-                        return 0
+                        raise ValueError('Layer wiring is not defined')
 
                     try:
                         output = layer['output']
                     except:
-                        print('Layer output is not defined.')
-                        return 0
-                except:
-                    print('Layer generic error.')
-                    return 0
-        except:
-            print("Layers in topology are not defined.")
-            return 0
-    except:
-        print("Topology in workflow is not defined.")
-        return 0
+                        raise ValueError('Layer output is not defined')
 
-    return 1
+                except ValueError as error:
+                    raise ValueError(error)
+
+        except ValueError as error:
+            raise ValueError(error)
+
+    except ValueError as error:
+        raise ValueError(error)
+
+    return True
 
 
 def run_get_configuration(id):

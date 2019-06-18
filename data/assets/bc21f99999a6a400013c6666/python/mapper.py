@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import pprint
+import json
 
 def map(input_dtos):
         map = []
@@ -11,9 +11,9 @@ def map(input_dtos):
                         map.append(input0)
                         map.append(input1)
                 except:
-                        None
-        except:
-                return None
+                        raise ValueError('Invalid inputs. Use: ' + json.dumps(inputs()))
+        except ValueError as error:
+                raise ValueError(error)
 
         return map
 

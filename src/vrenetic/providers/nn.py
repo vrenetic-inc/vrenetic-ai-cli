@@ -26,13 +26,9 @@ def run(ann_id, ann_dtos):
         if len(nn_item):
             configuration = run_get_configuration(ann_id)[0]
         else:
-            # TODO: return exception and don't use print
-            print('Cannot find neural network by ID')
-            exit(1)
+            raise ValueError('Cannot find neural network by ID')
     else:
-        # TODO: return exception and don't use print
-        print('No neural network ID provided')
-        exit(1)
+        raise ValueError('No neural network ID provided')
 
     input_dtos = contract_validator(ann_dtos)
 
@@ -45,10 +41,6 @@ def run(ann_id, ann_dtos):
         nn_mapping_spec = nn_mapping_spec.loader.exec_module(mapping)
 
         mapper_inputs = mapping.map(input_dtos)
-
-        if mapper_inputs == None:
-            print('Invalid inputs provided for neural network.')
-            exit(1)
 
     if configuration['expressions']:
         expression_json = configuration['expressions'][0]

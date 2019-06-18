@@ -36,15 +36,23 @@ def main(args):
     setup_logging(args.loglevel)
 
     if args.command == "ann-run":
-        data = json.loads(args.ann_dtos[0])
-        results = nn.run(args.ann_id, data)
-        print(json.dumps(results))
+        try:
+            data = json.loads(args.ann_dtos[0])
+            results = nn.run(args.ann_id, data)
+            print(json.dumps(results))
+        except ValueError as error:
+            print(error)
+            exit(1)
     if args.command == "ann-show":
         nn.show(args)
     if args.command == "workflow-run":
-        data = json.loads(args.workflow_dtos[0])
-        results = workflow.run(args.workflow_id, data)
-        print(json.dumps(results))
+        try:
+            data = json.loads(args.workflow_dtos[0])
+            results = workflow.run(args.workflow_id, data)
+            print(json.dumps(results))
+        except ValueError as error:
+            print(error)
+            exit(1)
     if args.command == "workflow-show":
         workflow.show(args)
 
