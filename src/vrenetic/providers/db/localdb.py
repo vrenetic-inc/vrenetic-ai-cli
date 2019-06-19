@@ -1,33 +1,43 @@
 from tinydb import TinyDB, Query
 
 
-def getById(id):
-    Item = Query()
-    db = TinyDB(__basepath_db__)
-    table = db.table('ann-models')
-    application_config = table.search(Item.id.matches(id))
-    return application_config
+__database_table_ann__ = 'ann-models'
+__database_table_workflow__ = 'workflow-models'
 
-def getAll():
-    Item = Query()
-    db = TinyDB(__basepath_db__)
-    table = db.table('ann-models')
-    application_config = table.search(Item.id.matches(''))
-    return application_config
+
+def getDB():
+    return TinyDB(__basepath_db__)
+
+
+def getANNTable():
+    return getDB().table(__database_table_ann__)
+
+
+def getWorkflowTable():
+    return getDB().table(__database_table_workflow__)
+
+
+def getANNById(id):
+    table = getANNTable()
+    return findById(table, id)
+
+
+def getANNAll():
+    table = getANNTable()
+    return findById(table, '')
 
 
 def getWorkflowById(id):
-    Item = Query()
-    db = TinyDB(__basepath_db__)
-    table = db.table('workflow-models')
-    workflow_config = table.search(Item.id.matches(id))
-    return workflow_config
+    table = getWorkflowTable()
+    return findById(table, id)
 
 
 def getWorkflowAll():
-    Item = Query()
-    db = TinyDB(__basepath_db__)
-    table = db.table('workflow-models')
-    application_config = table.search(Item.id.matches(''))
-    return application_config
+    table = getWorkflowTable()
+    return findById(table, '')
+
+
+def findById(table, id):
+    query = Query()
+    return table.search(query.id.matches(id))
 

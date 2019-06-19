@@ -7,10 +7,10 @@ from importlib.machinery import SourceFileLoader
 
 def show(options):
     if options.ann_id:
-        for nn in (localdb.getById(options.ann_id)):
+        for nn in (localdb.getANNById(options.ann_id)):
             show_print(nn, options)
     else:
-        nns = localdb.getAll()
+        nns = localdb.getANNAll()
         if options.optionJSONPrintAll == True:
             print(json.dumps(nns))
         else:
@@ -65,7 +65,7 @@ def contract_validator(input_dtos):
 
 
 def run_get_configuration(id):
-    return localdb.getById(id)
+    return localdb.getANNById(id)
 
 
 def data_get_path(path):
