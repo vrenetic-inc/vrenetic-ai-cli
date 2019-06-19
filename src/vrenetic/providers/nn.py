@@ -1,8 +1,7 @@
 import json
 import pprint
 from providers.db import localdb
-from importlib.util import spec_from_loader, module_from_spec
-from importlib.machinery import SourceFileLoader
+from providers.utils import module
 
 
 def show(options):
@@ -21,6 +20,7 @@ def show(options):
 def run(ann_id, ann_dtos):
     configuration = {}
     mapper_inputs = []
+
     if ann_id:
         nn_item = get_ann_configuration(ann_id)
         if len(nn_item):
@@ -35,22 +35,12 @@ def run(ann_id, ann_dtos):
     if configuration["mappers"]:
         mapper_json = configuration["mappers"][0]
         mapper_path = get_path_data_directory(mapper_json["path"])
-
-        nn_mapping_spec = spec_from_loader("module.name", SourceFileLoader("module.name", mapper_path))
-        mapping = module_from_spec(nn_mapping_spec)
-        nn_mapping_spec = nn_mapping_spec.loader.exec_module(mapping)
-
-        mapper_inputs = mapping.map(input_dtos)
+        mapper_inputs = module.load(mapper_path).map(input_dtos)
 
     if configuration["expressions"]:
         expression_json = configuration["expressions"][0]
         expression_path = get_path_data_directory(expression_json["path"])
-
-        nn_expression_spec = spec_from_loader("module.name", SourceFileLoader("module.name", expression_path))
-        expresion = module_from_spec(nn_expression_spec)
-        nn_expression_spec.loader.exec_module(expresion)
-
-        nn_output = expresion.expression(mapper_inputs)
+        nn_output = module.load(expression_path).expression(mapper_inputs)
         return nn_output
 
     return None

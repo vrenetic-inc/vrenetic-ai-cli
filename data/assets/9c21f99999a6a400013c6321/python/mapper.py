@@ -33,10 +33,10 @@ def map_outputs(data):
 def inputs():
         return [
                 {
-                    "name": "input",
+                    "name": "input0",
                     "type": "float",
                     "contract": {
-                        "dto": "input",
+                        "dto": "stdio",
                         "param": "input"
                     }
                 }
