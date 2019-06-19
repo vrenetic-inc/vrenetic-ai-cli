@@ -19,22 +19,23 @@ def show(options):
 
 def run(workflow_id, workflow_dtos):
     configuration = {}
+
     if workflow_id:
         workflow_item = run_get_configuration(workflow_id)
         if len(workflow_item):
             configuration = run_get_configuration(workflow_id)[0]
         else:
-            raise ValueError('Cannot find workflow by ID')
+            raise ValueError("Cannot find workflow by ID")
     else:
-        raise ValueError('No workflow ID provided')
+        raise ValueError("No workflow ID provided")
 
     try:
         validator = workflow_validator(configuration)
     except ValueError as error:
         raise ValueError(error)
 
-    topology = configuration['topology']
-    layers = topology['layers']
+    topology = configuration["topology"]
+    layers = topology["layers"]
 
     # TODO: validate output based on contract
     layer_output = run_workflow(layers, workflow_dtos)
@@ -46,16 +47,17 @@ def run_workflow(layers, workflow_dtos):
     ann_last_id = ""
     workflow_output = {}
     layer_ann_outputs = None
+
     for layer in layers:
         # TODO: re-think wiring output to input
         # probably should wire by aliases
         # probably should not override global input state bu just
         # pass new state between layers
-        if layer['wiring'] != None:
-            for wire in layer['wiring']:
-                link = wire.split('---')
-                layer_ann_output = link[0].split('::')
-                layer_ann_input = link[1].split('::')
+        if layer["wiring"] != None:
+            for wire in layer["wiring"]:
+                link = wire.split("---")
+                layer_ann_output = link[0].split("::")
+                layer_ann_input = link[1].split("::")
                 for ann_output in layer_ann_outputs:
                     try:
                         ann_id = layer_ann_output[0]
@@ -75,10 +77,10 @@ def run_workflow(layers, workflow_dtos):
         ann_outputs += layer_ann_outputs
 
     for layer in layers:
-        if layer['output'] != None:
-            for output in layer['output']:
-                link = output.split('---')
-                out = link[0].split('::')
+        if layer["output"] != None:
+            for output in layer["output"]:
+                link = output.split("---")
+                out = link[0].split("::")
                 if len(link) == 2:
                     out_alias = link[1]
                 else:
@@ -96,7 +98,8 @@ def run_workflow(layers, workflow_dtos):
 
 def run_workflow_layer(layer, workflow_dtos):
     layer_outpus = []
-    for ann in layer['ann']:
+
+    for ann in layer["ann"]:
         layer_outpus.append({
             ann: run_workflow_layer_ann(ann, workflow_dtos)
         })
@@ -109,30 +112,30 @@ def run_workflow_layer_ann(id, workflow_dtos):
 
 def workflow_validator(configuration):
     try:
-        topology = configuration['topology']
+        topology = configuration["topology"]
         try:
-            layers = topology['layers']
+            layers = topology["layers"]
             for layer in layers:
                 try:
                     try:
-                        id = layer['layer']
+                        id = layer["layer"]
                     except:
-                        raise ValueError('Layer index is not defined')
+                        raise ValueError("Layer index is not defined")
 
                     try:
-                        ann = layer['ann']
+                        ann = layer["ann"]
                     except:
-                        raise ValueError('Layer ANNs are not defined')
+                        raise ValueError("Layer ANNs are not defined")
 
                     try:
-                        wiring = layer['wiring']
+                        wiring = layer["wiring"]
                     except:
-                        raise ValueError('Layer wiring is not defined')
+                        raise ValueError("Layer wiring is not defined")
 
                     try:
-                        output = layer['output']
+                        output = layer["output"]
                     except:
-                        raise ValueError('Layer output is not defined')
+                        raise ValueError("Layer output is not defined")
 
                 except ValueError as error:
                     raise ValueError(error)
@@ -151,12 +154,12 @@ def run_get_configuration(id):
 
 
 def data_get_path(path):
-    return __basepath_data__ + '/' + path
+    return "/".join([__basepath_data__, path])
 
 
 def show_print(workflow, options):
     if options.optionJSONPrintAll == True:
         print(json.dumps(workflow))
     else:
-        print(workflow['id'], "/", workflow['version'], " - ", workflow['name'])
+        print(workflow["id"], "/", workflow["version"], " - ", workflow["name"])
 

@@ -1,8 +1,8 @@
 from tinydb import TinyDB, Query
 
 
-__database_table_ann__ = 'ann-models'
-__database_table_workflow__ = 'workflow-models'
+__database_table_ann__ = "ann-models"
+__database_table_workflow__ = "workflow-models"
 
 
 def getDB():
@@ -24,7 +24,7 @@ def getANNById(id):
 
 def getANNAll():
     table = getANNTable()
-    return findById(table, '')
+    return findById(table, "")
 
 
 def getWorkflowById(id):
@@ -34,7 +34,7 @@ def getWorkflowById(id):
 
 def getWorkflowAll():
     table = getWorkflowTable()
-    return findById(table, '')
+    return findById(table, "")
 
 
 def findById(table, id):

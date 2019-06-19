@@ -17,8 +17,8 @@ __license__ = "MIT"
 __version__ = "0.0.2"
 
 __basepath__ = os.path.dirname(os.path.realpath(__file__))
-__basepath_data__ = __basepath__ + '/../../data'
-__basepath_db__ = __basepath_data__ + '/db.json'
+__basepath_data__ = __basepath__ + "/../../data"
+__basepath_db__ = __basepath_data__ + "/db.json"
 _logger = logging.getLogger(__name__)
 
 
