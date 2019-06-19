@@ -121,31 +121,24 @@ def workflow_validator(configuration):
                         id = layer["layer"]
                     except:
                         raise ValueError("Layer index is not defined")
-
                     try:
                         ann = layer["ann"]
                     except:
                         raise ValueError("Layer ANNs are not defined")
-
                     try:
                         wiring = layer["wiring"]
                     except:
                         raise ValueError("Layer wiring is not defined")
-
                     try:
                         output = layer["output"]
                     except:
                         raise ValueError("Layer output is not defined")
-
                 except ValueError as error:
                     raise ValueError(error)
-
         except ValueError as error:
             raise ValueError(error)
-
     except ValueError as error:
         raise ValueError(error)
-
     return True
 
 

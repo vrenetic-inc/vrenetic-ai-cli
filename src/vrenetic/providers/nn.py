@@ -30,28 +30,56 @@ def run(ann_id, ann_dtos):
     else:
         raise ValueError("No neural network ID provided")
 
-    input_dtos = contract_validator(ann_dtos)
+    try:
+        contract_validator(configuration)
+    except ValueError as error:
+        raise ValueError(error)
 
     if configuration["mappers"]:
-        mapper_json = configuration["mappers"][0]
-        mapper_path = get_path_data_directory(mapper_json["path"])
-        mapper_inputs = module.load(mapper_path).map(input_dtos)
+        mappers = configuration["mappers"]
+        mapper_inputs = load_default_mapper(mappers).map(ann_dtos)
 
     if configuration["expressions"]:
-        expression_json = configuration["expressions"][0]
-        expression_path = get_path_data_directory(expression_json["path"])
-        nn_output = module.load(expression_path).expression(mapper_inputs)
+        expressions = configuration["expressions"]
+        nn_output = load_default_expression(expressions).expression(mapper_inputs)
         return nn_output
 
     return None
 
 
-def contract_validator(input_dtos):
-    # TODO: move inputs/outputs definition for json db to mapper.py files
-    # TODO: move contract definition into mappers section
-    # TODO: to be implemented
-    # TODO: needs storage with contract definitions
-    return input_dtos
+def load_default_mapper(mappers):
+    mapper_config = mappers[0]
+    mapper_path = get_path_data_directory(mapper_config["path"])
+    return module.load(mapper_path)
+
+
+def load_default_expression(expressions):
+    expression_config = expressions[0]
+    expression_path = get_path_data_directory(expression_config["path"])
+    return module.load(expression_path)
+
+
+def contract_validator(configuration):
+    try:
+        try:
+            mappers = configuration["mappers"]
+            try:
+                default_mapper = mappers[0]
+            except:
+                raise ValueError('Missing default mappers configuration')
+        except:
+            raise ValueError('Missing mappers configuration')
+        try:
+            expressions = configuration["expressions"]
+            try:
+                default_expressions = expressions[0]
+            except:
+                raise ValueError('Missing default expression configuration')
+        except:
+            raise ValueError('Missing expressions configuration')
+    except ValueError as error:
+        raise ValueError(error)
+    return True
 
 
 def get_ann_configuration(id):
