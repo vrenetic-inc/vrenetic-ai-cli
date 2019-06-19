@@ -127,6 +127,23 @@ Integration
 
 ![Integration v.1](/docs/assets/integration-v1.png)
 
+OpenCL
+------
+
+For OpenCL it's required to support [miniconda](https://docs.conda.io/en/latest/miniconda.html) and configure environment.
+
+#### Bootstrap
+```bash
+conda create --name vrenetic-ai
+conda install pip
+```
+
+#### Installation
+```bash
+conda install -c conda-forge pyopencl
+pip install -r requirements.txt
+```
+
 REST API
 --------
 
