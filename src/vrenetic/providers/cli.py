@@ -25,22 +25,6 @@ def init(version, logging):
     
     parser_command = parser.add_subparsers(help = 'Commands help', dest='command')
 
-    parser_cmd_workflow_run = parser_command.add_parser('workflow-run', help='AI Worfklow Run')
-    parser_cmd_workflow_run.add_argument('workflow_id', metavar='workflow-id', type=str, help='Workflow Id')
-    parser_cmd_workflow_run.add_argument('workflow_dtos', metavar='workflow-inputs', type=str, nargs='+', help='Workflow Input DTOs')
-
-    parser_cmd_workflow_run = parser_command.add_parser('workflow-show', help='AI Worfklow Show')
-    parser_cmd_workflow_run.add_argument(
-        '--print-json',
-        dest="optionJSONPrintAll",
-        help="All",
-        action='store_const',
-        const=True)
-    parser_cmd_workflow_run.add_argument(
-        '--workflow-id',
-        type=str,
-        help="AI Workflow ID")
-
     parser_cmd_ann_run = parser_command.add_parser('ann-run', help='ANN Run')
     parser_cmd_ann_run.add_argument('ann_id', metavar='ann-id', type=str, help='ANN Id')
     parser_cmd_ann_run.add_argument('ann_dtos', metavar='ann-inputs', type=str, nargs='+', help='ANN Input DTOs')
@@ -74,6 +58,24 @@ def init(version, logging):
         help="Outputs",
         action='store_const',
         const=logging.INFO)
+
+    parser_cmd_workflow_run = parser_command.add_parser('workflow-run', help='AI Worfklow Run')
+    parser_cmd_workflow_run.add_argument('workflow_id', metavar='workflow-id', type=str, help='Workflow Id')
+    parser_cmd_workflow_run.add_argument('workflow_dtos', metavar='workflow-inputs', type=str, nargs='+', help='Workflow Input DTOs')
+
+    parser_cmd_workflow_run = parser_command.add_parser('workflow-show', help='AI Worfklow Show')
+    parser_cmd_workflow_run.add_argument(
+        '--print-json',
+        dest="optionJSONPrintAll",
+        help="All",
+        action='store_const',
+        const=True)
+    parser_cmd_workflow_run.add_argument(
+        '--workflow-id',
+        type=str,
+        help="AI Workflow ID")
+
+    parser_command.add_parser('info', help='General setup information')
 
     return parser
 

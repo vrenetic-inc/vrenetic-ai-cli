@@ -7,7 +7,7 @@ import logging
 import pprint
 import os
 
-from providers import nn, cli, workflow
+from providers import application, cli, nn, workflow
 from providers.db import localdb
 
 
@@ -55,6 +55,8 @@ def main(args):
             exit(1)
     if args.command == "workflow-show":
         workflow.show(args)
+    if args.command == "info":
+        application.info(__version__)
 
 
 def modules_init():

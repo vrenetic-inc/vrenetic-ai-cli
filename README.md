@@ -19,10 +19,11 @@ VRenetic AI Cli
 positional arguments:
   {workflow-run,workflow-show,ann-run,ann-show}
                         Commands help
-    workflow-run        AI Worfklow Run
-    workflow-show       AI Worfklow Show
     ann-run             ANN Run
     ann-show            ANN Show
+    workflow-run        AI Worfklow Run
+    workflow-show       AI Worfklow Show
+    info                General setup information
 
 optional arguments:
   -h, --help            show this help message and exit
