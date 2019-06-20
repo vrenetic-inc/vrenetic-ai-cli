@@ -73,6 +73,32 @@ $ vrenetic-ai workflow-show
 885608de52ad636501mmaa9a / 0.0.1  -  Mixed serial&parallel topology with 3 layers (AND+OR::OR+AND::XOR)
 ```
 
+### Show environment info
+```bash
+$ vrenetic-ai info
+----- Environment details ----
+Version: 0.0.2
+OpenCL support: YES
+OpenCV support: NO
+
+------- OpenCL details -------
+Portable Computing Language
+ - Profile:  FULL_PROFILE
+ - Version:  OpenCL 1.2 pocl 1.3 Release, LLVM 8.0.0, SLEEF, DISTRO, POCL_DEBUG
+ - Devices:
+   -  pthread
+Apple
+ - Profile:  FULL_PROFILE
+ - Version:  OpenCL 1.2 (Apr  7 2019 18:38:19)
+ - Devices:
+   -  Intel(R) Core(TM) i7-8850H CPU @ 2.60GHz
+   -  Intel(R) UHD Graphics 630
+   -  AMD Radeon Pro 560X Compute Engine
+
+------- OpenCV details -------
+N/A
+```
+
 #### Run ANN with DTO inputs
 ```bash
 $ vrenetic-ai ann-run "ann-ID" '{ "user": "DTO", "content": "DTO", "stdio": "DTO", "relevancy": "DTO" }'
