@@ -6,11 +6,10 @@ def info(version):
     try:
         has_opencl()
         print('OpenCL support: YES')
+        print('--------OpenCL details--------')
+        opencl_details()
     except:
         print('OpenCL support: NO')
-
-    # print('--------OpenCL autotest--------')
-    # opencl_autotest()
 
 
 def has_opencl():
@@ -20,7 +19,7 @@ def has_opencl():
         raise ImportError('Cannot load OpenCL support')
 
 
-def opencl_autotest():
+def opencl_details():
     from backends import opencl
-    opencl.performance_test()
+    opencl.details()
 

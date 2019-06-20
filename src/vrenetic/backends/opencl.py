@@ -4,6 +4,25 @@ import pyopencl.characterize.performance as perf
 from six.moves import range
 
 
+def details():
+    platforms = cl.get_platforms()
+
+    for platform in platforms:
+        print(platform.name)
+        print(" - Profile: ", platform.profile)
+        print(" - Version: ", platform.version)
+        print(" - Devices: ")
+        devices = platform.get_devices()
+        for device in devices:
+            print("   - ", device.name)
+
+
+def set_default_context():
+    platform = cl.get_platforms()[0]
+    device = platform.get_devices()[0]
+    cl.Context([device])
+
+
 def performance_test():
     ctx = cl.create_some_context()
 
