@@ -1,6 +1,11 @@
 #!/usr/bin/python
 import json
 
+
+def map_opencl(input_dtos):
+        raise Exception('Not implemented')
+
+
 def map(input_dtos):
         map = []
         try:

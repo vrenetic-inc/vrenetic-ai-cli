@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
 from math import exp
+
+
 def Logistic(x) : 
    return(1/(1+exp(-x))) 
 
@@ -18,7 +20,12 @@ def Probability(x) :
    else : 
        return x
 
-def expression(inputs) : 
+
+def expression_opencl(inputs):
+    raise Exception('Not implemented')
+
+
+def expression(inputs): 
 
     if type(inputs) != list:
        print('Argument must be a list')
@@ -94,3 +101,4 @@ def expression(inputs) :
     return {
         "relevancy-index": conversion
     }
+

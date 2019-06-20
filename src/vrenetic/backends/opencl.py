@@ -2,6 +2,46 @@ from __future__ import division, absolute_import, print_function
 import pyopencl as cl
 import pyopencl.characterize.performance as perf
 from six.moves import range
+import numpy as np
+import pprint
+
+
+def run(kernel_code):
+    context = get_default_context()
+    program = get_program(context, kernel_code)
+    queue = get_queue(context)
+
+    a_np = np.random.rand(5000000).astype(np.float32)
+    b_np = np.random.rand(5000000).astype(np.float32)
+
+    mf = cl.mem_flags
+    a_g = cl.Buffer(context, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=a_np)
+    b_g = cl.Buffer(context, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=b_np)
+
+    res_g = cl.Buffer(context, mf.WRITE_ONLY, a_np.nbytes)
+
+    program.sum(queue, a_np.shape, None, a_g, b_g, res_g)
+
+    res_np = np.empty_like(a_np)
+    cl.enqueue_copy(queue, res_np, res_g)
+
+    pprint.pprint(res_np)
+    # print(res_g)
+    # raise Exception('Not implemented')
+
+
+def get_program(context, kernel_code):
+    return cl.Program(context, kernel_code).build()
+
+
+def get_queue(context):
+    return cl.CommandQueue(context)
+
+
+def get_default_context():
+    platform = cl.get_platforms()[0]
+    device = platform.get_devices()[0]
+    return cl.Context([device])
 
 
 def details():
@@ -15,12 +55,6 @@ def details():
         devices = platform.get_devices()
         for device in devices:
             print("   - ", device.name)
-
-
-def set_default_context():
-    platform = cl.get_platforms()[0]
-    device = platform.get_devices()[0]
-    cl.Context([device])
 
 
 def performance_test():
@@ -52,3 +86,4 @@ def performance_test():
             except Exception as e:
                 result = "exception: %s" % e.__class__.__name__
             print("bandwidth @ %d bytes: %s" % (bs, result))
+

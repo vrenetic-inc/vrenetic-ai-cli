@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
-import pprint
+
+def map_opencl(input_dtos):
+        raise Exception('Not implemented')
 
 
 def map(input_dtos):

@@ -1,6 +1,10 @@
 #!/usr/bin/python
 
 
+def map_opencl(input_dtos):
+        raise Exception('Not implemented')
+
+
 def map(input_dtos):
         map = []
         return map

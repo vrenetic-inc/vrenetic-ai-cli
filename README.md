@@ -4,6 +4,8 @@ vrenetic-ai
 
 VRenetic AI Cli tools.
 
+See [TODO](https://github.com/vrenetic-inc/vrenetic-ai-cli#todo) section
+
 Usage
 -----
 
@@ -166,20 +168,21 @@ TODO
 
 #### PoC
 * Workflow - improve support of layers out/in wiring
+* Packages - define and standardise VRenetic AI Package
 
 #### MVP
+* Introduce configurable data storage `--data-path`
 * Add [OpenCL](https://www.khronos.org/opencl/) generic support
-* Add PoC simple OpenCL support for python expressions
-* Add GPU support for OpenCL on Linux
+* Add PoC simple OpenCL support for python expressions with `--opencl-enable`
+* Add GPU support for OpenCL on Linux with `--opencl-device=[from-the-list]`
 * CI/CD deployment for package - maybe Travis for testing and Nexus for packages?
 
 #### Beta
 * Add [OpenCV](https://opencv.org/) generic support
 * Add GPU support for OpenCV on Linux
 * Add PoC simple OpenCV for Facial Recognition, Object Indentification, Segementation and Recognition, AR
-* Move "data" storage to the Cloud eg AWS/S3
 
 #### Public
-* Introduce "dataset" storage support
-* Introduce "dataset" training support
-* Introduce supervised, semi-supervised and unsupervised "ANN" training mode with multiple backend providers
+* Introduce ANN learning support with provided dataset and ANN model
+* Introduce supervised, semi-supervised and unsupervised "ANN" learning
+* Introduce multiple backend providers for ANN learning
