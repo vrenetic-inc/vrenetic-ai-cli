@@ -79,7 +79,7 @@ $ vrenetic-ai info
 ----- Environment details ----
 Version: 0.0.2
 OpenCL support: YES
-OpenCV support: NO
+OpenCV support: YES
 
 ------- OpenCL details -------
 Portable Computing Language
@@ -96,7 +96,32 @@ Apple
    -  AMD Radeon Pro 560X Compute Engine
 
 ------- OpenCV details -------
-N/A
+General configuration for OpenCV 3.4.2 =====================================
+  Version control:               unknown
+
+  Extra modules:
+    Location (extra):            /opt/concourse/worker/volumes/live/9523d527-1b9e-48e0-7ed0-a36adde286f0/volume/opencv-suite_1535558719691/work/opencv_contrib-3.4.2/modules
+    Version control (extra):     unknown
+
+  Platform:
+    Timestamp:                   2018-08-29T16:23:50Z
+    Host:                        Darwin 14.5.0 x86_64
+    CMake:                       3.12.0
+    CMake generator:             Unix Makefiles
+    CMake build tool:            /opt/concourse/worker/volumes/live/9523d527-1b9e-48e0-7ed0-a36adde286f0/volume/opencv-suite_1535558719691/_build_env/bin/make
+    Configuration:               Release
+
+  CPU/HW features:
+    Baseline:                    SSE SSE2 SSE3 SSSE3
+      requested:                 DETECT
+    Dispatched code generation:  SSE4_1 SSE4_2 FP16 AVX AVX2 AVX512_SKX
+      requested:                 SSE4_1 SSE4_2 AVX FP16 AVX2 AVX512_SKX
+      SSE4_1 (3 files):          + SSE4_1
+      SSE4_2 (1 files):          + SSE4_1 POPCNT SSE4_2
+      FP16 (1 files):            + SSE4_1 POPCNT SSE4_2 FP16 AVX
+      AVX (5 files):             + SSE4_1 POPCNT SSE4_2 AVX
+      AVX2 (9 files):            + SSE4_1 POPCNT SSE4_2 FP16 FMA3 AVX AVX2
+      AVX512_SKX (1 files):      + SSE4_1 POPCNT SSE4_2 FP16 FMA3 AVX AVX2 AVX_512F AVX512_SKX
 ```
 
 #### Run ANN with DTO inputs
@@ -156,10 +181,10 @@ Integration
 
 ![Integration v.1](/docs/assets/integration-v1.png)
 
-OpenCL
-------
+OpenCL and OpenCV
+-----------------
 
-For OpenCL it's required to support [miniconda](https://docs.conda.io/en/latest/miniconda.html) and configure environment.
+For OpenCL/CV it's required to support [miniconda](https://docs.conda.io/en/latest/miniconda.html) and configure environment.
 
 #### Bootstrap
 ```bash
@@ -170,6 +195,7 @@ conda install pip
 #### Installation
 ```bash
 conda install -c conda-forge pyopencl
+conda install -c anaconda py-opencv
 pip install -r requirements.txt
 ```
 
@@ -189,7 +215,6 @@ TODO
 #### PoC
 * Packages - define and standardise VRenetic AI Package
 * Introduce configurable data storage `--data-path`
-* Add [OpenCL](https://www.khronos.org/opencl/) generic support
 * Add PoC simple OpenCL support for python expressions with `--opencl-enable`
 
 #### MVP
@@ -197,8 +222,7 @@ TODO
 * CI/CD deployment for package - maybe Travis for testing and Nexus for packages?
 
 #### Beta
-* Add [OpenCV](https://opencv.org/) generic support
-* Add GPU support for OpenCV on Linux
+* Add GPU support for OpenCV on Linux with `--opencv-enable` and `--opencv-device=[from-the-list]`
 * Add PoC simple OpenCV for Facial Recognition, Object Indentification, Segementation and Recognition, AR
 
 #### Public

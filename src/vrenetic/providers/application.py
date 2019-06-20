@@ -27,6 +27,7 @@ def info(version):
         print('------- OpenCV details -------')
         opencv_details()
     except Exception as error:
+        print(error)
         print('N/A')
 
 
@@ -43,9 +44,13 @@ def opencl_details():
 
 
 def has_opencv():
-    raise Exception('Not implemented')
+    try:
+        from backends import opencv
+    except:
+        raise ImportError('Cannot load OpenCV support')
 
 
 def opencv_details():
-    raise Exception('Not implemented')
+    from backends import opencv
+    opencv.details()
 
