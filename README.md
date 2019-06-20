@@ -157,23 +157,16 @@ Develop and distro
 
 It's based on [PyScaffold](https://pyscaffold.org)
 
-Limitations
------------
-
-* ANN can have only single output
-* Workflow assumes unique ANNs on the same layer and unique global output names
-
 TODO
 ----
 
 #### PoC
-* Workflow - improve support of layers out/in wiring
 * Packages - define and standardise VRenetic AI Package
-
-#### MVP
 * Introduce configurable data storage `--data-path`
 * Add [OpenCL](https://www.khronos.org/opencl/) generic support
 * Add PoC simple OpenCL support for python expressions with `--opencl-enable`
+
+#### MVP
 * Add GPU support for OpenCL on Linux with `--opencl-device=[from-the-list]`
 * CI/CD deployment for package - maybe Travis for testing and Nexus for packages?
 
