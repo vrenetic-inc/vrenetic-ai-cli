@@ -1,9 +1,13 @@
 from __future__ import division, absolute_import, print_function
-import pyopencl as cl
-import pyopencl.characterize.performance as perf
-from six.moves import range
-import numpy as np
-import pprint
+
+try:
+    import pyopencl as cl
+    import pyopencl.characterize.performance as perf
+    from six.moves import range
+    import numpy as np
+    import pprint
+except Exception as error:
+    raise Exception('OpenCL not supported')
 
 
 def run(kernel_code):

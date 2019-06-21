@@ -224,6 +224,7 @@ TODO
 #### Beta
 * Add GPU support for OpenCV on Linux with `--opencv-enable` and `--opencv-device=[from-the-list]`
 * Add PoC simple OpenCV for Facial Recognition, Object Indentification, Segementation and Recognition, AR
+* Integrate [Darknet](https://github.com/pjreddie/darknet) with OpenCV for 80 default objects detection
 
 #### Public
 * Introduce ANN learning support with provided dataset and ANN model

@@ -1,4 +1,4 @@
-from backends import opencl
+
 
 def info(version):
     print('----- Environment details ----')
@@ -20,7 +20,7 @@ def info(version):
         print('------- OpenCL details -------')
         opencl_details()
     except Exception as error:
-        print('N/A')
+        print(error)
 
     try:
         print()
@@ -28,7 +28,6 @@ def info(version):
         opencv_details()
     except Exception as error:
         print(error)
-        print('N/A')
 
 
 def has_opencl():

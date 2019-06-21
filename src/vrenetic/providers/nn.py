@@ -2,7 +2,6 @@ import json
 import pprint
 from providers.db import localdb
 from providers.utils import module
-from backends import opencl
 
 
 def show(options):
@@ -44,6 +43,7 @@ def run(ann_id, ann_dtos):
     if configuration["expressions"]:
         expressions = configuration["expressions"]
         # nn_output = load_default_expression(expressions).expression_opencl(mapper_inputs)
+        # from backends import opencl
         # return opencl.run(nn_output)
         nn_output = load_default_expression(expressions).expression(mapper_inputs)
         return nn_output
