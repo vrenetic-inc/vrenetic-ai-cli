@@ -215,6 +215,7 @@ TODO
 #### PoC
 * Packages - define and standardise VRenetic AI Package
 * Introduce configurable data storage `--data-path`
+* Introduce Provider/Backend abstraction: Frameworks (OpenCL, OpenCV), Libraries (Darknet/...), Hardware (GPU/CPU/FPGA), APIs (Monkeylearn/...)
 * Add PoC simple OpenCL support for python expressions with `--opencl-enable`
 
 #### MVP
