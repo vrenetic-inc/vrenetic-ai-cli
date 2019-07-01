@@ -218,6 +218,7 @@ TODO
 * Add PoC simple OpenCL support for python expressions with `--opencl-enable`
 
 #### MVP
+* Add PoC [text classification](https://monkeylearn.com/) support (topic: scam, spam, auto tags; sentiment: positive, negative; intent: complaint, feedback, request)
 * Add GPU support for OpenCL on Linux with `--opencl-device=[from-the-list]`
 * CI/CD deployment for package - maybe Travis for testing and Nexus for packages?
 
