@@ -213,6 +213,8 @@ TODO
 ----
 
 #### PoC
+* Add "transactionID" to input DTOs (optional)
+* Convert all "-" into "_" in DTOs
 * Packages - define and standardise VRenetic AI Package
 * Introduce configurable data storage `--data-path`
 * Introduce Provider/Backend abstraction: Frameworks (OpenCL, OpenCV), Libraries (Darknet/...), Hardware (GPU/CPU/FPGA), APIs (Monkeylearn/...)
