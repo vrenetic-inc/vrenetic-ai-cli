@@ -18,7 +18,8 @@ Example
 
 ```json
 {
-    "input": "string",
+    "input0": "string",
+    "input1": "string",
     "output": "string",
     "error": "string"
 }
@@ -57,6 +58,19 @@ Example
     "publisher-profile-library-total-likes": "2333",
     "publisher-profile-library-total-comments": "33",
     "publisher-profile-library-total-reported": "0"
+}
+```
+
+### Context
+
+#### Context
+
+```json
+{
+    "ownership-user-to-content": "true",
+    "relation-user-to-content-publisher-friends": "true",
+    "relation-user-to-content-publisher-follower": "true",
+    "relation-content-publisher-to-user-follower": "true"
 }
 ```
 

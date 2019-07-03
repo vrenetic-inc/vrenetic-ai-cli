@@ -121,6 +121,20 @@
                 "type": "continues"
             }
         },
+        "context-context": {
+            "ownership-user-to-content": {
+                "type": "binary"
+            },
+            "relation-user-to-content-publisher-friends": {
+                "type": "binary"
+            },
+            "relation-user-to-content-publisher-follower": {
+                "type": "binary"
+            },
+            "relation-content-publisher-to-user-follower": {
+                "type": "binary"
+            }
+        },
         "statistic-user-feed-activity": {
             "content-type-live": "12",
             "content-type-capsule": "132",
