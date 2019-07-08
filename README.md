@@ -40,13 +40,14 @@ optional arguments:
 
 ```json
 {
+  "transation_id": "string",
   "stdio": {},
   "user": {},
   "content": {},
-  "statistic-user-feed-activity": {},
-  "statistic-source-activity": {},
-  "statistic-user-behaviour": {},
-  "configuration-user-preference": {},
+  "statistic_user_feed_activity": {},
+  "statistic_source_activity": {},
+  "statistic_user_behaviour": {},
+  "configuration_user_preference": {},
   "relevancy": {},
   "distribution": {}
 }
@@ -127,13 +128,16 @@ General configuration for OpenCV 3.4.2 =====================================
 #### Run ANN with DTO inputs
 ```bash
 $ vrenetic-ai ann-run "ann-ID" '{ "user": "DTO", "content": "DTO", "stdio": "DTO", "relevancy": "DTO" }'
-{ "relevancy-index": "1" }
+{ "relevancy_index": "1" }
 ```
 
 #### Run ANN with binary logical negation (NOT)
 ```bash
-$ vrenetic-ai ann-run 9c21f99999a6a400013c6321 '{ "stdio": { "input0": "1" }'
-{ "output": 0 }
+$ vrenetic-ai ann-run 9c21f99999a6a400013c6321 '{ "transaction_id": "223344", "stdio": { "input0": "1" }'
+{
+  "output": 0,
+  "transaction_id": "223344"
+}
 ```
 
 #### Run ANN with binary logical conjunction (AND)
@@ -150,10 +154,10 @@ $ vrenetic-ai ann-run bc21f99999a6a400013c6666 '{ "stdio": { "input0": "0", "inp
 
 #### Run Workflow with DTO inputs
 ```bash
-$ vrenetic-ai workflow-run "workflow-ID" '{ "user": "DTO", "content": "DTO", "statistic-source-activity": "DTO", "statistic-user-feed-activity: "DTO" }'
+$ vrenetic-ai workflow-run "workflow-ID" '{ "user": "DTO", "content": "DTO", "statistic_source_activity": "DTO", "statistic_user_feed_activity: "DTO" }'
 { 
-  "relevancy-index": "1",
-  "distribution-policy": "0.5",
+  "relevancy_index": "1",
+  "distribution_policy": "0.5",
 }
 ```
 
@@ -213,8 +217,7 @@ TODO
 ----
 
 #### PoC
-* Add "transactionID" to input DTOs (optional)
-* Convert all "-" into "_" in DTOs
+* Add Dummy Workflow with output for "relevancy" and "distribution" with always one.
 * Packages - define and standardise VRenetic AI Package
 * Introduce configurable data storage `--data-path`
 * Introduce Provider/Backend abstraction: Frameworks (OpenCL, OpenCV), Libraries (Darknet/...), Hardware (GPU/CPU/FPGA), APIs (Monkeylearn/...)

@@ -10,6 +10,14 @@ Full definition of [v1.0.0](/data/dtos/v1.0.0.json)
 Example
 -------
 
+## Transaction
+
+```json
+{
+    "transaction_id": "string"
+}
+```
+
 ## Input
 
 ### Entity
@@ -29,13 +37,13 @@ Example
 
 ```json
 {
-    "user-name": "Chris",
-    "user-age": "36",
-    "system-user-role": "user|trial|studio|afu",
-    "region-legal-gdpr": "Poland",
-    "region-registration-signup": "UK",
-    "region-session-datacenter": "Germany",
-    "region-relatime-gps": "Switzerland",
+    "user_name": "Chris",
+    "user_age": "36",
+    "system_user_role": "user|trial|studio|afu",
+    "region_legal_gdpr": "Poland",
+    "region_registration_signup": "UK",
+    "region_session_datacenter": "Germany",
+    "region_relatime_gps": "Switzerland",
 }
 ```
 
@@ -43,21 +51,21 @@ Example
 
 ```json
 {
-    "content-type": "live|capsule|photo",
-    "content-age": "10m",
-    "content-projection": "flat|spherical360",
-    "content-settings-muted": "true|false",
-    "content-audio-language": "unknown|lang-code",
-    "region-legal-gdpr": "Poland",
-    "region-registration-signup": "UK",
-    "region-session-datacenter": "Germany",
-    "region-relatime-gps": "Switzerland",
-    "publisher-profile-followers-count": "233",
-    "publisher-profile-library-count": "22",
-    "publisher-profile-library-total-views": "234001",
-    "publisher-profile-library-total-likes": "2333",
-    "publisher-profile-library-total-comments": "33",
-    "publisher-profile-library-total-reported": "0"
+    "content_type": "live|capsule|photo",
+    "content_age": "10m",
+    "content_projection": "flat|spherical360",
+    "content_settings_muted": "true|false",
+    "content_audio_language": "unknown|lang_code",
+    "region_legal_gdpr": "Poland",
+    "region_registration_signup": "UK",
+    "region_session_datacenter": "Germany",
+    "region_relatime_gps": "Switzerland",
+    "publisher_profile_followers_count": "233",
+    "publisher_profile_library_count": "22",
+    "publisher_profile_library_total_views": "234001",
+    "publisher_profile_library_total_likes": "2333",
+    "publisher_profile_library_total_comments": "33",
+    "publisher_profile_library_total_reported": "0"
 }
 ```
 
@@ -67,10 +75,10 @@ Example
 
 ```json
 {
-    "ownership-user-to-content": "true",
-    "relation-user-to-content-publisher-friends": "true",
-    "relation-user-to-content-publisher-follower": "true",
-    "relation-content-publisher-to-user-follower": "true"
+    "ownership_user_to_content": "true",
+    "relation_user_to_content_publisher_friends": "true",
+    "relation_user_to_content_publisher_follower": "true",
+    "relation_content_publisher_to_user_follower": "true"
 }
 ```
 
@@ -80,17 +88,17 @@ Example
 
 ```json
 {
-    "content-type-live": "12",
-    "content-type-capsule": "132",
-    "content-projection-flat": "12",
-    "content-projection-spherical360": "222",
-    "rate-last-minute": "23",
-    "rate-last-hour": "45",
-    "region-own-gdpr": "23",
-    "region-all": "435",
-    "region-us": "23",
-    "region-uk": "12",
-    "region-other": "123"
+    "content_type_live": "12",
+    "content_type_capsule": "132",
+    "content_projection_flat": "12",
+    "content_projection_spherical360": "222",
+    "rate_last_minute": "23",
+    "rate_last_hour": "45",
+    "region_own_gdpr": "23",
+    "region_all": "435",
+    "region_us": "23",
+    "region_uk": "12",
+    "region_other": "123"
 }
 ```
 
@@ -98,14 +106,14 @@ Example
 
 ```json
 {
-    "source-content-type": "live|capsule|photo",
-    "source-content-projection": "flat|spherical360",
-    "source-rate-last-minute": "23",
-    "source-rate-last-hour": "45",
-    "region-all": "435",
-    "region-us": "23",
-    "region-uk": "12",
-    "region-other": "123"
+    "source_content_type": "live|capsule|photo",
+    "source_content_projection": "flat|spherical360",
+    "source_rate_last_minute": "23",
+    "source_rate_last_hour": "45",
+    "region_all": "435",
+    "region_us": "23",
+    "region_uk": "12",
+    "region_other": "123"
 }
 ```
 
@@ -114,14 +122,14 @@ Example
 This will be used for future re-training of Neural Netowrk.
 ```json
 {
-    "date-form": "timestamp",
-    "date-to": "timestamp",
-    "behaviours-count": "1",
+    "date_form": "timestamp",
+    "date_to": "timestamp",
+    "behaviours_count": "1",
     "behaviours": [
         {
             "type": "like|view|comment|play|report|block|flag",
-            "entity-type": "video-flat|video-360|photo|comment|user",
-            "entity-dto": {}
+            "entity_type": "video-flat|video-360|photo|comment|user",
+            "entity_dto": {}
         }
     ]
 }
@@ -134,8 +142,8 @@ This will be used for future re-training of Neural Netowrk.
 This will be used for future re-training of Neural Netowrk.
 ```json
 {
-    "prefer-region-own-max": "70%",
-    "prefer-source-type-spherical360-max": "40%"
+    "prefer_region_own_max": "70%",
+    "prefer_source_type_spherical360_max": "40%"
 }
 ```
 
@@ -145,7 +153,7 @@ This will be used for future re-training of Neural Netowrk.
 
 ```json
 {
-    "relevancy-index": "0|1",
+    "relevancy_index": "0|1",
 }
 ```
 
@@ -153,7 +161,7 @@ This will be used for future re-training of Neural Netowrk.
 
 ```json
 {
-    "distribution-policy": "0|0.5|1"
+    "distribution_policy": "0|0.5|1"
 }
 ```
 0.0 - ignore, 0.5 - byffer by time, 1.0 - realtime

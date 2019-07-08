@@ -1,7 +1,7 @@
 import json
 import pprint
-from providers.db import localdb
-from providers.utils import module
+from .db import localdb
+from .utils import module
 
 
 def show(options):
