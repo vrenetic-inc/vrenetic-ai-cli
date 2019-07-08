@@ -24,6 +24,7 @@ pipeline {
       steps {
         script {
           sh 'python setup.py sdist bdist_wheel'
+          sh 'twine check dist/*'
         }
       }
     }
