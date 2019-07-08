@@ -27,5 +27,14 @@ pipeline {
         }
       }
     }
+    stage('Push to nexus') {
+      steps {
+        script {
+          withCredentials([usernamePassword(credentialsId: 'nexus_credentials', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+            sh 'twine upload dist/* -r https://nexus.core.vrenetic.io/repository/pypi-hosted/ -u $USER -p $PASS'
+          }
+        }
+      }
+    }    
   }
 }
