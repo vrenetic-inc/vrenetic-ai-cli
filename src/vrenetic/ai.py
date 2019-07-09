@@ -8,9 +8,9 @@ import pprint
 import os
 
 try:
-    from .providers import application, cli, ANN, workflow
+    from .providers import application, cli, nn, workflow
 except ModuleNotFoundError:
-    from providers import application, cli, ANN, workflow
+    from providers import application, cli, nn, workflow
 
 try:
     from .providers.db import localdb
@@ -41,8 +41,6 @@ def main(args):
     parser = cli.init(__version__, logging)
     args = parser.parse_args(args)
     setup_logging(args.loglevel)
-
-    nn = ANN()
 
     if args.command == "ann-run":
         try:
