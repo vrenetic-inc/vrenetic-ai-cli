@@ -14,8 +14,8 @@ pipeline {
     stage('Installation') {
       steps {
         script {
-          sh 'conda install -c conda-forge pyopencl'
-          sh 'conda install -c anaconda py-opencv'
+          sh 'conda install -y -c conda-forge pyopencl'
+          sh 'conda install -y -c anaconda py-opencv'
           sh 'pip install -r requirements.txt'
         }
       }
