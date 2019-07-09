@@ -1,6 +1,7 @@
 
 vrenetic-ai
 ===========
+[![Build Status](https://jenkins-eu.vrenetic.io/job/vrenetic-ai-cli/job/master/badge/icon)](https://jenkins-eu.vrenetic.io/job/vrenetic-ai-cli/job/master/)
 
 VRenetic AI Cli tools.
 
@@ -151,13 +152,13 @@ $ vrenetic-ai ann-run bc21f99999a6a400013c6666 '{ "stdio": { "input0": "0", "inp
 #### Run Workflow with DTO inputs
 ```bash
 $ vrenetic-ai workflow-run "workflow-ID" '{ "user": "DTO", "content": "DTO", "statistic-source-activity": "DTO", "statistic-user-feed-activity: "DTO" }'
-{ 
+{
   "relevancy-index": "1",
   "distribution-policy": "0.5",
 }
 ```
 
-Contract 
+Contract
 --------
 
 #### DTOs v1.0.0
