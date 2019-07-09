@@ -1,7 +1,7 @@
 import json
 import pprint
 from .db import localdb
-from .nn import run as run_ann
+from .nn import ANN
 
 
 def show(options):
@@ -105,7 +105,8 @@ def run_workflow_layer(layer, workflow_dtos):
 
 
 def run_workflow_layer_ann(id, workflow_dtos):
-    return run_ann(id, workflow_dtos)
+    nn = ANN()
+    return nn.run(id, workflow_dtos)
 
 
 def workflow_validator(configuration):
