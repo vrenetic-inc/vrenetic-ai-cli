@@ -179,7 +179,7 @@ Follow link to [see document](/docs/AI-PACKAGE-V1.md)
 
 Data storage
 ------------
-Business logic specific meta-data for AI/NN projects, expressions, mappers are provided via [db.json](/data/db.json) file using `JSON` local DB provider.
+Business logic specific meta-data for AI/NN projects, expressions, mappers are provided via [db.json](/src/vrenetic/data/db.json) file using `JSON` local DB provider.
 
 Integration
 -----------

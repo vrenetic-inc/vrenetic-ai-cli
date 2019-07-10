@@ -2,11 +2,6 @@ from vrenetic import ai
 from vrenetic.providers import nn
 
 
-class Options:
-    ann_id = '123'
-    optionJSONPrintAll = True
-
-
 def test_version():
     assert ai.__version__ == '0.0.2'
 

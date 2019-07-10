@@ -95,16 +95,16 @@
             "content_audio_language": {
                 "type": "categorical"
             },
-            "region_legal_gdpr": {
+            "publisher_region_legal_gdpr": {
                 "type": "categorical"
             },
-            "region_registration_signup": {
+            "publisher_region_registration_signup": {
                 "type": "categorical"
             },
-            "region_session_datacenter": {
+            "publisher_region_session_datacenter": {
                 "type": "categorical"
             },
-            "region_relatime_gps": {
+            "publisher_region_relatime_gps": {
                 "type": "categorical"
             },
             "publisher_profile_followers_count": {
