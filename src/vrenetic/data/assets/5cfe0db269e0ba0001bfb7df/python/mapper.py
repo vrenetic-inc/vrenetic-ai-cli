@@ -30,7 +30,7 @@ def inputs():
                     "type": "continues",
                     "contract": {
                         "dto": "user",
-                        "param": "user-age"
+                        "param": "user_age"
                     }
                 },
                 {
@@ -38,7 +38,7 @@ def inputs():
                     "type": "categorical",
                     "contract": {
                         "dto": "user",
-                        "param": "user-role"
+                        "param": "user_role"
                     }
                 },
                 {
@@ -46,7 +46,7 @@ def inputs():
                     "type": "binary",
                     "contract": {
                         "dto": "content",
-                        "param": "content-tags"
+                        "param": "content_tags"
                     }
                 }
             ]
@@ -59,7 +59,7 @@ def outputs():
                     "type": "float",
                     "contract": {
                         "dto": "relevancy",
-                        "param": "relevancy-index"
+                        "param": "relevancy_index"
                     }
                 }
             ]

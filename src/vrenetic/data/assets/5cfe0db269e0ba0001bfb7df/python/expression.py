@@ -99,6 +99,6 @@ def expression(inputs):
     conversion = Probability(non_probabilistic_conversion)
     
     return {
-        "relevancy-index": conversion
+        "relevancy_index": conversion
     }
 

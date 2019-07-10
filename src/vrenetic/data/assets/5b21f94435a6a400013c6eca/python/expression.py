@@ -3,7 +3,7 @@
 
 def expression(inputs):
     return {
-        "relevancy-index": 0
+        "relevancy_index": 0
     }
 
 

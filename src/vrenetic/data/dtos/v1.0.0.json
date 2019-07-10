@@ -4,15 +4,17 @@
         "stdio",
         "user",
         "content",
-        "statistic-user-feed-activity",
-        "statistic-source-activity",
-        "statistic-user-behaviour",
-        "configuration-user-preference"
+        "statistic_user_feed_activity",
+        "statistic_source_activity",
+        "statistic_user_behaviour",
+        "configuration_user_preference",
+        "transaction_id"
     ],
     "outputs": [
         "stdio",
         "relevancy",
-        "distribution"
+        "distribution",
+        "transaction_id"
     ],
     "types": [
         "continues",
@@ -21,6 +23,9 @@
         "json"
     ],
     "defintion": {
+        "transaction_id": {
+            "type": "string"
+        },
         "stdio": {
             "input0": {
                 "type": "continues"
@@ -36,13 +41,13 @@
             }
         },
         "user": {
-            "user-sex": {
+            "user_sex": {
                 "type": "binary"
             },
-            "user-age": {
+            "user_age": {
                 "type": "continues"
             },
-            "system-user-role": {
+            "system_user_role": {
                 "type": "categorical",
                 "dictionary": [
                     "user",
@@ -51,21 +56,21 @@
                     "afu"
                 ]
             },
-            "region-legal-gdpr": {
+            "region_legal_gdpr": {
                 "type": "categorical"
             },
-            "region-registration-signup": {
+            "region_registration_signup": {
                 "type": "categorical"
             },
-            "region-session-datacenter": {
+            "region_session_datacenter": {
                 "type": "categorical"
             },
-            "region-relatime-gps": {
+            "region_relatime_gps": {
                 "type": "categorical"
             }
         },
         "content": {
-            "content-type": {
+            "content_type": {
                 "type": "categorical",
                 "dictionary": [
                     "live",
@@ -73,10 +78,10 @@
                     "photo"
                 ]
             },
-            "content-age": {
+            "content_age": {
                 "type": "continues"
             },
-            "content-projection": {
+            "content_projection": {
                 "type": "categorical",
                 "dictionary": [
                     "flat",
@@ -84,88 +89,88 @@
                     "360"
                 ]
             },
-            "content-settings-muted": {
+            "content_settings_muted": {
                 "type": "integer"
             },
-            "content-audio-language": {
+            "content_audio_language": {
                 "type": "categorical"
             },
-            "region-legal-gdpr": {
+            "publisher_region_legal_gdpr": {
                 "type": "categorical"
             },
-            "region-registration-signup": {
+            "publisher_region_registration_signup": {
                 "type": "categorical"
             },
-            "region-session-datacenter": {
+            "publisher_region_session_datacenter": {
                 "type": "categorical"
             },
-            "region-relatime-gps": {
+            "publisher_region_relatime_gps": {
                 "type": "categorical"
             },
-            "publisher-profile-followers-count": {
+            "publisher_profile_followers_count": {
                 "type": "continues"
             },
-            "publisher-profile-library-count": {
+            "publisher_profile_library_count": {
                 "type": "continues"
             },
-            "publisher-profile-library-total-views": {
+            "publisher_profile_library_total_views": {
                 "type": "continues"
             },
-            "publisher-profile-library-total-likes": {
+            "publisher_profile_library_total_likes": {
                 "type": "continues"
             },
-            "publisher-profile-library-total-comments": {
+            "publisher_profile_library_total_comments": {
                 "type": "continues"
             },
-            "publisher-profile-library-total-reported": {
+            "publisher_profile_library_total_reported": {
                 "type": "continues"
             }
         },
-        "context-context": {
-            "ownership-user-to-content": {
+        "context_context": {
+            "ownership_user_to_content": {
                 "type": "binary"
             },
-            "relation-user-to-content-publisher-friends": {
+            "relation_user_to_content_publisher_friends": {
                 "type": "binary"
             },
-            "relation-user-to-content-publisher-follower": {
+            "relation_user_to_content_publisher_follower": {
                 "type": "binary"
             },
-            "relation-content-publisher-to-user-follower": {
+            "relation_content_publisher_to_user_follower": {
                 "type": "binary"
             }
         },
-        "statistic-user-feed-activity": {
-            "content-type-live": "12",
-            "content-type-capsule": "132",
-            "content-projection-flat": "12",
-            "content-projection-spherical360": "222",
-            "rate-last-minute": "23",
-            "rate-last-hour": "45",
-            "region-own-gdpr": "23",
-            "region-all": "435",
-            "region-us": "23",
-            "region-uk": "12",
-            "region-other": "123"
+        "statistic_user_feed_activity": {
+            "content_type_live": "12",
+            "content_type_capsule": "132",
+            "content_projection_flat": "12",
+            "content_projection_spherical360": "222",
+            "rate_last_minute": "23",
+            "rate_last_hour": "45",
+            "region_own_gdpr": "23",
+            "region_all": "435",
+            "region_us": "23",
+            "region_uk": "12",
+            "region_other": "123"
         },
-        "statistic-source-activity": {
-            "source-content-type": "live|capsule|photo",
-            "source-content-projection": "flat|spherical360",
-            "source-rate-last-minute": "23",
-            "source-rate-last-hour": "45",
-            "region-all": "435",
-            "region-us": "23",
-            "region-uk": "12",
-            "region-other": "123"
+        "statistic_source_activity": {
+            "source_content_type": "live|capsule|photo",
+            "source_content_projection": "flat|spherical360",
+            "source_rate_last_minute": "23",
+            "source_rate_last_hour": "45",
+            "region_all": "435",
+            "region_us": "23",
+            "region_uk": "12",
+            "region_other": "123"
         },
-        "statistic-user-behaviour": {
-            "date-form": {
+        "statistic_user_behaviour": {
+            "date_form": {
                 "type": "timestamp"
             },
-            "date-to": {
+            "date_to": {
                 "type": "timestamp"
             },
-            "behaviours-count": {
+            "behaviours_count": {
                 "type": "continues"
             },
             "behaviours": [
@@ -182,7 +187,7 @@
                             "flag"
                         ]
                     },
-                    "entity-type": {
+                    "entity_type": {
                         "type": "categorical",
                         "dictionary": [
                             "video-flat",
@@ -192,33 +197,33 @@
                             "user"
                         ]
                     },
-                    "entity-dto": {
+                    "entity_dto": {
                         "type": "json"
                     }
                 }
             ]
         },
-        "configuration-user-preference": {
-            "prefer-region-own-max": {
+        "configuration_user_preference": {
+            "prefer_region_own_max": {
                 "type": "continues",
                 "min": "0",
                 "max": "100%"
             },
-            "prefer-source-type-spherical360-max": {
+            "prefer_source_type_spherical360_max": {
                 "type": "continues",
                 "min": "0",
                 "max": "100%"
             }
         },
         "relevancy": {
-            "relevancy-index": {
+            "relevancy_index": {
                 "type": "continues",
                 "min": "0",
                 "max": "1"
             }
         },
         "distribution": {
-            "distribution-policy": {
+            "distribution_policy": {
                 "type": "continues",
                 "min": "0",
                 "max": "1",

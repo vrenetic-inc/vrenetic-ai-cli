@@ -29,7 +29,7 @@ def outputs():
                     "type": "float",
                     "contract": {
                         "dto": "relevancy",
-                        "param": "relevancy-index"
+                        "param": "relevancy_index"
                     }
                 }
             ]

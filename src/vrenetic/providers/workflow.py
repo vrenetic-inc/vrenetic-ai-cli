@@ -1,7 +1,7 @@
 import json
 import pprint
-import providers.nn as nn
-from providers.db import localdb
+from .db import localdb
+from .nn import run as run_ann
 
 
 def show(options):
@@ -38,7 +38,12 @@ def run(workflow_id, workflow_dtos):
     layers = topology["layers"]
 
     # TODO: validate output based on contract
+    try:
+        transaction_id = workflow_dtos['transaction_id']
+    except:
+        transaction_id = ''
     layer_output = run_workflow(layers, workflow_dtos)
+    layer_output['transaction_id'] = transaction_id
     return layer_output
 
 
@@ -100,7 +105,7 @@ def run_workflow_layer(layer, workflow_dtos):
 
 
 def run_workflow_layer_ann(id, workflow_dtos):
-    return nn.run(id, workflow_dtos)
+    return run_ann(id, workflow_dtos)
 
 
 def workflow_validator(configuration):

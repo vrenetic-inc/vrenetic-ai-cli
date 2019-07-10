@@ -4,7 +4,7 @@
 import sys
 
 from pkg_resources import require, VersionConflict
-from setuptools import setup
+from setuptools import setup, find_packages
 
 try:
     require('setuptools>=38.3')
