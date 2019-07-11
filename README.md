@@ -1,6 +1,6 @@
 
-vrenetic-ai
-===========
+vrenetic-ai-cli
+===============
 [![Build Status](https://jenkins-eu.vrenetic.io/buildStatus/icon?job=vrenetic-ai-cli%2Fmaster)](https://jenkins-eu.vrenetic.io/job/vrenetic-ai-cli/job/master/)
 
 VRenetic AI Cli tools.
