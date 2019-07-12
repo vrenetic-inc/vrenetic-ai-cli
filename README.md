@@ -220,21 +220,20 @@ TODO
 #### PoC
 * Add Dummy Workflow with output for "relevancy" and "distribution" with always one.
 * Packages - define and standardise VRenetic AI Package
-* Introduce configurable data storage `--data-path`
-* Introduce Provider/Backend abstraction: Frameworks (OpenCL, OpenCV), Libraries (Darknet/...), Hardware (GPU/CPU/FPGA), APIs (Monkeylearn/...)
-* Add PoC simple OpenCL support for python expressions with `--opencl-enable`
+* Introduce Provider abstraction: Frameworks (PyTorch, TensorFlow, OpenCL, OpenCV), Libraries (Darknet/...)
+* Introduce Backend abstraction: APIs (Monkeylearn/...)
+* Introduce HW abstraction: Hardware (GPU/CPU/FPGA)
 
 #### MVP
-* Add PoC [text classification](https://monkeylearn.com/) support (topic: scam, spam, auto tags; sentiment: positive, negative; intent: complaint, feedback, request)
+* Introduce configurable data storage `--data-path`
+* Add PoC simple OpenCL support for python expressions with `--opencl-enable`
 * Add GPU support for OpenCL on Linux with `--opencl-device=[from-the-list]`
-* CI/CD deployment for package - maybe Travis for testing and Nexus for packages?
-
-#### Beta
 * Add GPU support for OpenCV on Linux with `--opencv-enable` and `--opencv-device=[from-the-list]`
 * Add PoC simple OpenCV for Facial Recognition, Object Indentification, Segementation and Recognition, AR
 * Integrate [Darknet](https://github.com/pjreddie/darknet) with OpenCV for 80 default objects detection
 
-#### Public
-* Introduce ANN learning support with provided dataset and ANN model
-* Introduce supervised, semi-supervised and unsupervised "ANN" learning
-* Introduce multiple backend providers for ANN learning
+#### Beta
+* Add PoC [text classification](https://monkeylearn.com/) support (topic: scam, spam, auto tags; sentiment: positive, negative; intent: complaint, feedback, request)
+* Introduce ANN learning support with provided dataset and xNN model
+* Introduce supervised, semi-supervised and unsupervised "xNN" learning
+* Introduce multiple backend providers for xNN learning
