@@ -38,12 +38,10 @@ pipeline {
       when { 
           branch 'master'
       }
-      environment {
-        version = sh(returnStdout: true, script: """grep '__version__ =' src/vrenetic/ai.py |awk '{print \$3}'|tr -d '\"'""").trim()
-        tag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()
-      }
       steps {
         script {
+          version = sh(returnStdout: true, script: """grep '__version__ =' src/vrenetic/ai.py |awk '{print \$3}'|tr -d '\"'""").trim()
+          tag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()
           echo "version: ${version}\n tag ${tag}"
           if(version != tag){
             sh("git config user.name 'jenkins'")
