@@ -39,7 +39,7 @@ pipeline {
           branch 'master'
       }
       environment {
-        def version = sh(returnStdout: true, script: 'grep "__version__ =" src/vrenetic/ai.py |awk \'{print $3}\'|tr -d "\""').trim()
+        def version = sh(returnStdout: true, script: "grep \"__version__ =\" src/vrenetic/ai.py |awk \'{print $3}\'|tr -d \"\"\"").trim()
         def tag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()
       }
       steps {
