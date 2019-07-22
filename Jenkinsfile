@@ -47,9 +47,9 @@ pipeline {
           if(version != tag){
             sh("git config user.name 'jenkins'")
             sh("git config user.email 'jenkins@vrenetic.io'")
-            sh "git tag ${tag}"
+            sh "git tag ${version}"
             withCredentials([usernamePassword(credentialsId: vrenetic_bot_github, passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-              sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@${repository} ${tag}"
+              sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@${repository} ${version}"
             }
           }
           sh 'python setup.py sdist bdist_wheel'
