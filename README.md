@@ -222,9 +222,9 @@ TODO
 * Refactor to OOP
 * Add Dummy Workflow with output for "relevancy" and "distribution" with always one.
 * Packages - define and standardise VRenetic AI Package
-* Introduce Provider abstraction: Frameworks (PyTorch, TensorFlow, OpenCL, OpenCV), Libraries (Darknet/...)
+* Introduce Frameworks abstraction: PyTorch, TensorFlow, OpenCL, OpenCV
+* Introduce HW abstraction: TPU/NPU/GPU/CPU/FPGA
 * Introduce Backend abstraction: APIs (Monkeylearn/...)
-* Introduce HW abstraction: Hardware (GPU/CPU/FPGA)
 
 #### MVP
 * Introduce configurable data storage `--data-path`
