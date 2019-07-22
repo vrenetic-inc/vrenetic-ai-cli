@@ -201,6 +201,7 @@ conda install pip
 ```bash
 conda install -c conda-forge pyopencl
 conda install -c anaconda py-opencv
+conda install -c pytorch pytorch 
 pip install -r requirements.txt
 ```
 
@@ -218,6 +219,7 @@ TODO
 ----
 
 #### PoC
+* Refactor to OOP
 * Add Dummy Workflow with output for "relevancy" and "distribution" with always one.
 * Packages - define and standardise VRenetic AI Package
 * Introduce Provider abstraction: Frameworks (PyTorch, TensorFlow, OpenCL, OpenCV), Libraries (Darknet/...)

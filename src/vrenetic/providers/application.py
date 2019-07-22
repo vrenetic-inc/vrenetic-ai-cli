@@ -16,6 +16,12 @@ def info(version):
         print('OpenCV support: NO')
 
     try:
+        has_pytorch()
+        print('PyTorch support: YES')
+    except:
+        print('PyTorch support: NO')
+
+    try:
         print()
         print('------- OpenCL details -------')
         opencl_details()
@@ -26,6 +32,13 @@ def info(version):
         print()
         print('------- OpenCV details -------')
         opencv_details()
+    except Exception as error:
+        print(error)
+
+    try:
+        print()
+        print('------- PyTorch details -------')
+        pytorch_details()
     except Exception as error:
         print(error)
 
@@ -53,3 +66,14 @@ def opencv_details():
     from backends import opencv
     opencv.details()
 
+
+def has_pytorch():
+    try:
+        from backends import pytorch
+    except:
+        raise ImportError('Cannot load PyTorch support')
+
+
+def pytorch_details():
+    from backends import pytorch
+    pytorch.details()
