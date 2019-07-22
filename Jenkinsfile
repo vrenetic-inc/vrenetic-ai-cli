@@ -39,11 +39,12 @@ pipeline {
           branch 'master'
       }
       environment {
-        def version = sh(returnStdout: true, script: """grep '__version__ =' src/vrenetic/ai.py |awk '{print \$3}'|tr -d '\"'""").trim()
-        def tag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()
+        version = sh(returnStdout: true, script: """grep '__version__ =' src/vrenetic/ai.py |awk '{print \$3}'|tr -d '\"'""").trim()
+        tag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()
       }
       steps {
         script {
+          echo "version: ${version}\n tag ${tag}"
           if(version != tag){
             sh("git config user.name 'jenkins'")
             sh("git config user.email 'jenkins@vrenetic.io'")
