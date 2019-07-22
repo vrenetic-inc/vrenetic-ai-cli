@@ -16,11 +16,17 @@ pipeline {
         script {
           sh 'conda install -y -c conda-forge pyopencl'
           sh 'conda install -y -c anaconda py-opencv'
+          sh 'conda install -y -c pytorch pytorch'
           sh 'pip install -r requirements.txt'
         }
       }
     }
-    stage('Prepare package') {
+    stage('Prepare dev') {
+      when { 
+          not {
+            branch 'master'
+          }
+      }
       steps {
         script {
           sh 'python setup.py sdist bdist_wheel'
@@ -28,6 +34,29 @@ pipeline {
         }
       }
     }
+    stage('Prepare and tag master') {
+      when { 
+          branch 'master'
+      }
+      environment {
+        def version = sh(returnStdout: true, script: 'grep "__version__ =" src/vrenetic/ai.py |awk \'{print $3}\'|tr -d "\""').trim()
+        def tag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()
+      }
+      steps {
+        script {
+          if(version != tag){
+            sh("git config user.name 'jenkins'")
+            sh("git config user.email 'jenkins@vrenetic.io'")
+            sh "git tag ${tag}"
+            withCredentials([usernamePassword(credentialsId: vrenetic_bot_github, passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+              sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@${repository} ${tag}"
+            }
+          }
+          sh 'python setup.py sdist bdist_wheel'
+          sh 'twine check dist/*'
+        }
+      }
+    }    
     stage('Push to nexus') {
       steps {
         script {
