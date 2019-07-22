@@ -42,13 +42,13 @@ pipeline {
         script {
           def version = sh(returnStdout: true, script: """grep '__version__ =' src/vrenetic/ai.py |awk '{print \$3}'|tr -d '\"'""").trim()
           def tag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()
-          echo "version: ${version}\n tag ${tag}"
+          echo "version: ${version}\ntag ${tag}"
           if(version != tag){
             sh("git config user.name 'jenkins'")
             sh("git config user.email 'jenkins@vrenetic.io'")
             sh "git tag ${version}"
             withCredentials([usernamePassword(credentialsId: 'vrenetic_bot_github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-              sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@${repository} ${version}"
+              sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/vrenetic-inc/vrenetic-ai-cli ${version}"
             }
           }
           sh 'python setup.py sdist bdist_wheel'
