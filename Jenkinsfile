@@ -50,9 +50,10 @@ pipeline {
             withCredentials([usernamePassword(credentialsId: 'vrenetic_bot_github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
               sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/vrenetic-inc/vrenetic-ai-cli ${version}"
             }
+            sh 'python setup.py sdist bdist_wheel'
+            sh 'twine check dist/*'
           }
-          sh 'python setup.py sdist bdist_wheel'
-          sh 'twine check dist/*'
+
         }
       }
     }    
