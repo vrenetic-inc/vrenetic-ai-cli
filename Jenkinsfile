@@ -41,9 +41,9 @@ pipeline {
       steps {
         script {
           def version = sh(returnStdout: true, script: """grep '__version__ =' src/vrenetic/ai.py |awk '{print \$3}'|tr -d '\"'""").trim()
-          def tag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()
+          def tag = sh(returnStdout: true, script: "git tag | tail -1").trim()
           echo "version: ${version}\ntag ${tag}"
-          if(version != tag){
+          if(version.toString() != tag.toString()){
             sh("git config user.name 'jenkins'")
             sh("git config user.email 'jenkins@vrenetic.io'")
             sh "git tag ${version}"
@@ -60,8 +60,10 @@ pipeline {
     stage('Push to nexus') {
       steps {
         script {
-          withCredentials([usernamePassword(credentialsId: 'nexus_credentials', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
-            sh 'twine upload dist/* --repository-url https://nexus.core.vrenetic.io/repository/pypi-hosted/ -u $USER -p $PASS --verbose'
+          if(fileExists("dist")) {
+            withCredentials([usernamePassword(credentialsId: 'nexus_credentials', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                sh 'twine upload dist/* --repository-url https://nexus.core.vrenetic.io/repository/pypi-hosted/ -u $USER -p $PASS --verbose'
+            }
           }
         }
       }
