@@ -73,7 +73,6 @@ pipeline {
         branch 'master'
       }
       steps {
-        echo "version: ${version}\ntag ${tag}"
         build 'vrenetic-api-ai'
       }
     }
