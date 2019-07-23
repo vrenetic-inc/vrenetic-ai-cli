@@ -68,13 +68,5 @@ pipeline {
         }
       }
     }
-    stage('Trigger new api build') {
-      when {
-        branch 'master'
-      }
-      steps {
-        build 'vrenetic-api-ai'
-      }
-    }
   }
 }
