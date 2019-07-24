@@ -16,11 +16,17 @@ pipeline {
         script {
           sh 'conda install -y -c conda-forge pyopencl'
           sh 'conda install -y -c anaconda py-opencv'
+          sh 'conda install -y -c pytorch pytorch'
           sh 'pip install -r requirements.txt'
         }
       }
     }
-    stage('Prepare package') {
+    stage('Prepare dev') {
+      when { 
+          not {
+            branch 'master'
+          }
+      }
       steps {
         script {
           sh 'python setup.py sdist bdist_wheel'
@@ -28,14 +34,39 @@ pipeline {
         }
       }
     }
-    stage('Push to nexus') {
+    stage('Prepare and tag master') {
+      when { 
+          branch 'master'
+      }
       steps {
         script {
-          withCredentials([usernamePassword(credentialsId: 'nexus_credentials', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
-            sh 'twine upload dist/* --repository-url https://nexus.core.vrenetic.io/repository/pypi-hosted/ -u $USER -p $PASS --verbose'
+          def version = sh(returnStdout: true, script: """grep '__version__ =' src/vrenetic/ai.py |awk '{print \$3}'|tr -d '\"'""").trim()
+          def tag = sh(returnStdout: true, script: "git tag | tail -1").trim()
+          echo "version: ${version}\ntag ${tag}"
+          if(version.toString() != tag.toString()){
+            sh("git config user.name 'jenkins'")
+            sh("git config user.email 'jenkins@vrenetic.io'")
+            sh "git tag ${version}"
+            withCredentials([usernamePassword(credentialsId: 'vrenetic_bot_github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+              sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/vrenetic-inc/vrenetic-ai-cli ${version}"
+            }
+            sh 'python setup.py sdist bdist_wheel'
+            sh 'twine check dist/*'
           }
+
         }
       }
     }    
+    stage('Push to nexus') {
+      steps {
+        script {
+          if(fileExists("dist")) {
+            withCredentials([usernamePassword(credentialsId: 'nexus_credentials', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                sh 'twine upload dist/* --repository-url https://nexus.core.vrenetic.io/repository/pypi-hosted/ -u $USER -p $PASS --verbose'
+            }
+          }
+        }
+      }
+    }
   }
 }
