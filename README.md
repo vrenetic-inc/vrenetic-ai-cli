@@ -64,6 +64,8 @@ $ vrenetic-ai ann-show
 0021f99999a6a400013c0000 / 0.0.1  -  Binary logical conjunction (AND) as ANN with two inputs and single output
 bc21f99999a6a400013c6666 / 0.0.1  -  Binary logical disjunction (OR) as ANN with two inputs and single output
 acacf99999a6a400013c4321 / 0.0.1  -  Binary logical exclusive disjunction (XOR) as ANN with two inputs and single output
+tensf99999a6a400013cflow / 0.0.1  -  TensorFlow - 10 inputs and 1 output
+pyacf99999a6a400013torch / 0.0.1  -  PyTorch - 10 inputs and 1 output
 ```
 
 ### Show available Workflows
