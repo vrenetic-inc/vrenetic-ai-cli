@@ -6,3 +6,4 @@
 # scipy==1.0
 
 tinydb==3.13.0
+tensorflow==2.0.0-beta1
