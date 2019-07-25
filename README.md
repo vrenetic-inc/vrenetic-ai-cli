@@ -221,22 +221,22 @@ TODO
 ----
 
 #### PoC
-* Refactor to OOP
-* Add Dummy Workflow with output for "relevancy" and "distribution" with always one.
 * Packages - define and standardise VRenetic AI Package
 * Introduce Frameworks abstraction: PyTorch, TensorFlow, OpenCL, OpenCV
-* Introduce HW abstraction: TPU/NPU/GPU/CPU/FPGA
-* Introduce Backend abstraction: APIs (Monkeylearn/...)
+* Introduce Hardware abstraction: TPU/NPU/GPU/CPU/FPGA
+* Introduce REST backend abstraction: APIs (Monkeylearn/...)
 
 #### MVP
-* Introduce configurable data storage `--data-path`
-* Add PoC simple OpenCL support for python expressions with `--opencl-enable`
+* Add TPU/NPU support for TensorFlow on Linux with `--tensorflow-device=[from-the-list]`
 * Add GPU support for OpenCL on Linux with `--opencl-device=[from-the-list]`
 * Add GPU support for OpenCV on Linux with `--opencv-enable` and `--opencv-device=[from-the-list]`
-* Add PoC simple OpenCV for Facial Recognition, Object Indentification, Segementation and Recognition, AR
-* Integrate [Darknet](https://github.com/pjreddie/darknet) with OpenCV for 80 default objects detection
+* Add PoC simple OpenCL support for python expressions with `--opencl-enable`
 
 #### Beta
+* Refactor to OOP and remove technical debt
+* Introduce configurable data storage `--data-path`
+* Add PoC simple OpenCV for Facial Recognition, Object Indentification, Segementation and Recognition, AR
+* Integrate [Darknet](https://github.com/pjreddie/darknet) with OpenCV for 80 default objects detection
 * Add PoC [text classification](https://monkeylearn.com/) support (topic: scam, spam, auto tags; sentiment: positive, negative; intent: complaint, feedback, request)
 * Introduce ANN learning support with provided dataset and xNN model
 * Introduce supervised, semi-supervised and unsupervised "xNN" learning
