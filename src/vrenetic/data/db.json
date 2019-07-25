@@ -218,6 +218,64 @@
                 }
             ],
             "trainners": null
+        },
+        "8": {
+            "id": "tensf99999a6a400013cflow",
+            "application": "vresh",
+            "version": "0.0.1",
+            "name": "TensorFlow - Experimental multi-input and multi-output neural network",
+            "learning": "supervised",
+            "type": "ann-default",
+            "expressions": [
+                {
+                    "language": "python",
+                    "path": "./assets/tensf99999a6a400013cflow/python/expression.py",
+                    "type": "compute",
+                    "default": "true"
+                }
+            ],
+            "mappers": [
+                {
+                    "path": "./assets/tensf99999a6a400013cflow/python/mapper.py",
+                    "contract": {
+                        "version": "1.0.0",
+                        "type": "dto",
+                        "path": "./dtos/v1.0.0.json"
+                    },
+                    "language": "python",
+                    "default": "true"
+                }
+            ],
+            "trainners": null
+        },
+        "9": {
+            "id": "pyacf99999a6a400013torch",
+            "application": "vresh",
+            "version": "0.0.1",
+            "name": "PyTorch - Experimental multi-input and multi-output neural network",
+            "learning": "supervised",
+            "type": "ann-default",
+            "expressions": [
+                {
+                    "language": "python",
+                    "path": "./assets/pyacf99999a6a400013torch/python/expression.py",
+                    "type": "compute",
+                    "default": "true"
+                }
+            ],
+            "mappers": [
+                {
+                    "path": "./assets/pyacf99999a6a400013torch/python/mapper.py",
+                    "contract": {
+                        "version": "1.0.0",
+                        "type": "dto",
+                        "path": "./dtos/v1.0.0.json"
+                    },
+                    "language": "python",
+                    "default": "true"
+                }
+            ],
+            "trainners": null
         }
     },
     "workflow-models": {
