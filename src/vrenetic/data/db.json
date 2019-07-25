@@ -301,10 +301,11 @@
                             "5b9fa90171d4f00001bc863e"
                         ],
                         "wiring": [
-                            "5b21f94435a6a400013c6eca::relevancy-index---5b9fa90171d4f00001bc863e::relevancy-index"
+                            "5b21f94435a6a400013c6eca::relevancy_index---5b9fa90171d4f00001bc863e::relevancy_index"
                         ],
                         "output": [
-                            "5b9fa90171d4f00001bc863e::relevancy-index"
+                            "5b9fa90171d4f00001bc863e::relevancy_index---relevancy_index",
+                            "5b9fa90171d4f00001bc863e::relevancy_index---distribution_policy"
                         ]
                     }
                 ]

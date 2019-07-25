@@ -21,7 +21,7 @@ except:
 __author__ = "kris-lab <krzysztof.piotr.stasiak@gmail.com>"
 __copyright__ = "kris-lab"
 __license__ = "MIT"
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 __basepath__ = os.path.dirname(os.path.realpath(__file__))
 __basepath_data__ = __basepath__ + "/data"
