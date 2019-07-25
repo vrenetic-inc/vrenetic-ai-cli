@@ -223,7 +223,7 @@
             "id": "tensf99999a6a400013cflow",
             "application": "vresh",
             "version": "0.0.1",
-            "name": "TensorFlow - 10 inputs and 1 output",
+            "name": "TensorFlow - Experimental multi-input and multi-output neural network",
             "learning": "supervised",
             "type": "ann-default",
             "expressions": [
@@ -252,7 +252,7 @@
             "id": "pyacf99999a6a400013torch",
             "application": "vresh",
             "version": "0.0.1",
-            "name": "PyTorch - 10 inputs and 1 output",
+            "name": "PyTorch - Experimental multi-input and multi-output neural network",
             "learning": "supervised",
             "type": "ann-default",
             "expressions": [
