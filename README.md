@@ -3,7 +3,7 @@ vrenetic-ai-cli
 ===============
 [![Build Status](https://jenkins-eu.vrenetic.io/buildStatus/icon?job=vrenetic-ai-cli%2Fmaster)](https://jenkins-eu.vrenetic.io/job/vrenetic-ai-cli/job/master/)
 
-VRenetic AI Cli tools.
+VRenetic AI Cli tools with abstraction for supervised, semi-superfised and unsupervised learning for artificial neural networks, as well as the set of machine learning support via dedicated backends.
 
 See [TODO](https://github.com/vrenetic-inc/vrenetic-ai-cli#todo) section
 
@@ -222,9 +222,9 @@ TODO
 
 #### PoC
 * Packages - define and standardise VRenetic AI Package
-* Introduce Frameworks abstraction: PyTorch, TensorFlow, OpenCL, OpenCV
-* Introduce Hardware abstraction: TPU/NPU/GPU/CPU/FPGA
-* Introduce REST backend abstraction: APIs (Monkeylearn/...)
+* Introduce Frameworks abstraction for AI and ML: PyTorch, TensorFlow, OpenCL, OpenCV
+* Introduce Hardware abstraction for acceleration: TPU/NPU/GPU/CPU/FPGA
+* Introduce REST backend abstraction for integrations: APIs (Monkeylearn/...)
 
 #### MVP
 * Add TPU/NPU support for TensorFlow on Linux with `--tensorflow-device=[from-the-list]`
