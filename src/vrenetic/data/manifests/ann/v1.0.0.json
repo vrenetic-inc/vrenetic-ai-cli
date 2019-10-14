@@ -19,7 +19,8 @@
     "trainers": [
         {
             "language": "python",
-            "path": "string",
+            "model_path": "string",
+            "dataset_path": "string",
             "default": "[true|falase]"
         }
     ],
