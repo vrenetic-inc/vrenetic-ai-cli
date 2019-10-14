@@ -31,7 +31,7 @@ Example
                 ],
                 "wiring": null,
                 "output": [
-                    "5b21f94435a6a400013c6eca::relevancy-index---outputAliasName"
+                    "5b21f94435a6a400013c6eca::relevancy_index---outputAliasName"
                 ]
             },
             {
@@ -43,7 +43,7 @@ Example
                     "5b9fa90171d4f00001bc863e::output---5b9fa90171d4f00001bc863e::input0"
                 ],
                 "output": [
-                    "5b9fa90171d4f00001bc863e::distribution-policy---outputAliasName"
+                    "5b9fa90171d4f00001bc863e::distribution_policy---outputAliasName"
                 ]
             }
         ]
