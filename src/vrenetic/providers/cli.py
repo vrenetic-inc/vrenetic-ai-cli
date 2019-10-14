@@ -75,7 +75,13 @@ def init(version, logging):
         type=str,
         help="AI Workflow ID")
 
-    parser_command.add_parser('info', help='General setup information')
+    parser_cmd_info = parser_command.add_parser('info', help='General setup information')
+    parser_cmd_info.add_argument(
+        '--verbose',
+        dest="optionVerbose",
+        help="Verbose",
+        action='store_const',
+        const=True)
 
     return parser
 

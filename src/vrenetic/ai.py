@@ -63,7 +63,7 @@ def main(args):
     if args.command == "workflow-show":
         workflow.show(args)
     if args.command == "info":
-        application.info(__version__)
+        application.info(args, __version__)
 
 
 def modules_init():

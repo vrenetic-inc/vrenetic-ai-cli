@@ -1,61 +1,58 @@
 
 
-def info(version):
+def info(options, version):
     print('----- Environment details ----')
     print('Version:', version)
     try:
         has_opencl()
-        print('OpenCL support: YES')
+        print('OpenCL: supported')
     except:
-        print('OpenCL support: NO')
+        print('OpenCL: unsupported')
 
     try:
         has_opencv()
-        print('OpenCV support: YES')
+        print('OpenCV: supported')
     except:
-        print('OpenCV support: NO')
+        print('OpenCV: unsupported')
 
     try:
         has_pytorch()
-        print('PyTorch support: YES')
+        print('PyTorch: supported')
     except:
-        print('PyTorch support: NO')
+        print('PyTorch: unsupported')
 
 
     try:
         has_tensorflow()
-        print('TensorFlow support: YES')
+        print('TensorFlow: supported')
     except:
-        print('TensorFlow support: NO')
+        print('TensorFlow: unsupported')
 
-
-    try:
-        print()
-        print('------- OpenCL details -------')
-        opencl_details()
-    except Exception as error:
-        print(error)
-
-    try:
-        print()
-        print('------- OpenCV details -------')
-        opencv_details()
-    except Exception as error:
-        print(error)
-
-    try:
-        print()
-        print('------- PyTorch details -------')
-        pytorch_details()
-    except Exception as error:
-        print(error)
-
-    try:
-        print()
-        print('------- TensorFlow details -------')
-        tensorflow_details()
-    except Exception as error:
-        print(error)
+    if options.optionVerbose == True:
+        try:
+            print()
+            print('------- OpenCL details -------')
+            opencl_details()
+        except Exception as error:
+            print(error)
+        try:
+            print()
+            print('------- OpenCV details -------')
+            opencv_details()
+        except Exception as error:
+            print(error)
+        try:
+            print()
+            print('------- PyTorch details -------')
+            pytorch_details()
+        except Exception as error:
+            print(error)
+        try:
+            print()
+            print('------- TensorFlow details -------')
+            tensorflow_details()
+        except Exception as error:
+            print(error)
 
 
 def has_opencl():
