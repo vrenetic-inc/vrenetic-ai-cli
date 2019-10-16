@@ -246,7 +246,14 @@
                     "default": "true"
                 }
             ],
-            "trainners": null
+            "trainners": [
+                {
+                    "language": "python",
+                    "model_path": "./assets/tensf99999a6a400013cflow/python/trainer.py",
+                    "type": "compute",
+                    "default": "true"
+                }
+            ]
         },
         "9": {
             "id": "pyacf99999a6a400013torch",

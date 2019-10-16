@@ -52,6 +52,12 @@ def main(args):
             exit(1)
     if args.command == "ann-show":
         nn.show(args)
+    if args.command == "ann-train":
+        try:
+            nn.train(args.ann_id)
+        except ValueError as error:
+            print(error)
+            exit(1)
     if args.command == "workflow-run":
         try:
             data = json.loads(args.workflow_dtos[0])
