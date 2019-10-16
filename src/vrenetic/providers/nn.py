@@ -27,7 +27,7 @@ def train(ann_id):
 
     if configuration["trainners"]:
         trainners = configuration["trainners"]
-        nn_output = load_default_trainner(trainners).test_run()
+        nn_output = load_default_trainner(trainners).test_run({})
         return nn_output
     else:
         raise ValueError("No trainners implemented")
