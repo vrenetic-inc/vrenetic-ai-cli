@@ -57,24 +57,28 @@ optional arguments:
 ### Show available ANNs
 ```bash
 $ vrenetic-ai ann-show
-5cfe0db269e0ba0001bfb7df / 0.0.1  -  Vresh Feed Item Relevancy Index for global population market
-5b9fa90171d4f00001bc863e / 0.0.1  -  Analog PassThrough ANN with always Positive 1.0 response
-5b21f94435a6a400013c6eca / 0.0.1  -  Analog PassThrough ANN with always Negative 0.0 response
-9c21f99999a6a400013c6321 / 0.0.1  -  Binary logical negation (NOT) as ANN with always inverted input value as output
-0021f99999a6a400013c0000 / 0.0.1  -  Binary logical conjunction (AND) as ANN with two inputs and single output
-bc21f99999a6a400013c6666 / 0.0.1  -  Binary logical disjunction (OR) as ANN with two inputs and single output
-acacf99999a6a400013c4321 / 0.0.1  -  Binary logical exclusive disjunction (XOR) as ANN with two inputs and single output
-tensf99999a6a400013cflow / 0.0.1  -  TensorFlow - Experimental multi-input and multi-output neural network
-pyacf99999a6a400013torch / 0.0.1  -  PyTorch - Experimental multi-input and multi-output neural network
+Neural Network ID              	 Version 	 Name
+------------------------------------------------------------------------------------------------------------
+vresh-relevancy-feed         	 0.0.1 		 Vresh Feed Item Relevancy Index for global population market
+dummy-passthrough-positive   	 0.0.1 		 Analog PassThrough ANN with always Positive 1.0 response
+dummy-passthrough-negative   	 0.0.1 		 Analog PassThrough ANN with always Negative 0.0 response
+dummy-binary-not            	 0.0.1 		 Binary logical negation (NOT) as ANN with always inverted input value as output
+dummy-binary-and            	 0.0.1 		 Binary logical conjunction (AND) as ANN with two inputs and single output
+dummy-binary-or            	 0.0.1 		 Binary logical disjunction (OR) as ANN with two inputs and single output
+dummy-binary-xor            	 0.0.1 		 Binary logical exclusive disjunction (XOR) as ANN with two inputs and single output
+example-tensorflow-1         	 0.0.1 		 TensorFlow - Experimental multi-input and multi-output neural network
+example-pytorch-1            	 0.0.1 		 PyTorch - Experimental multi-input and multi-output neural network
 ```
 
 ### Show available Workflows
 ```bash
 $ vrenetic-ai workflow-show
-604f08de52ad6365011c4aa7 / 0.0.1  -  Serial passthrough via 2 dummy ANNs
-704f08de52ad6365011c4abc / 0.0.1  -  Serial Inverters with 3 layers (NOT::NOT::NOT)
-111108de52ad6365011caabb / 0.0.1  -  Parallel topology with 1 layer (AND+OR+XOR)
-885608de52ad636501mmaa9a / 0.0.1  -  Mixed serial&parallel topology with 3 layers (AND+OR::OR+AND::XOR)
+Workflow ID                    	 Version 	 Name
+------------------------------------------------------------------------------------------------------------
+604f08de52ad6365011c4aa7     	 0.0.1 		 Serial passthrough via 2 dummy ANNs
+704f08de52ad6365011c4abc     	 0.0.1 		 Serial Inverters with 3 layers (NOT::NOT::NOT)
+111108de52ad6365011caabb     	 0.0.1 		 Parallel topology with 1 layer (AND+OR+XOR)
+885608de52ad636501mmaa9a     	 0.0.1 		 Mixed serial&parallel topology with 3 layers (AND+OR::OR+AND::XOR)
 ```
 
 ### Show environment info
