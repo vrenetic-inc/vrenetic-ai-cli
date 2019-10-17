@@ -13,7 +13,7 @@ def show(options):
         if options.optionJSONPrintAll == True:
             print(json.dumps(nns))
         else:
-            print(('ID                                     ')[:30], "\t", "Version", "\t", "Name")
+            print(('Neural Network ID                                     ')[:30], "\t", "Version", "\t", "Name")
             print('------------------------------------------------------------------------------------------------------------')
             for nn in nns:
                 show_print(nn, options)

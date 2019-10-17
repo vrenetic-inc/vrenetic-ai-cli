@@ -13,6 +13,8 @@ def show(options):
         if options.optionJSONPrintAll == True:
             print(json.dumps(workflows))
         else:
+            print(('Workflow ID                                     ')[:30], "\t", "Version", "\t", "Name")
+            print('------------------------------------------------------------------------------------------------------------')
             for workflow in workflows:
                 show_print(workflow, options)
 
@@ -152,5 +154,5 @@ def show_print(workflow, options):
     if options.optionJSONPrintAll == True:
         print(json.dumps(workflow))
     else:
-        print(workflow["id"], "/", workflow["version"], " - ", workflow["name"])
+        print((workflow["id"] + '           ')[:28], "\t", workflow["version"], "\t\t", workflow["name"])
 
