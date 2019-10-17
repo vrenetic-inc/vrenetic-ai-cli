@@ -13,6 +13,8 @@ def show(options):
         if options.optionJSONPrintAll == True:
             print(json.dumps(nns))
         else:
+            print(('ID                                     ')[:30], "\t", "Version", "\t", "Name")
+            print('------------------------------------------------------------------------------------------------------------')
             for nn in nns:
                 show_print(nn, options)
 
@@ -131,5 +133,5 @@ def show_print(nn, options):
     if options.optionJSONPrintAll == True:
         print(json.dumps(nn))
     else:
-        print(nn["id"], "/", nn["version"], " - ", nn["name"])
+        print((nn["id"] + '           ')[:28], "\t", nn["version"], "\t\t", nn["name"])
 
