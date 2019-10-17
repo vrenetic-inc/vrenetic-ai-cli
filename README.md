@@ -140,7 +140,7 @@ $ vrenetic-ai ann-run "ann-ID" '{ "user": "DTO", "content": "DTO", "stdio": "DTO
 
 #### Run ANN with binary logical negation (NOT)
 ```bash
-$ vrenetic-ai ann-run 9c21f99999a6a400013c6321 '{ "transaction_id": "223344", "stdio": { "input0": "1" }'
+$ vrenetic-ai ann-run 'dummy-binary-not' '{ "transaction_id": "223344", "stdio": { "input0": "1" }'
 {
   "output": 0,
   "transaction_id": "223344"
@@ -149,13 +149,13 @@ $ vrenetic-ai ann-run 9c21f99999a6a400013c6321 '{ "transaction_id": "223344", "s
 
 #### Run ANN with binary logical conjunction (AND)
 ```bash
-$ vrenetic-ai ann-run 0021f99999a6a400013c0000 '{ "stdio": { "input0": "1", "input1": "1" } }'
+$ vrenetic-ai ann-run 'dummy-binary-and' '{ "stdio": { "input0": "1", "input1": "1" } }'
 { "output": 1 }
 ```
 
 #### Run ANN with binary logical disjunction (OR)
 ```bash
-$ vrenetic-ai ann-run bc21f99999a6a400013c6666 '{ "stdio": { "input0": "0", "input1": "1" } }'
+$ vrenetic-ai ann-run 'dummy-binary-or' '{ "stdio": { "input0": "0", "input1": "1" } }'
 { "output": 1 }
 ```
 
