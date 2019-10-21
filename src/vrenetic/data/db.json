@@ -308,11 +308,11 @@
                             "dummy-passthrough-positive"
                         ],
                         "wiring": [
-                            "dummy-passthrough-negative::relevancy_index---dummy-passthrough-positive::relevancy_index"
+                            "dummy-passthrough-negative::relevancy_index->>-dummy-passthrough-positive::relevancy_index"
                         ],
                         "output": [
-                            "dummy-passthrough-positive::relevancy_index---relevancy_index",
-                            "dummy-passthrough-positive::relevancy_index---distribution_policy"
+                            "dummy-passthrough-positive::relevancy_index->>-relevancy_index",
+                            "dummy-passthrough-positive::relevancy_index->>-distribution_policy"
                         ]
                     }
                 ]
@@ -340,7 +340,7 @@
                             "dummy-binary-not"
                         ],
                         "wiring": [
-                            "dummy-binary-not::output---dummy-binary-not::input"
+                            "dummy-binary-not::output->>-dummy-binary-not::input"
                         ],
                         "output": null
                     },
@@ -350,7 +350,7 @@
                             "dummy-binary-not"
                         ],
                         "wiring": [
-                            "dummy-binary-not::output---dummy-binary-not::input"
+                            "dummy-binary-not::output->>-dummy-binary-not::input"
                         ],
                         "output": [
                             "dummy-binary-not::output"
@@ -376,9 +376,9 @@
                         ],
                         "wiring": null,
                         "output": [
-                            "dummy-binary-and::output---AND",
-                            "dummy-binary-or::output---OR",
-                            "dummy-binary-xor::output---XOR"
+                            "dummy-binary-and::output->>-AND",
+                            "dummy-binary-or::output->>-OR",
+                            "dummy-binary-xor::output->>-XOR"
                         ]
                     }
                 ]
@@ -408,10 +408,10 @@
                             "dummy-binary-and"
                         ],
                         "wiring": [
-                            "dummy-binary-and::output---dummy-binary-or::input0",
-                            "dummy-binary-and::output---dummy-binary-or::input1",
-                            "dummy-binary-or::output---dummy-binary-and::input0",
-                            "dummy-binary-or::output---dummy-binary-and::input1"
+                            "dummy-binary-and::output->>-dummy-binary-or::input0",
+                            "dummy-binary-and::output->>-dummy-binary-or::input1",
+                            "dummy-binary-or::output->>-dummy-binary-and::input0",
+                            "dummy-binary-or::output->>-dummy-binary-and::input1"
                         ],
                         "output": null
                     },
@@ -421,8 +421,8 @@
                             "dummy-binary-xor"
                         ],
                         "wiring": [
-                            "dummy-binary-or::output---dummy-binary-xor::input0",
-                            "dummy-binary-and::output---dummy-binary-xor::input1"
+                            "dummy-binary-or::output->>-dummy-binary-xor::input0",
+                            "dummy-binary-and::output->>-dummy-binary-xor::input1"
                         ],
                         "output": [
                             "dummy-binary-xor::output"

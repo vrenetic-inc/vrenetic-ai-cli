@@ -57,7 +57,7 @@ def run_workflow(layers, workflow_dtos):
     for layer in layers:
         if layer["wiring"] != None:
             for wire in layer["wiring"]:
-                link = wire.split("---")
+                link = wire.split("->>-")
                 layer_ann_output = link[0].split("::")
                 layer_ann_input = link[1].split("::")
                 for ann_output in layer_outputs:
@@ -79,7 +79,7 @@ def run_workflow(layers, workflow_dtos):
     for layer in layers:
         if layer["output"] != None:
             for output in layer["output"]:
-                link = output.split("---")
+                link = output.split("->>-")
                 out = link[0].split("::")
                 if len(link) == 2:
                     out_alias = link[1]

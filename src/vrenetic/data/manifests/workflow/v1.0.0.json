@@ -14,7 +14,7 @@
                 ],
                 "wiring": null,
                 "output": [
-                    "ann-id0::output-name0---outputAliasName"
+                    "ann-id0::output-name0->>-outputAliasName"
                 ]
             },
             {
@@ -25,9 +25,9 @@
                     "ann-id2"
                 ],
                 "wiring": [
-                    "ann-id0::output-name0---ann-id0::input-name0",
-                    "ann-id0::output-name0---ann-id1::input-name1",
-                    "ann-id1::output-name1---ann-id2::input-name2"
+                    "ann-id0::output-name0->>-ann-id0::input-name0",
+                    "ann-id0::output-name0->>-ann-id1::input-name1",
+                    "ann-id1::output-name1->>-ann-id2::input-name2"
                 ],
                 "output": null
             },
@@ -37,12 +37,12 @@
                     "ann-id0"
                 ],
                 "wiring": [
-                    "ann-id1::output-name1---ann-id0::input-name1",
-                    "ann-id1::output-name1---ann-id0::input-name2",
-                    "ann-id2::output-name2---ann-id0::input-name3"
+                    "ann-id1::output-name1->>-ann-id0::input-name1",
+                    "ann-id1::output-name1->>-ann-id0::input-name2",
+                    "ann-id2::output-name2->>-ann-id0::input-name3"
                 ],
                 "output": [
-                    "ann-id::output-name0---outputAliasName"
+                    "ann-id::output-name0->>-outputAliasName"
                 ]
             }
         ]
