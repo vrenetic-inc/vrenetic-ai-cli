@@ -31,7 +31,8 @@ Example
     "trainers": [
         {
             "language": "python",
-            "path": "./assets/06c180564e5934837c7c137d130fdf6d/python/trainer.py",
+            "model_path": "./assets/06c180564e5934837c7c137d130fdf6d/python/trainer.py",
+            "dataset_path": "./assets/06c180564e5934837c7c137d130fdf6d/data/data.csv",
             "default": "true"
         }
     ],

@@ -11,8 +11,8 @@ Example
 -------
 
 * `output` links ANNs outputs on layer to the final buffer of `outputs` with support for `alias`
-* `output` of value `5b21f94435a6a400013c6eca::output---myoutput` means ANN of id `5b21f94435a6a400013c6eca` without existing output `output` should be mapped to global output as alias `myoutput`
-* `wiring` of value `5b9fa90171d4f00001bc863e::output---5b9fa90171d4f00001bc863e::input0` means to link ANN of id `5b9fa90171d4f00001bc863e` with existing output `output` into ANN of id `5b9fa90171d4f00001bc863e` with existing input `input0`
+* `output` of value `5b21f94435a6a400013c6eca::output->>-myoutput` means ANN of id `5b21f94435a6a400013c6eca` without existing output `output` should be mapped to global output as alias `myoutput`
+* `wiring` of value `5b9fa90171d4f00001bc863e::output->>-5b9fa90171d4f00001bc863e::input0` means to link ANN of id `5b9fa90171d4f00001bc863e` with existing output `output` into ANN of id `5b9fa90171d4f00001bc863e` with existing input `input0`
 
 #### Serial wiring
 ```json
@@ -31,7 +31,7 @@ Example
                 ],
                 "wiring": null,
                 "output": [
-                    "5b21f94435a6a400013c6eca::relevancy-index---outputAliasName"
+                    "5b21f94435a6a400013c6eca::relevancy_index->>-outputAliasName"
                 ]
             },
             {
@@ -40,10 +40,10 @@ Example
                     "5b9fa90171d4f00001bc863e"
                 ],
                 "wiring": [
-                    "5b9fa90171d4f00001bc863e::output---5b9fa90171d4f00001bc863e::input0"
+                    "5b9fa90171d4f00001bc863e::output->>-5b9fa90171d4f00001bc863e::input0"
                 ],
                 "output": [
-                    "5b9fa90171d4f00001bc863e::distribution-policy---outputAliasName"
+                    "5b9fa90171d4f00001bc863e::distribution_policy->>-outputAliasName"
                 ]
             }
         ]

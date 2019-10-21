@@ -25,9 +25,12 @@ def init(version, logging):
     
     parser_command = parser.add_subparsers(help = 'Commands help', dest='command')
 
-    parser_cmd_ann_run = parser_command.add_parser('ann-run', help='ANN Run')
+    parser_cmd_ann_run = parser_command.add_parser('ann-run', help='ANN Run/Evaluate')
     parser_cmd_ann_run.add_argument('ann_id', metavar='ann-id', type=str, help='ANN Id')
     parser_cmd_ann_run.add_argument('ann_dtos', metavar='ann-inputs', type=str, nargs='+', help='ANN Input DTOs')
+
+    parser_cmd_ann_train = parser_command.add_parser('ann-train', help='ANN Train')
+    parser_cmd_ann_train.add_argument('ann_id', metavar='ann-id', type=str, help='ANN Id')
 
     parser_cmd_ann_show = parser_command.add_parser('ann-show', help='ANN Show')
     parser_cmd_ann_show.add_argument(
@@ -75,7 +78,13 @@ def init(version, logging):
         type=str,
         help="AI Workflow ID")
 
-    parser_command.add_parser('info', help='General setup information')
+    parser_cmd_info = parser_command.add_parser('info', help='General setup information')
+    parser_cmd_info.add_argument(
+        '--verbose',
+        dest="optionVerbose",
+        help="Verbose",
+        action='store_const',
+        const=True)
 
     return parser
 

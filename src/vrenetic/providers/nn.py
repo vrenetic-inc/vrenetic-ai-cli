@@ -13,25 +13,36 @@ def show(options):
         if options.optionJSONPrintAll == True:
             print(json.dumps(nns))
         else:
+            print(('Neural Network ID                                     ')[:30], "\t", "Version", "\t", "Name")
+            print('------------------------------------------------------------------------------------------------------------')
             for nn in nns:
                 show_print(nn, options)
+
+
+def train(ann_id):
+    configuration = {}
+
+    try:
+        configuration = load_configuration(ann_id)
+    except ValueError as error:
+        raise ValueError(error)
+
+    if configuration["trainners"]:
+        trainners = configuration["trainners"]
+        nn_output = load_default_trainner(trainners).test_run({})
+        return nn_output
+    else:
+        raise ValueError("No trainners implemented")
+
+    return None
 
 
 def run(ann_id, ann_dtos):
     configuration = {}
     mapper_inputs = []
 
-    if ann_id:
-        nn_item = get_ann_configuration(ann_id)
-        if len(nn_item):
-            configuration = get_ann_configuration(ann_id)[0]
-        else:
-            raise ValueError("Cannot find neural network by ID")
-    else:
-        raise ValueError("No neural network ID provided")
-
     try:
-        contract_validator(configuration)
+        configuration = load_configuration(ann_id)
     except ValueError as error:
         raise ValueError(error)
 
@@ -51,6 +62,24 @@ def run(ann_id, ann_dtos):
     return None
 
 
+def load_configuration(ann_id):
+    if ann_id:
+        nn_item = get_ann_configuration(ann_id)
+        if len(nn_item):
+            configuration = get_ann_configuration(ann_id)[0]
+        else:
+            raise ValueError("Cannot find neural network by ID")
+    else:
+        raise ValueError("No neural network ID provided")
+
+    try:
+        contract_validator(configuration)
+    except ValueError as error:
+        raise ValueError(error)
+
+    return configuration
+
+
 def load_default_mapper(mappers):
     mapper_config = mappers[0]
     mapper_path = get_path_data_directory(mapper_config["path"])
@@ -61,6 +90,12 @@ def load_default_expression(expressions):
     expression_config = expressions[0]
     expression_path = get_path_data_directory(expression_config["path"])
     return module.load(expression_path)
+
+
+def load_default_trainner(trainners):
+    trainner_config = trainners[0]
+    trainner_path = get_path_data_directory(trainner_config["model_path"])
+    return module.load(trainner_path)
 
 
 def contract_validator(configuration):
@@ -98,5 +133,5 @@ def show_print(nn, options):
     if options.optionJSONPrintAll == True:
         print(json.dumps(nn))
     else:
-        print(nn["id"], "/", nn["version"], " - ", nn["name"])
+        print((nn["id"] + '           ')[:28], "\t", nn["version"], "\t\t", nn["name"])
 

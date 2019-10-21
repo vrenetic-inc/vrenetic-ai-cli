@@ -13,6 +13,8 @@ def show(options):
         if options.optionJSONPrintAll == True:
             print(json.dumps(workflows))
         else:
+            print(('Workflow ID                                     ')[:30], "\t", "Version", "\t", "Name")
+            print('------------------------------------------------------------------------------------------------------------')
             for workflow in workflows:
                 show_print(workflow, options)
 
@@ -55,7 +57,7 @@ def run_workflow(layers, workflow_dtos):
     for layer in layers:
         if layer["wiring"] != None:
             for wire in layer["wiring"]:
-                link = wire.split("---")
+                link = wire.split("->>-")
                 layer_ann_output = link[0].split("::")
                 layer_ann_input = link[1].split("::")
                 for ann_output in layer_outputs:
@@ -77,7 +79,7 @@ def run_workflow(layers, workflow_dtos):
     for layer in layers:
         if layer["output"] != None:
             for output in layer["output"]:
-                link = output.split("---")
+                link = output.split("->>-")
                 out = link[0].split("::")
                 if len(link) == 2:
                     out_alias = link[1]
@@ -152,5 +154,5 @@ def show_print(workflow, options):
     if options.optionJSONPrintAll == True:
         print(json.dumps(workflow))
     else:
-        print(workflow["id"], "/", workflow["version"], " - ", workflow["name"])
+        print((workflow["id"] + '           ')[:28], "\t", workflow["version"], "\t\t", workflow["name"])
 

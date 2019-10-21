@@ -2,7 +2,7 @@
     "_default": {},
     "ann-models": {
         "1": {
-            "id": "5cfe0db269e0ba0001bfb7df",
+            "id": "vresh-relevancy-feed",
             "version": "0.0.1",
             "application": "vresh",
             "name": "Vresh Feed Item Relevancy Index for global population market",
@@ -21,14 +21,14 @@
             "expressions": [
                 {
                     "language": "python",
-                    "path": "./assets/5cfe0db269e0ba0001bfb7df/python/expression.py",
+                    "path": "./assets/vresh-relevancy-feed/python/expression.py",
                     "type": "compute",
                     "default": "true"
                 }
             ],
             "mappers": [
                 {
-                    "path": "./assets/5cfe0db269e0ba0001bfb7df/python/mapper.py",
+                    "path": "./assets/vresh-relevancy-feed/python/mapper.py",
                     "contract": {
                         "version": "1.0.0",
                         "type": "dto",
@@ -41,7 +41,7 @@
             "trainners": null
         },
         "2": {
-            "id": "5b9fa90171d4f00001bc863e",
+            "id": "dummy-passthrough-positive",
             "application": "vresh",
             "version": "0.0.1",
             "name": "Analog PassThrough ANN with always Positive 1.0 response",
@@ -50,14 +50,14 @@
             "expressions": [
                 {
                     "language": "python",
-                    "path": "./assets/5b9fa90171d4f00001bc863e/python/expression.py",
+                    "path": "./assets/dummy-passthrough-positive/python/expression.py",
                     "type": "compute",
                     "default": "true"
                 }
             ],
             "mappers": [
                 {
-                    "path": "./assets/5b9fa90171d4f00001bc863e/python/mapper.py",
+                    "path": "./assets/dummy-passthrough-positive/python/mapper.py",
                     "contract": {
                         "version": "1.0.0",
                         "type": "dto",
@@ -70,7 +70,7 @@
             "trainners": null
         },
         "3": {
-            "id": "5b21f94435a6a400013c6eca",
+            "id": "dummy-passthrough-negative",
             "application": "vresh",
             "version": "0.0.1",
             "name": "Analog PassThrough ANN with always Negative 0.0 response",
@@ -79,7 +79,7 @@
             "expressions": [
                 {
                     "language": "python",
-                    "path": "./assets/5b21f94435a6a400013c6eca/python/expression.py",
+                    "path": "./assets/dummy-passthrough-negative/python/expression.py",
                     "contract": {
                         "version": "1.0.0",
                         "type": "dto",
@@ -91,7 +91,7 @@
             ],
             "mappers": [
                 {
-                    "path": "./assets/5b21f94435a6a400013c6eca/python/mapper.py",
+                    "path": "./assets/dummy-passthrough-negative/python/mapper.py",
                     "contract": {
                         "version": "1.0.0",
                         "type": "dto",
@@ -104,7 +104,7 @@
             "trainners": null
         },
         "4": {
-            "id": "9c21f99999a6a400013c6321",
+            "id": "dummy-binary-not",
             "application": "vresh",
             "version": "0.0.1",
             "name": "Binary logical negation (NOT) as ANN with always inverted input value as output",
@@ -113,14 +113,14 @@
             "expressions": [
                 {
                     "language": "python",
-                    "path": "./assets/9c21f99999a6a400013c6321/python/expression.py",
+                    "path": "./assets/dummy-binary-not/python/expression.py",
                     "type": "compute",
                     "default": "true"
                 }
             ],
             "mappers": [
                 {
-                    "path": "./assets/9c21f99999a6a400013c6321/python/mapper.py",
+                    "path": "./assets/dummy-binary-not/python/mapper.py",
                     "contract": {
                         "version": "1.0.0",
                         "type": "dto",
@@ -133,7 +133,7 @@
             "trainners": null
         },
         "5": {
-            "id": "0021f99999a6a400013c0000",
+            "id": "dummy-binary-and",
             "application": "vresh",
             "version": "0.0.1",
             "name": "Binary logical conjunction (AND) as ANN with two inputs and single output",
@@ -142,14 +142,14 @@
             "expressions": [
                 {
                     "language": "python",
-                    "path": "./assets/0021f99999a6a400013c0000/python/expression.py",
+                    "path": "./assets/dummy-binary-and/python/expression.py",
                     "type": "compute",
                     "default": "true"
                 }
             ],
             "mappers": [
                 {
-                    "path": "./assets/0021f99999a6a400013c0000/python/mapper.py",
+                    "path": "./assets/dummy-binary-and/python/mapper.py",
                     "contract": {
                         "version": "1.0.0",
                         "type": "dto",
@@ -162,7 +162,7 @@
             "trainners": null
         },
         "6": {
-            "id": "bc21f99999a6a400013c6666",
+            "id": "dummy-binary-or",
             "application": "vresh",
             "version": "0.0.1",
             "name": "Binary logical disjunction (OR) as ANN with two inputs and single output",
@@ -171,14 +171,14 @@
             "expressions": [
                 {
                     "language": "python",
-                    "path": "./assets/bc21f99999a6a400013c6666/python/expression.py",
+                    "path": "./assets/dummy-binary-or/python/expression.py",
                     "type": "compute",
                     "default": "true"
                 }
             ],
             "mappers": [
                 {
-                    "path": "./assets/bc21f99999a6a400013c6666/python/mapper.py",
+                    "path": "./assets/dummy-binary-or/python/mapper.py",
                     "contract": {
                         "version": "1.0.0",
                         "type": "dto",
@@ -191,7 +191,7 @@
             "trainners": null
         },
         "7": {
-            "id": "acacf99999a6a400013c4321",
+            "id": "dummy-binary-xor",
             "application": "vresh",
             "version": "0.0.1",
             "name": "Binary logical exclusive disjunction (XOR) as ANN with two inputs and single output",
@@ -200,14 +200,79 @@
             "expressions": [
                 {
                     "language": "python",
-                    "path": "./assets/acacf99999a6a400013c4321/python/expression.py",
+                    "path": "./assets/dummy-binary-xor/python/expression.py",
                     "type": "compute",
                     "default": "true"
                 }
             ],
             "mappers": [
                 {
-                    "path": "./assets/acacf99999a6a400013c4321/python/mapper.py",
+                    "path": "./assets/dummy-binary-xor/python/mapper.py",
+                    "contract": {
+                        "version": "1.0.0",
+                        "type": "dto",
+                        "path": "./dtos/v1.0.0.json"
+                    },
+                    "language": "python",
+                    "default": "true"
+                }
+            ],
+            "trainners": null
+        },
+        "8": {
+            "id": "example-tensorflow-1",
+            "application": "vresh",
+            "version": "0.0.1",
+            "name": "TensorFlow - Experimental multi-input and multi-output neural network",
+            "learning": "supervised",
+            "type": "ann-default",
+            "expressions": [
+                {
+                    "language": "python",
+                    "path": "./assets/example-tensorflow-1/python/expression.py",
+                    "type": "compute",
+                    "default": "true"
+                }
+            ],
+            "mappers": [
+                {
+                    "path": "./assets/example-tensorflow-1/python/mapper.py",
+                    "contract": {
+                        "version": "1.0.0",
+                        "type": "dto",
+                        "path": "./dtos/v1.0.0.json"
+                    },
+                    "language": "python",
+                    "default": "true"
+                }
+            ],
+            "trainners": [
+                {
+                    "language": "python",
+                    "model_path": "./assets/example-tensorflow-1/python/trainer.py",
+                    "type": "compute",
+                    "default": "true"
+                }
+            ]
+        },
+        "9": {
+            "id": "example-pytorch-1",
+            "application": "vresh",
+            "version": "0.0.1",
+            "name": "PyTorch - Experimental multi-input and multi-output neural network",
+            "learning": "supervised",
+            "type": "ann-default",
+            "expressions": [
+                {
+                    "language": "python",
+                    "path": "./assets/example-pytorch-1/python/expression.py",
+                    "type": "compute",
+                    "default": "true"
+                }
+            ],
+            "mappers": [
+                {
+                    "path": "./assets/example-pytorch-1/python/mapper.py",
                     "contract": {
                         "version": "1.0.0",
                         "type": "dto",
@@ -232,7 +297,7 @@
                     {
                         "layer": "0",
                         "ann": [
-                            "5b21f94435a6a400013c6eca"
+                            "dummy-passthrough-negative"
                         ],
                         "wiring": null,
                         "output": null
@@ -240,14 +305,14 @@
                     {
                         "layer": "1",
                         "ann": [
-                            "5b9fa90171d4f00001bc863e"
+                            "dummy-passthrough-positive"
                         ],
                         "wiring": [
-                            "5b21f94435a6a400013c6eca::relevancy_index---5b9fa90171d4f00001bc863e::relevancy_index"
+                            "dummy-passthrough-negative::relevancy_index->>-dummy-passthrough-positive::relevancy_index"
                         ],
                         "output": [
-                            "5b9fa90171d4f00001bc863e::relevancy_index---relevancy_index",
-                            "5b9fa90171d4f00001bc863e::relevancy_index---distribution_policy"
+                            "dummy-passthrough-positive::relevancy_index->>-relevancy_index",
+                            "dummy-passthrough-positive::relevancy_index->>-distribution_policy"
                         ]
                     }
                 ]
@@ -264,7 +329,7 @@
                     {
                         "layer": "0",
                         "ann": [
-                            "9c21f99999a6a400013c6321"
+                            "dummy-binary-not"
                         ],
                         "wiring": null,
                         "output": null
@@ -272,23 +337,23 @@
                     {
                         "layer": "1",
                         "ann": [
-                            "9c21f99999a6a400013c6321"
+                            "dummy-binary-not"
                         ],
                         "wiring": [
-                            "9c21f99999a6a400013c6321::output---9c21f99999a6a400013c6321::input"
+                            "dummy-binary-not::output->>-dummy-binary-not::input"
                         ],
                         "output": null
                     },
                     {
                         "layer": "2",
                         "ann": [
-                            "9c21f99999a6a400013c6321"
+                            "dummy-binary-not"
                         ],
                         "wiring": [
-                            "9c21f99999a6a400013c6321::output---9c21f99999a6a400013c6321::input"
+                            "dummy-binary-not::output->>-dummy-binary-not::input"
                         ],
                         "output": [
-                            "9c21f99999a6a400013c6321::output"
+                            "dummy-binary-not::output"
                         ]
                     }
                 ]
@@ -305,15 +370,15 @@
                     {
                         "layer": "0",
                         "ann": [
-                            "0021f99999a6a400013c0000",
-                            "bc21f99999a6a400013c6666",
-                            "acacf99999a6a400013c4321"
+                            "dummy-binary-and",
+                            "dummy-binary-or",
+                            "dummy-binary-xor"
                         ],
                         "wiring": null,
                         "output": [
-                            "0021f99999a6a400013c0000::output---AND",
-                            "bc21f99999a6a400013c6666::output---OR",
-                            "acacf99999a6a400013c4321::output---XOR"
+                            "dummy-binary-and::output->>-AND",
+                            "dummy-binary-or::output->>-OR",
+                            "dummy-binary-xor::output->>-XOR"
                         ]
                     }
                 ]
@@ -330,8 +395,8 @@
                     {
                         "layer": "0",
                         "ann": [
-                            "0021f99999a6a400013c0000",
-                            "bc21f99999a6a400013c6666"
+                            "dummy-binary-and",
+                            "dummy-binary-or"
                         ],
                         "wiring": null,
                         "output": null
@@ -339,28 +404,28 @@
                     {
                         "layer": "1",
                         "ann": [
-                            "bc21f99999a6a400013c6666",
-                            "0021f99999a6a400013c0000"
+                            "dummy-binary-or",
+                            "dummy-binary-and"
                         ],
                         "wiring": [
-                            "0021f99999a6a400013c0000::output---bc21f99999a6a400013c6666::input0",
-                            "0021f99999a6a400013c0000::output---bc21f99999a6a400013c6666::input1",
-                            "bc21f99999a6a400013c6666::output---0021f99999a6a400013c0000::input0",
-                            "bc21f99999a6a400013c6666::output---0021f99999a6a400013c0000::input1"
+                            "dummy-binary-and::output->>-dummy-binary-or::input0",
+                            "dummy-binary-and::output->>-dummy-binary-or::input1",
+                            "dummy-binary-or::output->>-dummy-binary-and::input0",
+                            "dummy-binary-or::output->>-dummy-binary-and::input1"
                         ],
                         "output": null
                     },
                     {
                         "layer": "2",
                         "ann": [
-                            "acacf99999a6a400013c4321"
+                            "dummy-binary-xor"
                         ],
                         "wiring": [
-                            "bc21f99999a6a400013c6666::output---acacf99999a6a400013c4321::input0",
-                            "0021f99999a6a400013c0000::output---acacf99999a6a400013c4321::input1"
+                            "dummy-binary-or::output->>-dummy-binary-xor::input0",
+                            "dummy-binary-and::output->>-dummy-binary-xor::input1"
                         ],
                         "output": [
-                            "acacf99999a6a400013c4321::output"
+                            "dummy-binary-xor::output"
                         ]
                     }
                 ]

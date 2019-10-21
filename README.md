@@ -3,7 +3,7 @@ vrenetic-ai-cli
 ===============
 [![Build Status](https://jenkins-eu.vrenetic.io/buildStatus/icon?job=vrenetic-ai-cli%2Fmaster)](https://jenkins-eu.vrenetic.io/job/vrenetic-ai-cli/job/master/)
 
-VRenetic AI Cli tools.
+VRenetic AI Cli tools with abstraction for supervised, semi-superfised and unsupervised learning for artificial neural networks, as well as the set of machine learning support via dedicated backends.
 
 See [TODO](https://github.com/vrenetic-inc/vrenetic-ai-cli#todo) section
 
@@ -57,22 +57,28 @@ optional arguments:
 ### Show available ANNs
 ```bash
 $ vrenetic-ai ann-show
-5cfe0db269e0ba0001bfb7df / 0.0.1  -  Vresh Feed Item Relevancy Index for global population market
-5b9fa90171d4f00001bc863e / 0.0.1  -  Analog PassThrough ANN with always Positive 1.0 response
-5b21f94435a6a400013c6eca / 0.0.1  -  Analog PassThrough ANN with always Negative 0.0 response
-9c21f99999a6a400013c6321 / 0.0.1  -  Binary logical negation (NOT) as ANN with always inverted input value as output
-0021f99999a6a400013c0000 / 0.0.1  -  Binary logical conjunction (AND) as ANN with two inputs and single output
-bc21f99999a6a400013c6666 / 0.0.1  -  Binary logical disjunction (OR) as ANN with two inputs and single output
-acacf99999a6a400013c4321 / 0.0.1  -  Binary logical exclusive disjunction (XOR) as ANN with two inputs and single output
+Neural Network ID              	 Version 	 Name
+------------------------------------------------------------------------------------------------------------
+vresh-relevancy-feed         	 0.0.1 		 Vresh Feed Item Relevancy Index for global population market
+dummy-passthrough-positive   	 0.0.1 		 Analog PassThrough ANN with always Positive 1.0 response
+dummy-passthrough-negative   	 0.0.1 		 Analog PassThrough ANN with always Negative 0.0 response
+dummy-binary-not            	 0.0.1 		 Binary logical negation (NOT) as ANN with always inverted input value as output
+dummy-binary-and            	 0.0.1 		 Binary logical conjunction (AND) as ANN with two inputs and single output
+dummy-binary-or            	 0.0.1 		 Binary logical disjunction (OR) as ANN with two inputs and single output
+dummy-binary-xor            	 0.0.1 		 Binary logical exclusive disjunction (XOR) as ANN with two inputs and single output
+example-tensorflow-1         	 0.0.1 		 TensorFlow - Experimental multi-input and multi-output neural network
+example-pytorch-1            	 0.0.1 		 PyTorch - Experimental multi-input and multi-output neural network
 ```
 
 ### Show available Workflows
 ```bash
 $ vrenetic-ai workflow-show
-604f08de52ad6365011c4aa7 / 0.0.1  -  Serial passthrough via 2 dummy ANNs
-704f08de52ad6365011c4abc / 0.0.1  -  Serial Inverters with 3 layers (NOT::NOT::NOT)
-111108de52ad6365011caabb / 0.0.1  -  Parallel topology with 1 layer (AND+OR+XOR)
-885608de52ad636501mmaa9a / 0.0.1  -  Mixed serial&parallel topology with 3 layers (AND+OR::OR+AND::XOR)
+Workflow ID                    	 Version 	 Name
+------------------------------------------------------------------------------------------------------------
+604f08de52ad6365011c4aa7     	 0.0.1 		 Serial passthrough via 2 dummy ANNs
+704f08de52ad6365011c4abc     	 0.0.1 		 Serial Inverters with 3 layers (NOT::NOT::NOT)
+111108de52ad6365011caabb     	 0.0.1 		 Parallel topology with 1 layer (AND+OR+XOR)
+885608de52ad636501mmaa9a     	 0.0.1 		 Mixed serial&parallel topology with 3 layers (AND+OR::OR+AND::XOR)
 ```
 
 ### Show environment info
@@ -134,7 +140,7 @@ $ vrenetic-ai ann-run "ann-ID" '{ "user": "DTO", "content": "DTO", "stdio": "DTO
 
 #### Run ANN with binary logical negation (NOT)
 ```bash
-$ vrenetic-ai ann-run 9c21f99999a6a400013c6321 '{ "transaction_id": "223344", "stdio": { "input0": "1" }'
+$ vrenetic-ai ann-run 'dummy-binary-not' '{ "transaction_id": "223344", "stdio": { "input0": "1" }'
 {
   "output": 0,
   "transaction_id": "223344"
@@ -143,13 +149,13 @@ $ vrenetic-ai ann-run 9c21f99999a6a400013c6321 '{ "transaction_id": "223344", "s
 
 #### Run ANN with binary logical conjunction (AND)
 ```bash
-$ vrenetic-ai ann-run 0021f99999a6a400013c0000 '{ "stdio": { "input0": "1", "input1": "1" } }'
+$ vrenetic-ai ann-run 'dummy-binary-and' '{ "stdio": { "input0": "1", "input1": "1" } }'
 { "output": 1 }
 ```
 
 #### Run ANN with binary logical disjunction (OR)
 ```bash
-$ vrenetic-ai ann-run bc21f99999a6a400013c6666 '{ "stdio": { "input0": "0", "input1": "1" } }'
+$ vrenetic-ai ann-run 'dummy-binary-or' '{ "stdio": { "input0": "0", "input1": "1" } }'
 { "output": 1 }
 ```
 
@@ -201,6 +207,7 @@ conda install pip
 ```bash
 conda install -c conda-forge pyopencl
 conda install -c anaconda py-opencv
+conda install -c pytorch pytorch 
 pip install -r requirements.txt
 ```
 
@@ -218,21 +225,22 @@ TODO
 ----
 
 #### PoC
-* Add Dummy Workflow with output for "relevancy" and "distribution" with always one.
 * Packages - define and standardise VRenetic AI Package
-* Introduce Provider abstraction: Frameworks (PyTorch, TensorFlow, OpenCL, OpenCV), Libraries (Darknet/...)
-* Introduce Backend abstraction: APIs (Monkeylearn/...)
-* Introduce HW abstraction: Hardware (GPU/CPU/FPGA)
+* Introduce Frameworks abstraction for AI and ML: PyTorch, TensorFlow, OpenCL, OpenCV
+* Introduce Hardware abstraction for acceleration: TPU/NPU/GPU/CPU/FPGA
+* Introduce REST backend abstraction for integrations: APIs (Monkeylearn/...)
 
 #### MVP
-* Introduce configurable data storage `--data-path`
-* Add PoC simple OpenCL support for python expressions with `--opencl-enable`
+* Add TPU/NPU support for TensorFlow on Linux with `--tensorflow-device=[from-the-list]`
 * Add GPU support for OpenCL on Linux with `--opencl-device=[from-the-list]`
 * Add GPU support for OpenCV on Linux with `--opencv-enable` and `--opencv-device=[from-the-list]`
-* Add PoC simple OpenCV for Facial Recognition, Object Indentification, Segementation and Recognition, AR
-* Integrate [Darknet](https://github.com/pjreddie/darknet) with OpenCV for 80 default objects detection
+* Add PoC simple OpenCL support for python expressions with `--opencl-enable`
 
 #### Beta
+* Refactor to OOP and remove technical debt
+* Introduce configurable data storage `--data-path`
+* Add PoC simple OpenCV for Facial Recognition, Object Indentification, Segementation and Recognition, AR
+* Integrate [Darknet](https://github.com/pjreddie/darknet) with OpenCV for 80 default objects detection
 * Add PoC [text classification](https://monkeylearn.com/) support (topic: scam, spam, auto tags; sentiment: positive, negative; intent: complaint, feedback, request)
 * Introduce ANN learning support with provided dataset and xNN model
 * Introduce supervised, semi-supervised and unsupervised "xNN" learning

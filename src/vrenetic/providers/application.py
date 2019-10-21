@@ -1,33 +1,58 @@
 
 
-def info(version):
+def info(options, version):
     print('----- Environment details ----')
     print('Version:', version)
     try:
         has_opencl()
-        print('OpenCL support: YES')
+        print('OpenCL: supported')
     except:
-        print('OpenCL support: NO')
+        print('OpenCL: unsupported')
 
     try:
         has_opencv()
-        print('OpenCV support: YES')
+        print('OpenCV: supported')
     except:
-        print('OpenCV support: NO')
+        print('OpenCV: unsupported')
 
     try:
-        print()
-        print('------- OpenCL details -------')
-        opencl_details()
-    except Exception as error:
-        print(error)
+        has_pytorch()
+        print('PyTorch: supported')
+    except:
+        print('PyTorch: unsupported')
+
 
     try:
-        print()
-        print('------- OpenCV details -------')
-        opencv_details()
-    except Exception as error:
-        print(error)
+        has_tensorflow()
+        print('TensorFlow: supported')
+    except:
+        print('TensorFlow: unsupported')
+
+    if options.optionVerbose == True:
+        try:
+            print()
+            print('------- OpenCL details -------')
+            opencl_details()
+        except Exception as error:
+            print(error)
+        try:
+            print()
+            print('------- OpenCV details -------')
+            opencv_details()
+        except Exception as error:
+            print(error)
+        try:
+            print()
+            print('------- PyTorch details -------')
+            pytorch_details()
+        except Exception as error:
+            print(error)
+        try:
+            print()
+            print('------- TensorFlow details -------')
+            tensorflow_details()
+        except Exception as error:
+            print(error)
 
 
 def has_opencl():
@@ -52,4 +77,27 @@ def has_opencv():
 def opencv_details():
     from backends import opencv
     opencv.details()
+
+
+def has_pytorch():
+    try:
+        from backends import pytorch
+    except:
+        raise ImportError('Cannot load PyTorch support')
+
+
+def pytorch_details():
+    from backends import pytorch
+    pytorch.details()
+
+
+def has_tensorflow():
+    try:
+        from backends import tensorflow
+    except:
+        raise ImportError('Cannot load TensorFlow support')
+
+def tensorflow_details():
+    from backends import tensorflow
+    tensorflow.details()
 

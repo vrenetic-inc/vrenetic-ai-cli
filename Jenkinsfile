@@ -1,6 +1,6 @@
 pipeline {
   agent {
-      label 'jenkins-slave-misc-operations'
+      label 'misc-operations'
   }
   stages {
     stage('Bootstrap') {
@@ -22,7 +22,7 @@ pipeline {
       }
     }
     stage('Prepare dev') {
-      when { 
+      when {
           not {
             branch 'master'
           }
@@ -35,7 +35,7 @@ pipeline {
       }
     }
     stage('Prepare and tag master') {
-      when { 
+      when {
           branch 'master'
       }
       steps {
@@ -56,7 +56,7 @@ pipeline {
 
         }
       }
-    }    
+    }
     stage('Push to nexus') {
       steps {
         script {
